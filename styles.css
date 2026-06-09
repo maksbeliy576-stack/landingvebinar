@@ -1692,3 +1692,31 @@ blockquote {
     min-height: 280px;
   }
 }
+
+/* Exact page background from dm-marketing.kz */
+:root {
+  --grad-bg: radial-gradient(circle, #eff2f7 20%, #c8d8e8 100%);
+}
+
+html,
+body {
+  background: var(--grad-bg);
+  background-attachment: fixed;
+}
+
+body::before {
+  display: none;
+}
+
+.hero,
+.section--light,
+.pain-section,
+.speaker-section,
+.guarantees,
+.final-cta {
+  background: transparent;
+}
+
+.hero::before {
+  background: transparent;
+}
