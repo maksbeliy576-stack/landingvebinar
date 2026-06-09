@@ -1721,6 +1721,55 @@ body::before {
   background: transparent;
 }
 
+.webinar-date {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding: 10px 12px 10px 16px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid #dbe5f2;
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.webinar-date > div {
+  display: grid;
+  gap: 2px;
+}
+
+.webinar-date__label {
+  color: #1f3a78;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.webinar-date strong {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.calendar-button {
+  min-height: 38px;
+  padding: 9px 13px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3a5fbf 0%, #1f3a78 100%);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px -14px rgba(31, 58, 120, 0.6);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.calendar-button:hover {
+  filter: brightness(1.04);
+}
+
 /* Latest requested refinements */
 .hero {
   min-height: min(640px, calc(100svh - 70px));
@@ -1782,28 +1831,6 @@ body::before {
 }
 
 /* Requested content updates */
-.hero__partners {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.hero__partners span {
-  color: #6b7280;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.hero__partners img {
-  width: 176px;
-  height: auto;
-  filter: drop-shadow(0 10px 22px rgba(31, 58, 120, 0.12));
-}
-
 .hero-photo-card {
   display: flex;
   min-height: 218px;
@@ -2069,6 +2096,44 @@ body::before {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
 
+.webinar-partners {
+  margin-top: 46px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid #dbe5f2;
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.webinar-partners .section-heading {
+  margin-bottom: 24px;
+}
+
+.webinar-partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.webinar-partner-card {
+  display: grid;
+  min-height: 104px;
+  place-items: center;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e6ecf5;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px -24px rgba(31, 58, 120, 0.4);
+}
+
+.webinar-partner-card img {
+  display: block;
+  width: 100%;
+  max-width: 170px;
+  max-height: 54px;
+  object-fit: contain;
+}
+
 .takeaway-section {
   background: transparent;
 }
@@ -2149,13 +2214,14 @@ body::before {
 }
 
 @media (max-width: 760px) {
-  .hero__partners {
-    align-items: flex-start;
+  .webinar-date {
+    width: 100%;
+    align-items: stretch;
     flex-direction: column;
   }
 
-  .hero__partners img {
-    width: 164px;
+  .calendar-button {
+    width: 100%;
   }
 
   .hero-photo-card {
@@ -2195,12 +2261,20 @@ body::before {
   .letter-lightbox {
     padding: 18px;
   }
+
+  .webinar-partners {
+    padding: 22px;
+  }
+
+  .webinar-partners__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Final hero height override */
 .hero {
-  min-height: min(640px, calc(100svh - 70px));
-  padding: clamp(18px, 2.6vw, 32px) 0;
+  min-height: min(650px, calc(100svh - 70px));
+  padding: clamp(14px, 2.2vw, 28px) 0;
 }
 
 .hero__grid {
@@ -2228,6 +2302,14 @@ body::before {
 .hero-card p {
   margin-bottom: 14px;
   font-size: 14px;
+}
+
+.hero__meta {
+  margin-top: 18px;
+}
+
+.hero__actions {
+  margin-top: 20px;
 }
 
 @media (max-width: 1080px) {

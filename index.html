@@ -36,6 +36,15 @@
         <div class="hero__glow hero__glow--two"></div>
         <div class="container hero__grid">
           <div class="hero__content">
+            <div class="webinar-date" aria-label="Дата и время вебинара">
+              <div>
+                <span class="webinar-date__label">25 июня 2026 · 11:00 по Мск</span>
+                <strong id="webinar-countdown">Считаем дни до вебинара</strong>
+              </div>
+              <button class="calendar-button" type="button" id="add-to-calendar">
+                Добавить в календарь
+              </button>
+            </div>
             <p class="eyebrow">Бесплатный онлайн-вебинар</p>
             <h1>CRM: внедрять или нет?</h1>
             <p class="hero__lead">
@@ -43,9 +52,9 @@
               и почему 73% внедрений проваливаются.
             </p>
             <div class="hero__meta" aria-label="Дата и формат вебинара">
-              <span>25 июня 2026</span>
               <span>Онлайн</span>
               <span>Бесплатно</span>
+              <span>60 минут</span>
             </div>
             <div class="hero__actions">
               <a class="button" href="#registration">Зарегистрироваться на вебинар</a>
@@ -86,7 +95,7 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Для кого</p>
-            <h2>Этот вебинар — для вас, если хотя бы один пункт про вас:</h2>
+            <h2>Вебинар будет полезен, если узнаёте себя в одной из ситуаций:</h2>
           </div>
           <div class="cards cards--four">
             <article class="card pain-card">
@@ -333,6 +342,26 @@
               </a>
             </div>
           </div>
+          <div class="webinar-partners" id="partners">
+            <div class="section-heading section-heading--center">
+              <p class="eyebrow">Партнёры вебинара</p>
+              <h2>Технологии, с которыми работает система продаж</h2>
+            </div>
+            <div class="webinar-partners__grid">
+              <article class="webinar-partner-card">
+                <img src="assets/partners/bitrix24.svg" alt="Bitrix24">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/wazzup.svg" alt="Wazzup">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/beeline.png" alt="Билайн">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/sipuni.svg" alt="Sipuni">
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -415,5 +444,82 @@
         <img src="assets/letters/letter-6-laborin.png" alt="Благодарственное письмо — ТОО Laborin">
       </div>
     </main>
+    <script>
+      (function () {
+        var eventStart = new Date(Date.UTC(2026, 5, 25, 8, 0, 0));
+        var eventEnd = new Date(Date.UTC(2026, 5, 25, 9, 0, 0));
+        var countdown = document.getElementById("webinar-countdown");
+        var calendarButton = document.getElementById("add-to-calendar");
+
+        function formatDays(value) {
+          var lastTwo = value % 100;
+          var last = value % 10;
+
+          if (lastTwo >= 11 && lastTwo <= 14) {
+            return "дней";
+          }
+          if (last === 1) {
+            return "день";
+          }
+          if (last >= 2 && last <= 4) {
+            return "дня";
+          }
+          return "дней";
+        }
+
+        function updateCountdown() {
+          if (!countdown) {
+            return;
+          }
+
+          var now = new Date();
+          var diff = eventStart.getTime() - now.getTime();
+
+          if (diff <= 0) {
+            countdown.textContent = "Вебинар уже начался";
+            return;
+          }
+
+          var days = Math.ceil(diff / 86400000);
+          countdown.textContent = "До вебинара осталось " + days + " " + formatDays(days);
+        }
+
+        function toIcsDate(date) {
+          return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+        }
+
+        if (calendarButton) {
+          calendarButton.addEventListener("click", function () {
+            var details = [
+              "BEGIN:VCALENDAR",
+              "VERSION:2.0",
+              "PRODID:-//dm-marketing//crm-webinar//RU",
+              "BEGIN:VEVENT",
+              "UID:crm-webinar-20260625@dm-marketing.pro",
+              "DTSTAMP:" + toIcsDate(new Date()),
+              "DTSTART:" + toIcsDate(eventStart),
+              "DTEND:" + toIcsDate(eventEnd),
+              "SUMMARY:CRM: внедрять или нет?",
+              "DESCRIPTION:Бесплатный онлайн-вебинар о том, когда CRM нужна бизнесу и как избежать ошибок внедрения.",
+              "LOCATION:Онлайн",
+              "END:VEVENT",
+              "END:VCALENDAR"
+            ].join("\\r\\n");
+            var blob = new Blob([details], { type: "text/calendar;charset=utf-8" });
+            var link = document.createElement("a");
+
+            link.href = URL.createObjectURL(blob);
+            link.download = "crm-webinar-25-06-2026.ics";
+            document.body.appendChild(link);
+            link.click();
+            URL.revokeObjectURL(link.href);
+            link.remove();
+          });
+        }
+
+        updateCountdown();
+        window.setInterval(updateCountdown, 3600000);
+      }());
+    </script>
   </body>
 </html>
