@@ -1,0 +1,12 @@
+<svg width="214" height="48" viewBox="0 0 214 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Bitrix24</title>
+  <rect width="214" height="48" rx="14" fill="white"/>
+  <rect x="1" y="1" width="212" height="46" rx="13" stroke="#DDE6F5" stroke-width="2"/>
+  <circle cx="25" cy="24" r="12" fill="#2FC6F6"/>
+  <circle cx="38" cy="15" r="5" fill="#8BD64A"/>
+  <circle cx="42" cy="30" r="4" fill="#FFB13B"/>
+  <circle cx="18" cy="12" r="4" fill="#2E6CF6"/>
+  <path d="M20.5 24.2L24.1 27.8L31.6 19.6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="58" y="30" fill="#1F3A78" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="800">Bitrix24</text>
+  <text x="155" y="30" fill="#6B7280" font-family="Manrope, Arial, sans-serif" font-size="12" font-weight="700">CRM</text>
+</svg>
