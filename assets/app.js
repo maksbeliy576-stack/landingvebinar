@@ -12,7 +12,7 @@
     nav.addEventListener('click', (event) => {
       const link = event.target.closest('a');
       const item = event.target.closest('.nav__item');
-      if (link?.classList.contains('nav__link') && item?.querySelector('.nav__dropdown') && window.matchMedia('(max-width: 900px)').matches) {
+      if (link?.classList.contains('nav__link') && item?.querySelector('.nav__dropdown') && window.matchMedia('(max-width: 1180px)').matches) {
         event.preventDefault();
         const wasOpen = item.classList.contains('is-open');
         nav.querySelectorAll('.nav__item.is-open').forEach((openItem) => {
