@@ -9,6 +9,7 @@ const phoneDisplay = '+7 (473) 200-24-24';
 const phoneHref = '+74732002424';
 const email = 'hello@dm-marketing.pro';
 const whatsapp = 'https://wa.me/74732002424';
+const dmAssetBase = '/assets/dm-source';
 
 const generatedRoots = [
   'index.html',
@@ -447,6 +448,57 @@ const blogPosts = [
   },
 ];
 
+const sourceTeam = [
+  ['maksim.png', 'Максим Дедяев', 'основатель Студии Дедяева Максима'],
+  ['dmitry.png', 'Дмитрий Андреев', 'руководитель отдела внедрения'],
+  ['dayana.png', 'Даяна Гаспарик', 'маркетолог'],
+  ['ilya.png', 'Илья Кудинов', 'BI-аналитик'],
+];
+
+const sourceCaseCards = [
+  ['case-meat-67.jpg', 'Мясоперерабатывающий завод', 'Производство · опт B2B', 'Внедрили воронку, регламенты и автоматическую отчетность. Выручка выросла на 67% за 5 месяцев.', '+67%', 'к выручке за 5 мес'],
+  ['case-gofro-133.jpg', 'Производство гофроупаковки', 'Производство · B2B-продажи', 'Сегментация лидов, скрипты, автоматический подогрев. Конверсия из заявки в сделку выросла на 133%.', '+133%', 'к конверсии'],
+  ['case-polymer-3-5d.jpg', 'Производство полимерного сырья', 'Производство · дистрибуция', 'База знаний, чек-листы, регламенты. Время адаптации нового менеджера сократили с 4 недель до 3-5 дней.', '×6', 'быстрее адаптация'],
+  ['case-food-eq-95.jpg', 'Оборудование пищевых производств', 'Производство · сложные сделки', 'Сквозная воронка от заявки до отгрузки, контроль сроков. 95% заказов выполняется в срок.', '95%', 'заказов в срок'],
+  ['case-chem-6x.jpg', 'Химзавод минеральных удобрений', 'Производство · крупный B2B', 'Потери заявок сократили в 6 раз. Среднее время первого ответа клиенту — 10-15 минут.', '×6', 'меньше потерь'],
+  ['case-uzi-15.jpg', 'Дистрибьютор УЗИ-оборудования', 'Дистрибуция · медтех', 'Автоматизация воронки и контроль каждого этапа сделки. Цикл сделки сократили в 1,5 раза.', '×1,5', 'быстрее цикл сделки'],
+];
+
+const sourceLogos = [
+  ['01-sberbank.jpeg', 'ПАО Сбербанк'], ['02-rzhd.jpeg', 'РЖД'], ['03-krays.png', 'KRAYS Group'], ['04-baumark.jpeg', 'Baumark'],
+  ['05-letrrans.png', 'LE-TRANS'], ['06-rocket-firm.jpeg', 'Rocket Firm'], ['07-edge-apps.jpeg', 'Edge Apps'], ['08-tulsar.jpg', 'Tulsar'],
+  ['09-kosmetika.jpg', 'Косметика'], ['10-shlyapa.png', 'Шляпа'], ['11-aupair-babysitters.jpeg', 'Au-pair Babysitters'], ['12-mk.png', 'MK-Global Logistics'],
+  ['13-mengel.jpeg', 'Mengel'], ['14-laborin.png', 'Laborin'], ['15-mc.png', 'MC'], ['16-koula.png', 'Koula'],
+  ['17-cosos.png', 'Cosos'], ['18-konkrit.png', 'Конкрит'], ['19-kazprice.png', 'KazPrice'], ['20-zam-zam.jpeg', 'Zam-Zam'],
+  ['21-dom-kz.png', 'Dom.kz'], ['22-dr-kudarov.jpeg', 'Dr. Kudarov'], ['23-d-tail.png', 'D-Tail'], ['24-grosstoun.png', 'Grosstoun'],
+  ['25-geo-platinum.png', 'Geo Platinum'], ['26-bolim-lombard.jpeg', 'Болим Ломбард'], ['27-bilimland.png', 'Bilimland'], ['28-agrosputnik.jpeg', 'Агроспутник'],
+  ['29-agralis.jpeg', 'Агралис'], ['30-100lgd.png', '100ЛГД'], ['31-n1broker.png', 'N1 Broker'], ['32-yuridich-alyans.png', 'Юридический Альянс'],
+];
+
+const sourceLetters = [
+  ['letter-1-sber.png', 'Лаборатория нейронаук, ПАО Сбербанк'],
+  ['letter-2-asilbek.png', '«ASILBEK SULTANBEK GROUP»'],
+  ['letter-3-letrans.png', 'ТОО «LE-TRANS»'],
+  ['letter-4-krays.jpg', '«KRAYS GROUP»'],
+  ['letter-5-mk.png', '«MK-GLOBAL LOGISTICS»'],
+  ['letter-6-laborin.png', 'ТОО «LABORIN»'],
+];
+
+const methodologyStages = [
+  ['Аудит и анализ процессов', 'Аудит и анализ текущих процессов продаж', '5-7 дней'],
+  ['Проектирование воронки', 'Проектирование целевой воронки продаж', '3-5 дней'],
+  ['Проектирование отчетов', 'Проектирование отчетов для руководителя и РОПа', '2-4 дня'],
+  ['Регламенты и инструкции', 'Регламенты и инструкции для команды продаж', '4-6 дней'],
+  ['Базовая структура Битрикс24', 'Создание базовой структуры портала Битрикс24', '2-4 дня'],
+  ['Настройка CRM и сделок', 'Настройка CRM, карточек, стадий и ответственных', '5-10 дней'],
+  ['Автоматизация и роботы', 'Автоматизация рутинных действий и контроль задач', '5-12 дней'],
+  ['Интеграции с внешними системами', 'Интеграции с 1С, сайтом, телефонией и мессенджерами', '7-20 дней'],
+  ['Аналитика и отчетность', 'Аналитика, дашборды и управленческая отчетность', '3-7 дней'],
+  ['Обучение команды', 'Обучение менеджеров, РОПа и руководителя', '2-5 дней'],
+  ['Тестирование и запуск', 'Тестирование сценариев и запуск в работу', '3-7 дней'],
+  ['Постпроектное сопровождение', 'Постпроектное сопровождение и развитие системы', 'ежемесячно'],
+];
+
 const defaultFaq = [
   ['Сколько длится внедрение Битрикс24?', 'Первый рабочий запуск обычно занимает от 10 рабочих дней. Срок зависит от количества воронок, интеграций и объема обучения.'],
   ['Можно ли начать с бесплатного аудита?', 'Да. Экспресс-аудит помогает понять текущие проблемы, выбрать приоритеты и оценить бюджет внедрения.'],
@@ -634,7 +686,7 @@ function header() {
 <header class="header">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label="dm-marketing.pro">
-      <img src="/assets/logo.svg" width="210" height="60" alt="dm-marketing.pro">
+      <img src="${dmAssetBase}/logo.svg" width="240" height="42" alt="dm-marketing.pro">
     </a>
     <nav class="nav" data-nav aria-label="Основное меню">
       <div class="nav__item">
@@ -720,6 +772,13 @@ function footer() {
     ${leadForm('exit-modal')}
   </div>
 </div>
+<div class="lightbox" data-lightbox aria-hidden="true">
+  <button class="lightbox__close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" data-lightbox-img src="" alt="">
+    <figcaption class="lightbox__caption" data-lightbox-caption></figcaption>
+  </figure>
+</div>
 <script src="/assets/app.js" defer></script>
 </body>
 </html>`;
@@ -762,21 +821,24 @@ function leadForm(source = 'site') {
 }
 
 function ctaBlock(title = 'Получите бесплатный аудит отдела продаж', text = 'Разберем текущую воронку, источники лидов и работу менеджеров. По итогам дадим список быстрых улучшений и план внедрения Битрикс24.') {
-  return `<section class="section">
+  return `<section class="section section--cta" id="audit">
   <div class="container">
-    <div class="cta-band" id="audit">
-      <div class="cta-band__inner">
-        <div>
-          <span class="eyebrow eyebrow--white">Лид-магнит</span>
-          <h2>${escapeHtml(title)}</h2>
-          <p>${escapeHtml(text)}</p>
-          <ul class="cta-points">
-            <li>короткий аудит текущей схемы продаж;</li>
-            <li>список узких мест и потерь в воронке;</li>
-            <li>рекомендацию по этапам внедрения;</li>
-            <li>ориентир по бюджету и срокам запуска.</li>
-          </ul>
-        </div>
+    <div class="cta-wrap">
+      <div class="cta-text">
+        <span class="eyebrow eyebrow--white">Финальный шаг</span>
+        <h2>Выберите удобное время для <u class="u-accent u-accent--white">бесплатного экспресс-аудита</u></h2>
+        <p class="cta-lead">${escapeHtml(text || title)}</p>
+        <ul class="cta-list">
+          <li>Диагностику проблем в отделе продаж</li>
+          <li>Демонстрацию системы на базе Битрикс24 в вашей нише</li>
+          <li>Реальные кейсы компаний из вашей отрасли</li>
+          <li>Готовое КП с ценами и сроками сразу после встречи</li>
+          <li>Бесплатный доступ к Битрикс24 на 2 недели</li>
+        </ul>
+        <p class="cta-social">За последний месяц экспресс-аудит прошли <b>12 компаний из России</b>.</p>
+      </div>
+      <div class="cta-form">
+        <h3>Записаться на экспресс-аудит</h3>
         ${leadForm('audit')}
       </div>
     </div>
@@ -839,6 +901,174 @@ function cardGrid(items, columns = 3) {
       ${item.tags ? `<div class="tag-row">${item.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
     </a>`).join('')}
   </div>`;
+}
+
+function servicesHomeBlock(topServices) {
+  return `<section class="section" id="services">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Услуги</span>
+      <h2>Все услуги, которые мы предоставляем</h2>
+      <p class="section__sub">Выберите направление: от аудита и стратегии до внедрения системы продаж, интеграций, лицензий, обучения и сопровождения Битрикс24.</p>
+    </div>
+    ${cardGrid(topServices.map((service, index) => ({ href: servicePath(service), icon: String(index + 1), title: service.name, text: service.short, tags: service.seo.slice(0, 2) })), 4)}
+  </div>
+</section>`;
+}
+
+function solutionsHomeBlock() {
+  return `<section class="section section--white" id="solutions">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Решения по отраслям</span>
+      <h2>Адаптируем Битрикс24 под специфику вашего бизнеса</h2>
+      <p class="section__sub">Для каждой отрасли отличаются воронки, роли, документы, интеграции и управленческие отчеты.</p>
+    </div>
+    ${cardGrid(industries.map((industry) => ({ href: industryPath(industry), icon: 'B24', title: industry.name, text: industry.description, tags: industry.keywords })), 3)}
+  </div>
+</section>`;
+}
+
+function teamSourceBlock() {
+  return `<section class="section section--team" id="team">
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow eyebrow--blue">Команда экспертов</span>
+      <h2>С вами работает <u class="u-accent">команда профильных специалистов</u></h2>
+      <p class="section__sub">Не один универсал, а команда экспертов по внедрению системы продаж: основатель студии, руководитель отдела внедрения, маркетолог и BI-аналитик.</p>
+    </header>
+    <div class="team-grid">${sourceTeam.map(([img, name, role]) => `
+      <article class="team-card">
+        <div class="team-card__photo"><img src="${dmAssetBase}/assets/team/${img}" alt="${escapeHtml(name)}" loading="lazy"></div>
+        <h3 class="team-card__name">${escapeHtml(name)}</h3>
+        <div class="team-card__role">${escapeHtml(role)}</div>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>`;
+}
+
+function resultsSourceBlock() {
+  return `<section class="section" id="source-results">
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow eyebrow--orange">Результаты клиентов</span>
+      <h2>Реальные результаты B2B-компаний</h2>
+      <p class="section__sub">Скриншоты и метрики из реальных кейсов — факты, а не обещания. Конверсия, выручка, скорость обработки заявок — в цифрах.</p>
+    </header>
+    <div class="grid grid--cases">${sourceCaseCards.map(([img, name, tag, text, metric, label]) => `
+      <article class="case-card">
+        <img class="case-card__shot" src="${dmAssetBase}/assets/cases/${img}" alt="Кейс — ${escapeHtml(name)}" loading="lazy">
+        <div class="case-card__name">${escapeHtml(name)}</div>
+        <div class="case-card__tag">${escapeHtml(tag)}</div>
+        <p>${escapeHtml(text)}</p>
+        <div class="case-card__metric"><b>${escapeHtml(metric)}</b> ${escapeHtml(label)}</div>
+      </article>`).join('')}
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="metric__num">+12-18%</div><div class="metric__label">к конверсии лидов в оплаченные сделки</div></div>
+      <div class="metric"><div class="metric__num">0</div><div class="metric__label">потерянных и забытых заявок</div></div>
+      <div class="metric"><div class="metric__num">+31-43%</div><div class="metric__label">к среднему чеку за счет скриптов и автоматизации</div></div>
+      <div class="metric"><div class="metric__num">до 3 мин</div><div class="metric__label">время реакции на заявку</div></div>
+      <div class="metric"><div class="metric__num">+18-26%</div><div class="metric__label">к LTV клиента за счет повторных продаж</div></div>
+    </div>
+    <p class="metrics__note">* Усредненные данные по 14 клиентам в производстве, торговле и логистике за 2024-2025 гг.</p>
+  </div>
+</section>`;
+}
+
+function logosSourceBlock() {
+  return `<section class="logos">
+  <div class="container">
+    <p class="logos__title">Нам доверяют компании Казахстана и России</p>
+    <div class="logos__row">${sourceLogos.map(([img, alt]) => `
+      <div class="client-logo"><img src="${dmAssetBase}/assets/logos-real/${img}" alt="${escapeHtml(alt)}" loading="lazy"></div>`).join('')}
+    </div>
+  </div>
+</section>`;
+}
+
+function lettersSourceBlock() {
+  return `<section class="section section--letters" id="letters">
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow eyebrow--blue">Благодарственные письма</span>
+      <h2><u class="u-accent">Благодарственные письма</u> от наших клиентов</h2>
+      <p class="section__sub">Сканы официальных писем от руководителей компаний, с которыми мы работали.</p>
+    </header>
+    <div class="letters-grid stage-shots__grid">${sourceLetters.map(([img, caption]) => `
+      <button type="button" class="letter letter-shot js-lightbox" data-src="${dmAssetBase}/assets/letters/${img}" data-caption="${escapeHtml(caption)}" aria-label="Открыть письмо — ${escapeHtml(caption)}">
+        <div class="letter__shot"><img src="${dmAssetBase}/assets/letters/${img}" alt="Благодарственное письмо — ${escapeHtml(caption)}" loading="lazy"><span class="letter__zoom" aria-hidden="true">＋</span></div>
+        <div class="letter__caption">${escapeHtml(caption)}</div>
+      </button>`).join('')}
+    </div>
+    <p class="letters-hint">Нажмите на письмо, чтобы открыть в полном размере.</p>
+  </div>
+</section>`;
+}
+
+function stagesSourceBlock() {
+  return `<section class="section" id="what">
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow eyebrow--green">План работ по внедрению, в зависимости от целей, задач и масштабов компании</span>
+      <h2>Получите работающую систему продаж: <u class="u-accent">12 понятных этапов</u> под ваш бизнес</h2>
+      <p class="section__sub">Авторская методология Студии Дедяева Максима — от аудита процессов до постпроектного сопровождения. Каждый этап с понятными задачами, файлами на выходе и конкретными результатами.</p>
+    </header>
+    <div class="stages">
+      <div class="stages__tabs" role="tablist" aria-label="12 этапов внедрения">
+        ${methodologyStages.map(([name], index) => `<button class="stage-tab ${index === 0 ? 'is-active' : ''}" role="tab" data-stage="${index + 1}" aria-selected="${index === 0 ? 'true' : 'false'}"><span class="stage-tab__num">${String(index + 1).padStart(2, '0')}</span><span class="stage-tab__name">${escapeHtml(name)}</span></button>`).join('')}
+      </div>
+      <div class="stages__panels">
+        ${methodologyStages.map(([name, title, time], index) => {
+          const n = index + 1;
+          const shots = [1, 2, 3].map((shot) => {
+            const safeShot = (n === 2 || n === 3) && shot === 3 ? 2 : shot;
+            return `${dmAssetBase}/assets/stages/et-${String(n).padStart(2, '0')}-${safeShot}.webp`;
+          });
+          return `<article class="stage-panel ${index === 0 ? 'is-active' : ''}" data-stage="${n}" role="tabpanel" ${index === 0 ? '' : 'hidden'}>
+            <header class="stage-panel__head">
+              <span class="stage-panel__index">Этап ${String(n).padStart(2, '0')}</span>
+              <h3>${escapeHtml(title)}</h3>
+              <span class="stage-panel__time">⏱ ${escapeHtml(time)}</span>
+            </header>
+            <div class="stage-body">
+              <div class="stage-grid">
+                <div class="stage-block">
+                  <h4>Задачи этапа</h4>
+                  <div class="stage-block-scroll"><ul class="stage-list">
+                    <li>Разбираем текущий процесс и фиксируем точки потерь</li>
+                    <li>Согласуем роли, ответственных и ожидаемый результат</li>
+                    <li>Готовим настройки, документы и сценарии для команды</li>
+                    <li>Проверяем этап на реальных продажах и заявках</li>
+                  </ul></div>
+                </div>
+                <div class="stage-block stage-block--files">
+                  <h4>Файлы на выходе</h4>
+                  <ul class="stage-files">
+                    <li><span class="file-name">${escapeHtml(name)}.docx</span><span class="ext">docx</span></li>
+                    <li><span class="file-name">Настройки этапа в Битрикс24</span><span class="ext">crm</span></li>
+                  </ul>
+                </div>
+                <div class="stage-block stage-block--results">
+                  <h4>Результат</h4>
+                  <ul class="stage-list stage-list--check">
+                    <li>Понятный артефакт, который можно проверить и использовать</li>
+                    <li>Следующий шаг внедрения согласован с командой</li>
+                  </ul>
+                </div>
+                <div class="stage-shots">
+                  <div class="stage-shots__title">Скриншоты этапа</div>
+                  <div class="stage-shots__grid">${shots.map((src, shotIndex) => `<button type="button" class="stage-shot js-lightbox" data-src="${src}" data-caption="Этап ${String(n).padStart(2, '0')} — скриншот ${shotIndex + 1}"><img src="${src}" alt="Этап ${String(n).padStart(2, '0')} — скриншот ${shotIndex + 1}" loading="lazy"><span class="stage-shot__zoom">＋</span></button>`).join('')}</div>
+                </div>
+              </div>
+            </div>
+          </article>`;
+        }).join('')}
+      </div>
+    </div>
+  </div>
+</section>`;
 }
 
 function heroStats() {
@@ -1036,6 +1266,10 @@ function homePage() {
   </div>
 </section>
 
+${servicesHomeBlock(topServices)}
+${solutionsHomeBlock()}
+${stagesSourceBlock()}
+
 <section class="section section--white">
   <div class="container">
     <div class="section__head">
@@ -1086,34 +1320,10 @@ function homePage() {
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section__head">
-      <span class="eyebrow">Что внедряем</span>
-      <h2>Подбираем не “модуль Битрикс24”, а следующий шаг для роста продаж</h2>
-      <p class="section__sub">Если CRM еще нет — запускаем основу. Если CRM уже есть, но не работает — реанимируем. Если процесс уперся в ручной труд — подключаем интеграции и аналитику.</p>
-    </div>
-    ${cardGrid(topServices.map((service, index) => ({ href: servicePath(service), icon: String(index + 1), title: service.name, text: service.short, tags: service.seo.slice(0, 2) })), 4)}
-  </div>
-</section>
-
-<section class="section section--white">
-  <div class="container">
-    <div class="section__head">
-      <span class="eyebrow">Кейсы</span>
-      <h2>Реальные результаты клиентов</h2>
-      <p class="section__sub">Показываем не только настройки CRM, но и влияние на контроль, скорость работы и повторные продажи.</p>
-    </div>
-    <div class="grid grid--3">${cases.map((item) => `
-      <a class="card card--link" href="${casePath(item)}">
-        <span class="card__icon">↗</span>
-        <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(item.task)}</p>
-        <div class="tag-row">${item.results.map((result) => `<span class="tag">${escapeHtml(result)}</span>`).join('')}</div>
-      </a>`).join('')}
-    </div>
-  </div>
-</section>
+${resultsSourceBlock()}
+${logosSourceBlock()}
+${lettersSourceBlock()}
+${teamSourceBlock()}
 
 <section class="section">
   <div class="container">

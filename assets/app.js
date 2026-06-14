@@ -106,4 +106,58 @@
       }
     });
   }
+
+  document.querySelectorAll('.stages').forEach((stages) => {
+    const tabs = [...stages.querySelectorAll('.stage-tab')];
+    const panels = [...stages.querySelectorAll('.stage-panel')];
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const stage = tab.dataset.stage;
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach((panel) => {
+          const active = panel.dataset.stage === stage;
+          panel.classList.toggle('is-active', active);
+          panel.hidden = !active;
+        });
+      });
+    });
+  });
+
+  const lightbox = document.querySelector('[data-lightbox]');
+  if (lightbox) {
+    const image = lightbox.querySelector('[data-lightbox-img]');
+    const caption = lightbox.querySelector('[data-lightbox-caption]');
+    const close = lightbox.querySelector('[data-lightbox-close]');
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      body.classList.remove('modal-open');
+      if (image) image.src = '';
+    }
+
+    document.querySelectorAll('.js-lightbox').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!image) return;
+        image.src = button.dataset.src;
+        image.alt = button.dataset.caption || '';
+        if (caption) caption.textContent = button.dataset.caption || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        body.classList.add('modal-open');
+      });
+    });
+
+    close?.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  }
 }());

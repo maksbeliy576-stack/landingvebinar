@@ -52,7 +52,7 @@
 <header class="header">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label="dm-marketing.pro">
-      <img src="/assets/logo.svg" width="210" height="60" alt="dm-marketing.pro">
+      <img src="/assets/dm-source/logo.svg" width="240" height="42" alt="dm-marketing.pro">
     </a>
     <nav class="nav" data-nav aria-label="Основное меню">
       <div class="nav__item">
@@ -308,21 +308,24 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section--cta" id="audit">
   <div class="container">
-    <div class="cta-band" id="audit">
-      <div class="cta-band__inner">
-        <div>
-          <span class="eyebrow eyebrow--white">Лид-магнит</span>
-          <h2>Обсудить: Интеграция с маркетплейсами</h2>
-          <p>Оставьте заявку, и мы покажем, как эта услуга будет выглядеть именно для вашей компании.</p>
-          <ul class="cta-points">
-            <li>короткий аудит текущей схемы продаж;</li>
-            <li>список узких мест и потерь в воронке;</li>
-            <li>рекомендацию по этапам внедрения;</li>
-            <li>ориентир по бюджету и срокам запуска.</li>
-          </ul>
-        </div>
+    <div class="cta-wrap">
+      <div class="cta-text">
+        <span class="eyebrow eyebrow--white">Финальный шаг</span>
+        <h2>Выберите удобное время для <u class="u-accent u-accent--white">бесплатного экспресс-аудита</u></h2>
+        <p class="cta-lead">Оставьте заявку, и мы покажем, как эта услуга будет выглядеть именно для вашей компании.</p>
+        <ul class="cta-list">
+          <li>Диагностику проблем в отделе продаж</li>
+          <li>Демонстрацию системы на базе Битрикс24 в вашей нише</li>
+          <li>Реальные кейсы компаний из вашей отрасли</li>
+          <li>Готовое КП с ценами и сроками сразу после встречи</li>
+          <li>Бесплатный доступ к Битрикс24 на 2 недели</li>
+        </ul>
+        <p class="cta-social">За последний месяц экспресс-аудит прошли <b>12 компаний из России</b>.</p>
+      </div>
+      <div class="cta-form">
+        <h3>Записаться на экспресс-аудит</h3>
         <form class="form" data-form data-source="audit">
     <input type="hidden" name="source" value="audit">
     <input name="name" autocomplete="name" placeholder="Ваше имя" required>
@@ -466,6 +469,13 @@
     <div class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Форму можно подключить к вебхуку Битрикс24.</div>
   </form>
   </div>
+</div>
+<div class="lightbox" data-lightbox aria-hidden="true">
+  <button class="lightbox__close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" data-lightbox-img src="" alt="">
+    <figcaption class="lightbox__caption" data-lightbox-caption></figcaption>
+  </figure>
 </div>
 <script src="/assets/app.js" defer></script>
 </body>
