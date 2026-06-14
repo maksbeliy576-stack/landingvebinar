@@ -18,6 +18,16 @@
   }
 
   document.querySelectorAll('form[data-form]').forEach((form) => {
+    const nextButton = form.querySelector('[data-form-next]');
+    const details = form.querySelector('.form-step--details');
+    nextButton?.addEventListener('click', () => {
+      const phone = form.querySelector('[name="phone"]');
+      if (phone && !phone.reportValidity()) return;
+      if (details) details.hidden = false;
+      nextButton.closest('.form-step--first')?.classList.add('is-completed');
+      form.querySelector('[name="name"]')?.focus();
+    });
+
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const status = form.querySelector('[data-form-status]');
@@ -122,6 +132,20 @@
           const active = panel.dataset.stage === stage;
           panel.classList.toggle('is-active', active);
           panel.hidden = !active;
+        });
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-role-filter]').forEach((filter) => {
+    const buttons = [...filter.querySelectorAll('[data-role]')];
+    const cards = [...document.querySelectorAll('.service-role-card')];
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const role = button.dataset.role;
+        buttons.forEach((item) => item.classList.toggle('is-active', item === button));
+        cards.forEach((card) => {
+          card.hidden = role !== 'all' && card.dataset.role !== role;
         });
       });
     });

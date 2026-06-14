@@ -26,10 +26,13 @@ npm run serve
 
 ## Интеграции перед запуском
 
-В `scripts/build-site.mjs` подготовлены плейсхолдеры:
+В `scripts/build-site.mjs` подготовлены пустые значения конфигурации:
 
-- `REPLACE_WITH_YANDEX_METRIKA_ID`;
-- `REPLACE_WITH_GA_ID`;
-- `REPLACE_WITH_BITRIX24_OPEN_LINE_WIDGET_URL`.
+- `window.DM_MARKETING_ANALYTICS.yandexMetrikaId`;
+- `window.DM_MARKETING_ANALYTICS.googleAnalyticsId`;
+- `window.DM_MARKETING_WIDGETS.bitrixOpenLineUrl`.
+
+Перед production-деплоем внесите реальные ID/URL. Публичных строк-заглушек
+в HTML нет.
 
 Формы размечены атрибутами `data-form` и `data-source`, чтобы подключить отправку в Битрикс24 через вебхук или backend-обработчик.

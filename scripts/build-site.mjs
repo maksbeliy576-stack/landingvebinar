@@ -10,6 +10,7 @@ const phoneHref = '+74732002424';
 const email = 'hello@dm-marketing.pro';
 const whatsapp = 'https://wa.me/74732002424';
 const dmAssetBase = '/assets/dm-source';
+const defaultVideoEmbed = 'https://vkvideo.ru/video_ext.php?oid=-129518208&id=456239173&hash=702876a7c0188274&hd=4';
 
 const generatedRoots = [
   'index.html',
@@ -20,6 +21,7 @@ const generatedRoots = [
   'blog',
   'o-kompanii',
   'kontakty',
+  'bitrix24-vs-amocrm',
   'sitemap.xml',
   'robots.txt',
 ];
@@ -184,6 +186,32 @@ const servicePages = [
     seo: ['купить лицензию битрикс24', 'тарифы битрикс24 цена', 'лицензия битрикс24 партнер'],
     price: 'официальные тарифы Битрикс24, скидки партнера до 20%',
     type: 'Транзакционная',
+  },
+  {
+    slug: 'tarify-bitrix24',
+    category: 'Лицензии',
+    name: 'Тарифы Битрикс24 2026',
+    short: 'Сравнение тарифов, лимитов и подбор без переплаты',
+    h1: 'Тарифы Битрикс24 в 2026 году — сравнение и подбор для бизнеса',
+    title: 'Тарифы Битрикс24 2026 — сравнение и подбор тарифа',
+    description: 'Сравниваем тарифы Битрикс24 2026: пользователи, лимиты, CRM, автоматизация, коробка и облако. Поможем выбрать тариф без переплаты.',
+    lead: 'Разбираем облачные и коробочные тарифы Битрикс24, ограничения, сценарии использования и стоимость владения для отдела продаж.',
+    seo: ['тарифы битрикс24 2026', 'сравнение тарифов битрикс24', 'цены битрикс24'],
+    price: 'официальные тарифы Битрикс24, подбор бесплатно',
+    type: 'SEO-страница',
+  },
+  {
+    slug: 'bitrix24-dlya-malogo-biznesa',
+    category: 'Внедрение',
+    name: 'Битрикс24 для малого бизнеса',
+    short: 'Быстрый запуск CRM для небольших команд продаж',
+    h1: 'Битрикс24 для малого бизнеса — быстрый запуск CRM без лишней сложности',
+    title: 'Битрикс24 для малого бизнеса — внедрение и настройка CRM',
+    description: 'Настраиваем Битрикс24 для малого бизнеса: лиды, сделки, задачи, телефония, мессенджеры и отчеты без лишней сложности.',
+    lead: 'Помогаем небольшим командам быстро перейти от таблиц и чатов к понятной CRM: заявки, задачи, клиенты и контроль продаж в одном месте.',
+    seo: ['битрикс24 для малого бизнеса', 'crm для малого бизнеса', 'настройка битрикс24 для малого бизнеса'],
+    price: 'от 120 000 ₽ за быстрый запуск',
+    type: 'SEO-страница',
   },
   {
     slug: 'obuchenie-bitrix24',
@@ -408,6 +436,39 @@ const cases = [
     results: ['-60% дублей данных', '1 окно для менеджера', '3 дня на стабилизацию обмена'],
     quote: 'После интеграции исчез ручной перенос счетов, а ошибки обмена стали прозрачными и контролируемыми.',
   },
+  {
+    slug: 'crm-dlya-myasopererabotki',
+    name: 'Мясоперерабатывающий завод',
+    h1: 'Как мясоперерабатывающий завод увеличил выручку на 67% с Битрикс24',
+    title: 'Кейс Битрикс24 для мясоперерабатывающего завода',
+    description: 'Кейс внедрения Битрикс24 для производства и оптовых B2B-продаж: воронка, регламенты, отчетность и рост выручки.',
+    task: 'Компания теряла заявки между менеджерами и не видела, какие каналы и этапы реально влияют на оплату.',
+    work: ['Собрали единую воронку от заявки до оплаты', 'Настроили автоматические задачи и контроль просрочек', 'Подготовили регламенты для менеджеров', 'Вывели отчетность по выручке и конверсии'],
+    results: ['+67% к выручке', '5 месяцев до результата', '0 забытых заявок'],
+    quote: 'После запуска Битрикс24 продажи перестали зависеть от ручных таблиц, а руководитель увидел реальную картину по воронке.',
+  },
+  {
+    slug: 'crm-dlya-proizvodstva-gofroupakovki',
+    name: 'Производство гофроупаковки',
+    h1: 'Как производство гофроупаковки повысило конверсию заявок на 133%',
+    title: 'Кейс CRM для производства гофроупаковки',
+    description: 'Кейс автоматизации B2B-продаж производства гофроупаковки: сегментация лидов, скрипты и автоматический подогрев.',
+    task: 'Заявки приходили из разных каналов, менеджеры по-разному квалифицировали клиентов, а повторные касания не контролировались.',
+    work: ['Разделили лиды по сегментам и типам потребности', 'Настроили скрипты и обязательные поля квалификации', 'Добавили автоматический подогрев и задачи по касаниям', 'Собрали отчет по конверсии из заявки в сделку'],
+    results: ['+133% к конверсии', '3 сегмента лидов', '2 недели на первый запуск'],
+    quote: 'Воронка стала прозрачной: видно, какие заявки качественные, где менеджеры тормозят и какие действия повышают конверсию.',
+  },
+  {
+    slug: 'crm-dlya-distributora-medtehniki',
+    name: 'Дистрибьютор УЗИ-оборудования',
+    h1: 'Как дистрибьютор медтехники сократил цикл сделки в 1,5 раза',
+    title: 'Кейс Битрикс24 для дистрибьютора медицинского оборудования',
+    description: 'Кейс внедрения Битрикс24 для дистрибуции медтехники: контроль этапов сделки, задачи, документы и ускорение цикла продажи.',
+    task: 'Сложные сделки с несколькими участниками зависали без контроля, а руководитель не видел реальный прогноз продаж.',
+    work: ['Настроили этапы длинной B2B-сделки', 'Добавили задачи по документам, КП и повторным касаниям', 'Собрали прогноз по вероятности оплаты', 'Обучили менеджеров вести сделку по регламенту'],
+    results: ['×1,5 быстрее цикл', '100% сделок с задачами', '30/60/90 прогноз'],
+    quote: 'Команда перестала держать договоренности в голове: каждая сделка получила понятный следующий шаг и ответственного.',
+  },
 ];
 
 const blogPosts = [
@@ -417,6 +478,9 @@ const blogPosts = [
     title: 'Как выбрать тариф Битрикс24 в 2026 году',
     description: 'Разбираем тарифы Битрикс24 в 2026 году: что важно для продаж, когда нужен старший тариф и как не переплатить.',
     keywords: ['тарифы битрикс24', 'сравнение битрикс24'],
+    date: '14.06.2026',
+    tags: ['Битрикс24', 'Тарифы'],
+    image: 'case-food-eq-95.jpg',
   },
   {
     slug: 'amocrm-vs-bitrix24',
@@ -424,6 +488,9 @@ const blogPosts = [
     title: 'amoCRM vs Битрикс24 — сравнение для B2B-продаж',
     description: 'Сравниваем amoCRM и Битрикс24 для B2B: воронки, автоматизации, задачи, интеграции, стоимость и развитие системы продаж.',
     keywords: ['amocrm vs битрикс24'],
+    date: '12.06.2026',
+    tags: ['CRM', 'Сравнение'],
+    image: 'case-gofro-133.jpg',
   },
   {
     slug: 'oshibki-pri-vnedrenii-crm',
@@ -431,6 +498,9 @@ const blogPosts = [
     title: 'Ошибки при внедрении CRM — как не потерять продажи',
     description: 'Пять частых ошибок внедрения CRM: отсутствие методологии, плохие воронки, нет обучения, слабая аналитика и сопротивление команды.',
     keywords: ['ошибки внедрения crm'],
+    date: '10.06.2026',
+    tags: ['Внедрение', 'Ошибки CRM'],
+    image: 'case-chem-6x.jpg',
   },
   {
     slug: 'integraciya-1s-bitrix24-kak-nastroit',
@@ -438,6 +508,9 @@ const blogPosts = [
     title: 'Интеграция 1С и Битрикс24 — как настроить обмен',
     description: 'Что учесть при интеграции 1С и Битрикс24: справочники, статусы, права, ошибки обмена и этапы внедрения.',
     keywords: ['как настроить интеграцию 1с битрикс24'],
+    date: '08.06.2026',
+    tags: ['Интеграции', '1С'],
+    image: 'case-polymer-3-5d.jpg',
   },
   {
     slug: 'kak-ocifrovaty-otdel-prodazh',
@@ -445,6 +518,29 @@ const blogPosts = [
     title: 'Как оцифровать отдел продаж — CRM, KPI и воронка',
     description: 'Пошаговый план оцифровки отдела продаж: аудит, воронка, KPI, CRM, обучение и отчетность для руководителя.',
     keywords: ['оцифровать отдел продаж'],
+    date: '05.06.2026',
+    tags: ['Продажи', 'KPI'],
+    image: 'case-meat-67.jpg',
+  },
+  {
+    slug: 'kak-vybrat-crm',
+    h1: 'Как выбрать CRM для B2B-продаж — критерии руководителя',
+    title: 'Как выбрать CRM для B2B — критерии, ошибки и чек-лист',
+    description: 'Разбираем, как выбрать CRM для B2B-продаж: воронки, интеграции, отчеты, обучение команды и стоимость внедрения.',
+    keywords: ['как выбрать crm для b2b'],
+    date: '03.06.2026',
+    tags: ['CRM', 'B2B'],
+    image: 'case-uzi-15.jpg',
+  },
+  {
+    slug: 'stoimost-vnedrenia-bitrix24',
+    h1: 'Стоимость внедрения Битрикс24 — из чего складывается бюджет',
+    title: 'Стоимость внедрения Битрикс24 — примеры смет и пакеты',
+    description: 'Объясняем стоимость внедрения Битрикс24: аудит, воронки, интеграции, обучение, сопровождение и примеры смет.',
+    keywords: ['стоимость внедрения битрикс24'],
+    date: '01.06.2026',
+    tags: ['Цены', 'Внедрение'],
+    image: 'case-chem-6x.jpg',
   },
 ];
 
@@ -484,19 +580,121 @@ const sourceLetters = [
   ['letter-6-laborin.png', 'ТОО «LABORIN»'],
 ];
 
+const reviews = [
+  ['Александр Иванов', 'коммерческий директор, ООО «Промторг»', 'После внедрения Битрикс24 перестали терять заявки. Руководитель видит воронку каждый день, а менеджеры работают по единому регламенту.', 'АИ'],
+  ['Елена Смирнова', 'руководитель отдела продаж, «ТехноОпт»', 'Команда dm-marketing помогла связать CRM с 1С и убрать ручной перенос счетов. Скорость обработки заявок заметно выросла.', 'ЕС'],
+  ['Дмитрий Ковалев', 'собственник производственной компании', 'Нам не просто настроили портал, а разобрали процесс продаж, обучили команду и оставили понятный план развития CRM.', 'ДК'],
+];
+
 const methodologyStages = [
-  ['Аудит и анализ процессов', 'Аудит и анализ текущих процессов продаж', '5-7 дней'],
-  ['Проектирование воронки', 'Проектирование целевой воронки продаж', '3-5 дней'],
-  ['Проектирование отчетов', 'Проектирование отчетов для руководителя и РОПа', '2-4 дня'],
-  ['Регламенты и инструкции', 'Регламенты и инструкции для команды продаж', '4-6 дней'],
-  ['Базовая структура Битрикс24', 'Создание базовой структуры портала Битрикс24', '2-4 дня'],
-  ['Настройка CRM и сделок', 'Настройка CRM, карточек, стадий и ответственных', '5-10 дней'],
-  ['Автоматизация и роботы', 'Автоматизация рутинных действий и контроль задач', '5-12 дней'],
-  ['Интеграции с внешними системами', 'Интеграции с 1С, сайтом, телефонией и мессенджерами', '7-20 дней'],
-  ['Аналитика и отчетность', 'Аналитика, дашборды и управленческая отчетность', '3-7 дней'],
-  ['Обучение команды', 'Обучение менеджеров, РОПа и руководителя', '2-5 дней'],
-  ['Тестирование и запуск', 'Тестирование сценариев и запуск в работу', '3-7 дней'],
-  ['Постпроектное сопровождение', 'Постпроектное сопровождение и развитие системы', 'ежемесячно'],
+  {
+    name: 'Аудит и анализ процессов',
+    title: 'Аудит и анализ текущих процессов продаж',
+    time: '5-7 дней',
+    tasks: ['Проводим интервью с собственником, РОПом и ключевыми менеджерами', 'Разбираем действующую воронку, источники лидов и причины потерь', 'Проверяем документы, регламенты, задачи и работу с дебиторкой', 'Фиксируем узкие места, которые мешают продажам расти'],
+    files: ['Отчет аудита отдела продаж', 'Карта потерь лидов и задач'],
+    results: ['Понятно, где теряются заявки и деньги', 'Сформирован список приоритетов для внедрения'],
+    alt: 'Аудит отдела продаж — скриншот настройки воронки Битрикс24',
+  },
+  {
+    name: 'Проектирование воронки',
+    title: 'Проектирование целевой воронки продаж',
+    time: '3-5 дней',
+    tasks: ['Описываем этапы сделки на языке вашего бизнеса', 'Определяем обязательные поля и правила перехода между стадиями', 'Разделяем новые, повторные и проектные продажи', 'Закладываем точки контроля для руководителя'],
+    files: ['Схема целевой воронки', 'Матрица стадий и ответственных'],
+    results: ['Команда понимает единый маршрут сделки', 'CRM отражает реальный процесс, а не абстрактные статусы'],
+    alt: 'Проектирование воронки продаж — этапы сделки в Битрикс24',
+  },
+  {
+    name: 'Проектирование отчетов',
+    title: 'Проектирование отчетов для руководителя и РОПа',
+    time: '2-4 дня',
+    tasks: ['Определяем KPI собственника, РОПа и менеджеров', 'Проектируем план-факт, прогноз выручки и контроль просрочек', 'Выбираем показатели по каналам, конверсии и активности', 'Согласуем формат регулярного управленческого отчета'],
+    files: ['Макет дашборда руководителя', 'Список метрик и источников данных'],
+    results: ['Руководитель видит воронку в цифрах', 'Снижается зависимость от ручных отчетов'],
+    alt: 'Проектирование отчетов Битрикс24 — дашборд руководителя',
+  },
+  {
+    name: 'Регламенты и инструкции',
+    title: 'Регламенты и инструкции для команды продаж',
+    time: '4-6 дней',
+    tasks: ['Описываем правила обработки лидов и ведения сделки', 'Готовим инструкции для менеджеров и РОПа', 'Фиксируем стандарты задач, комментариев и документов', 'Согласуем ответственность за каждый этап'],
+    files: ['Регламент работы в CRM', 'Инструкции и чек-листы менеджера'],
+    results: ['Менеджеры работают по единым правилам', 'Новые сотрудники быстрее входят в процесс'],
+    alt: 'Регламенты продаж — база знаний и инструкции в Битрикс24',
+  },
+  {
+    name: 'Базовая структура Битрикс24',
+    title: 'Создание базовой структуры портала Битрикс24',
+    time: '2-4 дня',
+    tasks: ['Создаем структуру пользователей, отделов и ролей', 'Настраиваем права доступа и базовые справочники', 'Подготавливаем поля карточек лидов, сделок и компаний', 'Проверяем безопасность и видимость данных'],
+    files: ['Карта ролей и прав доступа', 'Настроенная структура портала'],
+    results: ['Портал готов к настройке продаж', 'Данные защищены и распределены по ролям'],
+    alt: 'Структура Битрикс24 — пользователи отделы и права доступа',
+  },
+  {
+    name: 'Настройка CRM и сделок',
+    title: 'Настройка CRM, карточек, стадий и ответственных',
+    time: '5-10 дней',
+    tasks: ['Настраиваем лиды, сделки, компании и контакты', 'Добавляем поля, стадии, обязательные условия и направления продаж', 'Настраиваем источники заявок и правила распределения', 'Тестируем сценарии на реальных сделках'],
+    files: ['Настроенная CRM-воронка', 'Сценарии тестирования сделок'],
+    results: ['Заявки фиксируются и не теряются', 'Сделки проходят по понятным этапам'],
+    alt: 'Настройка CRM Битрикс24 — карточка сделки и этапы продаж',
+  },
+  {
+    name: 'Автоматизация и роботы',
+    title: 'Автоматизация рутинных действий и контроль задач',
+    time: '5-12 дней',
+    tasks: ['Настраиваем роботов, уведомления и автоматические задачи', 'Создаем напоминания по просрочкам и повторным касаниям', 'Автоматизируем документы, КП и контроль дебиторки', 'Проверяем, чтобы роботы не мешали менеджерам продавать'],
+    files: ['Карта автоматизаций', 'Настроенные роботы и триггеры'],
+    results: ['Ручной рутины становится меньше', 'CRM сама подсказывает следующий шаг менеджеру'],
+    alt: 'Автоматизация Битрикс24 — роботы для отдела продаж',
+  },
+  {
+    name: 'Интеграции с внешними системами',
+    title: 'Интеграции с 1С, сайтом, телефонией и мессенджерами',
+    time: '7-20 дней',
+    tasks: ['Описываем обмен данными между системами', 'Настраиваем передачу заявок, счетов, заказов и статусов', 'Подключаем телефонию, WhatsApp, Telegram и открытые линии', 'Тестируем ошибки, дубли и контроль обмена'],
+    files: ['Схема интеграций', 'Журнал тестирования обмена'],
+    results: ['Данные не переносятся вручную', 'Менеджер работает в одном окне CRM'],
+    alt: 'Интеграция Битрикс24 с 1С сайтом и телефонией',
+  },
+  {
+    name: 'Аналитика и отчетность',
+    title: 'Аналитика, дашборды и управленческая отчетность',
+    time: '3-7 дней',
+    tasks: ['Собираем отчеты по воронке, менеджерам и источникам лидов', 'Настраиваем план-факт и прогноз продаж', 'Показываем просрочки, конверсию и скорость реакции', 'Передаем регламент регулярного анализа'],
+    files: ['Дашборд продаж', 'Регламент управленческой отчетности'],
+    results: ['Руководитель видит реальные цифры', 'Решения принимаются на данных, а не на ощущениях'],
+    alt: 'Аналитика Битрикс24 — дашборд продаж и план факт',
+  },
+  {
+    name: 'Обучение команды',
+    title: 'Обучение менеджеров, РОПа и руководителя',
+    time: '2-5 дней',
+    tasks: ['Проводим обучение по ролям: менеджер, РОП, руководитель', 'Разбираем реальные сделки и ошибки заполнения CRM', 'Передаем записи, инструкции и чек-листы', 'Проверяем, что команда понимает новые правила'],
+    files: ['Программа обучения', 'Записи и чек-листы пользователей'],
+    results: ['Команда начинает работать в CRM осознанно', 'Сопротивление внедрению снижается'],
+    alt: 'Обучение Битрикс24 — тренинг для менеджеров и РОПа',
+  },
+  {
+    name: 'Тестирование и запуск',
+    title: 'Тестирование сценариев и запуск в работу',
+    time: '3-7 дней',
+    tasks: ['Проверяем путь заявки от источника до оплаты', 'Тестируем роботов, права, уведомления и интеграции', 'Исправляем найденные ошибки до запуска команды', 'Запускаем CRM на реальных сделках'],
+    files: ['Чек-лист запуска', 'Отчет о тестировании сценариев'],
+    results: ['Система запускается без хаоса', 'Команда понимает, как работать с первого дня'],
+    alt: 'Запуск Битрикс24 — тестирование сценариев продаж',
+  },
+  {
+    name: 'Постпроектное сопровождение',
+    title: 'Постпроектное сопровождение и развитие системы',
+    time: 'ежемесячно',
+    tasks: ['Собираем backlog улучшений после запуска', 'Дорабатываем отчеты, роботов и интеграции', 'Обучаем новых сотрудников и отвечаем на вопросы', 'Проводим регулярную оптимизацию системы продаж'],
+    files: ['Backlog развития CRM', 'Ежемесячный отчет сопровождения'],
+    results: ['CRM не деградирует после запуска', 'Система развивается вместе с продажами'],
+    alt: 'Сопровождение Битрикс24 — backlog доработок и отчет поддержки',
+  },
 ];
 
 const defaultFaq = [
@@ -538,6 +736,18 @@ function servicePath(service) {
 
 function industryPath(industry) {
   return `/resheniya/${industry.slug}/`;
+}
+
+function industryCase(industry) {
+  const map = {
+    'bitrix24-dlya-proizvodstva': ['Производственная компания сократила потери заявок с Битрикс24', 'Для производства настроили воронку от заявки до отгрузки, связали CRM с 1С и вывели руководителю контроль статусов заказов.'],
+    'bitrix24-dlya-optovoy-torgovli': ['Оптовый дистрибьютор вернул повторные продажи', 'Для оптовой торговли настроили сегменты клиентов, напоминания о повторных закупках, контроль дебиторки и отчетность РОПа.'],
+    'bitrix24-dlya-stroitelstva': ['Строительная компания связала продажи, сметы и 1С', 'Для строительного бизнеса настроили проектные сделки, согласования документов, обмен счетами и контроль этапов работ.'],
+    'bitrix24-dlya-b2b': ['B2B-команда стала контролировать длинные сделки', 'Для B2B-продаж настроили касания по нескольким ЛПР, задачи по этапам переговоров и прогноз выручки на 30/60/90 дней.'],
+    'bitrix24-dlya-logistiki': ['Логистическая компания ускорила обработку заявок', 'Для логистики собрали заявки из разных каналов, статусы перевозок, задачи диспетчерам и уведомления клиентам.'],
+    'bitrix24-dlya-servisnykh-kompaniy': ['Сервисная компания навела порядок в обращениях', 'Для сервиса настроили заявки, SLA, повторные обращения, базу знаний и историю обслуживания клиента в CRM.'],
+  };
+  return map[industry.slug] || map['bitrix24-dlya-proizvodstva'];
 }
 
 function casePath(item) {
@@ -611,12 +821,33 @@ function serviceSchema(service) {
     areaServed: 'Воронеж и Россия',
     description: service.description,
     url: url(servicePath(service)),
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'RUB',
+      price: String(parsePrice(service.price) || 0),
+      availability: 'https://schema.org/InStock',
+      url: url(servicePath(service)),
+    },
   };
+}
+
+function parsePrice(text) {
+  const match = String(text).replace(/\s/g, '').match(/(\d{2,})/);
+  return match ? Number(match[1]) : null;
+}
+
+function ogImageForPath(pathname) {
+  if (pathname === '/') return `${baseUrl}/assets/og/home.png`;
+  if (pathname.startsWith('/uslugi/')) return `${baseUrl}/assets/og/services.png`;
+  if (pathname.startsWith('/kejsy/')) return `${baseUrl}/assets/og/cases.png`;
+  if (pathname.startsWith('/ceny/')) return `${baseUrl}/assets/og/prices.png`;
+  return `${baseUrl}/assets/og/default.png`;
 }
 
 function pageHead({ title, description, pathname, schema = [] }) {
   const canonical = url(pathname);
   const allSchema = [localBusinessSchema(), ...schema];
+  const ogImage = ogImageForPath(pathname);
   return `<!doctype html>
 <html lang="ru">
 <head>
@@ -630,7 +861,9 @@ function pageHead({ title, description, pathname, schema = [] }) {
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${baseUrl}/assets/logo.svg">
+  <meta property="og:image" content="${ogImage}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -639,11 +872,11 @@ function pageHead({ title, description, pathname, schema = [] }) {
   <script type="application/ld+json">${JSON.stringify(allSchema)}</script>
   <script>
     window.DM_MARKETING_ANALYTICS = {
-      yandexMetrikaId: 'REPLACE_WITH_YANDEX_METRIKA_ID',
-      googleAnalyticsId: 'REPLACE_WITH_GA_ID'
+      yandexMetrikaId: '',
+      googleAnalyticsId: ''
     };
     window.DM_MARKETING_WIDGETS = {
-      bitrixOpenLineUrl: 'REPLACE_WITH_BITRIX24_OPEN_LINE_WIDGET_URL'
+      bitrixOpenLineUrl: ''
     };
     (function () {
       var analytics = window.DM_MARKETING_ANALYTICS;
@@ -714,7 +947,7 @@ function header() {
       <a class="header__phone" href="tel:${phoneHref}">${phoneDisplay}</a>
       <a class="icon-btn" href="tel:${phoneHref}" aria-label="Позвонить">☎</a>
       <a class="icon-btn icon-btn--wa" href="${whatsapp}" aria-label="Написать в WhatsApp">WA</a>
-      <a class="btn btn--cta" href="/kontakty/#audit">Получить консультацию</a>
+      <a class="btn btn--cta" href="/kontakty/#audit">Получить бесплатный аудит</a>
       <button class="menu-toggle" data-menu-toggle type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -762,13 +995,13 @@ function footer() {
   <a class="btn btn--cta" href="tel:${phoneHref}">Позвонить</a>
   <a class="btn btn--ghost" href="${whatsapp}">WhatsApp</a>
 </div>
-<a class="chat-widget" href="/kontakty/#audit" aria-label="Открытая линия Битрикс24">💬 Открытая линия</a>
+<a class="chat-widget" href="${whatsapp}" aria-label="Написать в WhatsApp">💬 WhatsApp</a>
 <div class="modal" data-exit-modal aria-hidden="true">
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="exit-title">
     <button class="modal__close" data-modal-close type="button" aria-label="Закрыть">×</button>
     <span class="eyebrow">Бесплатный аудит</span>
     <h2 id="exit-title">Перед уходом заберите диагностику отдела продаж</h2>
-    <p class="section__sub">Покажем, где теряются лиды, какие этапы воронки мешают продажам и что автоматизировать в Битрикс24 в первую очередь.</p>
+    <p class="section__sub">Скачайте чек-лист «20 ошибок при внедрении CRM» и получите бесплатный шаблон аудита отдела продаж на первом разборе.</p>
     ${leadForm('exit-modal')}
   </div>
 </div>
@@ -802,21 +1035,28 @@ function breadcrumbs(crumbs) {
 }
 
 function leadForm(source = 'site') {
-  return `<form class="form" data-form data-source="${source}">
+  return `<form class="form form--steps" data-form data-step-form data-source="${source}">
     <input type="hidden" name="source" value="${source}">
-    <input name="name" autocomplete="name" placeholder="Ваше имя" required>
-    <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
-    <select name="scenario" aria-label="Что нужно обсудить">
-      <option value="audit">Нужен аудит CRM / отдела продаж</option>
-      <option value="implementation">Нужно внедрение Битрикс24</option>
-      <option value="rescue">Нужно спасти текущий Битрикс24</option>
-      <option value="integration">Нужна интеграция с 1С / сайтом</option>
-      <option value="license">Нужно купить или подобрать тариф</option>
-    </select>
-    <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
-    <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
+    <div class="form-step form-step--first">
+      <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+      <button class="btn btn--cta btn--block" type="button" data-form-next>Получить аудит</button>
+    </div>
+    <div class="form-step form-step--details" hidden>
+      <input name="name" autocomplete="name" placeholder="Ваше имя">
+      <input name="company" autocomplete="organization" placeholder="Название компании">
+      <input name="managers" inputmode="numeric" placeholder="Количество менеджеров">
+      <select name="scenario" aria-label="Что нужно обсудить">
+        <option value="audit">Нужен аудит CRM / отдела продаж</option>
+        <option value="implementation">Нужно внедрение Битрикс24</option>
+        <option value="rescue">Нужно спасти текущий Битрикс24</option>
+        <option value="integration">Нужна интеграция с 1С / сайтом</option>
+        <option value="license">Нужно купить или подобрать тариф</option>
+      </select>
+      <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
+      <button class="btn btn--cta btn--block" type="submit">Отправить заявку</button>
+    </div>
     <div class="form__status" data-form-status></div>
-    <div class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Форму можно подключить к вебхуку Битрикс24.</div>
+    <div class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Свяжемся в рабочее время и предложим ближайшее окно для аудита.</div>
   </form>`;
 }
 
@@ -916,6 +1156,22 @@ function servicesHomeBlock(topServices) {
 </section>`;
 }
 
+function roleForService(service) {
+  if (['audit-otdela-prodazh', 'strategiya-prodazh', 'sistema-prodazh-bitrix24', 'reanimaciya-crm', 'dashbordy-bitrix24'].includes(service.slug)) return 'owner';
+  if (['vnedrenie-bitrix24', 'obuchenie-bitrix24', 'trening-po-prodazham-crm', 'skripty-regulamenty-prodazh', 'crm-marketing-bitrix24'].includes(service.slug)) return 'rop';
+  if (['integraciya-1s-bitrix24', 'integraciya-sayt-1s-bitrix24', 'integraciya-telefonii-bitrix24', 'integraciya-messengerov-bitrix24', 'razrabotka-korobki-bitrix24', 'migraciya-v-bitrix24', 'hr-avtomatizaciya-bitrix24', 'integraciya-marketplejsy-bitrix24'].includes(service.slug)) return 'it';
+  return 'owner';
+}
+
+function servicesRoleFilter() {
+  return `<div class="role-filter" data-role-filter>
+    <button class="is-active" type="button" data-role="all">Все услуги</button>
+    <button type="button" data-role="owner">Собственнику</button>
+    <button type="button" data-role="rop">РОПу</button>
+    <button type="button" data-role="it">ИТ-директору</button>
+  </div>`;
+}
+
 function solutionsHomeBlock() {
   return `<section class="section section--white" id="solutions">
   <div class="container">
@@ -1007,6 +1263,40 @@ function lettersSourceBlock() {
 </section>`;
 }
 
+function reviewsBlock() {
+  return `<section class="section section--white reviews" id="reviews">
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow">Отзывы</span>
+      <h2>Что говорят клиенты после запуска Битрикс24</h2>
+      <p class="section__sub">Отзывы руководителей, которые покупали не “настройку CRM”, а управляемую систему продаж.</p>
+    </header>
+    <div class="grid grid--3">${reviews.map(([name, role, text, initials]) => `
+      <article class="review-card">
+        <div class="review-card__avatar">${escapeHtml(initials)}</div>
+        <div>
+          <strong>${escapeHtml(name)}</strong>
+          <span>${escapeHtml(role)}</span>
+          <p>«${escapeHtml(text)}»</p>
+          <div class="stars" aria-label="5 из 5">★★★★★</div>
+        </div>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>`;
+}
+
+function reviewSchema() {
+  return reviews.map(([name, role, text]) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    author: { '@type': 'Person', name },
+    reviewBody: text,
+    itemReviewed: { '@type': 'Organization', name: 'dm-marketing.pro' },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+  }));
+}
+
 function stagesSourceBlock() {
   return `<section class="section" id="what">
   <div class="container">
@@ -1017,10 +1307,10 @@ function stagesSourceBlock() {
     </header>
     <div class="stages">
       <div class="stages__tabs" role="tablist" aria-label="12 этапов внедрения">
-        ${methodologyStages.map(([name], index) => `<button class="stage-tab ${index === 0 ? 'is-active' : ''}" role="tab" data-stage="${index + 1}" aria-selected="${index === 0 ? 'true' : 'false'}"><span class="stage-tab__num">${String(index + 1).padStart(2, '0')}</span><span class="stage-tab__name">${escapeHtml(name)}</span></button>`).join('')}
+        ${methodologyStages.map((stage, index) => `<button class="stage-tab ${index === 0 ? 'is-active' : ''}" role="tab" data-stage="${index + 1}" aria-selected="${index === 0 ? 'true' : 'false'}"><span class="stage-tab__num">${String(index + 1).padStart(2, '0')}</span><span class="stage-tab__name">${escapeHtml(stage.name)}</span></button>`).join('')}
       </div>
       <div class="stages__panels">
-        ${methodologyStages.map(([name, title, time], index) => {
+        ${methodologyStages.map((stage, index) => {
           const n = index + 1;
           const shots = [1, 2, 3].map((shot) => {
             const safeShot = (n === 2 || n === 3) && shot === 3 ? 2 : shot;
@@ -1029,37 +1319,26 @@ function stagesSourceBlock() {
           return `<article class="stage-panel ${index === 0 ? 'is-active' : ''}" data-stage="${n}" role="tabpanel" ${index === 0 ? '' : 'hidden'}>
             <header class="stage-panel__head">
               <span class="stage-panel__index">Этап ${String(n).padStart(2, '0')}</span>
-              <h3>${escapeHtml(title)}</h3>
-              <span class="stage-panel__time">⏱ ${escapeHtml(time)}</span>
+              <h3>${escapeHtml(stage.title)}</h3>
+              <span class="stage-panel__time">⏱ ${escapeHtml(stage.time)}</span>
             </header>
             <div class="stage-body">
               <div class="stage-grid">
                 <div class="stage-block">
                   <h4>Задачи этапа</h4>
-                  <div class="stage-block-scroll"><ul class="stage-list">
-                    <li>Разбираем текущий процесс и фиксируем точки потерь</li>
-                    <li>Согласуем роли, ответственных и ожидаемый результат</li>
-                    <li>Готовим настройки, документы и сценарии для команды</li>
-                    <li>Проверяем этап на реальных продажах и заявках</li>
-                  </ul></div>
+                  <div class="stage-block-scroll"><ul class="stage-list">${stage.tasks.map((task) => `<li>${escapeHtml(task)}</li>`).join('')}</ul></div>
                 </div>
                 <div class="stage-block stage-block--files">
                   <h4>Файлы на выходе</h4>
-                  <ul class="stage-files">
-                    <li><span class="file-name">${escapeHtml(name)}.docx</span><span class="ext">docx</span></li>
-                    <li><span class="file-name">Настройки этапа в Битрикс24</span><span class="ext">crm</span></li>
-                  </ul>
+                  <ul class="stage-files">${stage.files.map((file, fileIndex) => `<li><span class="file-name">${escapeHtml(file)}</span><span class="ext">${fileIndex === 0 ? 'docx' : 'crm'}</span></li>`).join('')}</ul>
                 </div>
                 <div class="stage-block stage-block--results">
                   <h4>Результат</h4>
-                  <ul class="stage-list stage-list--check">
-                    <li>Понятный артефакт, который можно проверить и использовать</li>
-                    <li>Следующий шаг внедрения согласован с командой</li>
-                  </ul>
+                  <ul class="stage-list stage-list--check">${stage.results.map((result) => `<li>${escapeHtml(result)}</li>`).join('')}</ul>
                 </div>
                 <div class="stage-shots">
                   <div class="stage-shots__title">Скриншоты этапа</div>
-                  <div class="stage-shots__grid">${shots.map((src, shotIndex) => `<button type="button" class="stage-shot js-lightbox" data-src="${src}" data-caption="Этап ${String(n).padStart(2, '0')} — скриншот ${shotIndex + 1}"><img src="${src}" alt="Этап ${String(n).padStart(2, '0')} — скриншот ${shotIndex + 1}" loading="lazy"><span class="stage-shot__zoom">＋</span></button>`).join('')}</div>
+                  <div class="stage-shots__grid">${shots.map((src, shotIndex) => `<button type="button" class="stage-shot js-lightbox" data-src="${src}" data-caption="${escapeHtml(stage.alt)} — ${shotIndex + 1}"><img src="${src}" alt="${escapeHtml(stage.alt)} — ${shotIndex + 1}" loading="lazy"><span class="stage-shot__zoom">＋</span></button>`).join('')}</div>
                 </div>
               </div>
             </div>
@@ -1073,25 +1352,16 @@ function stagesSourceBlock() {
 
 function heroStats() {
   return `<div class="hero__stats">
-    <div class="stat"><b>80+</b><span>CRM-проектов и аудитов</span></div>
-    <div class="stat"><b>9 лет</b><span>в продажах и автоматизации</span></div>
-    <div class="stat"><b>до 70%</b><span>рутины уходит в автоматизацию</span></div>
+    <div class="stat"><b>80+</b><span>успешных проектов: от 20 до 200+ пользователей</span></div>
+    <div class="stat"><b>9 лет</b><span>с 2015 года, до 40 проектов в год</span></div>
+    <div class="stat"><b>до 70%</b><span>ручных задач автоматизируется в первые 2 месяца</span></div>
   </div>`;
 }
 
-function videoBlock({ title, text, bullets = [], badge = 'Видео от эксперта' }) {
+function videoBlock({ title, text, bullets = [], badge = 'Видео от эксперта', embedUrl = defaultVideoEmbed }) {
   return `<aside class="video-card">
     <div class="video-frame" aria-label="${escapeHtml(title)}">
-      <div class="video-frame__top">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="video-frame__body">
-        <button class="play-button" type="button" aria-label="Смотреть видео">▶</button>
-        <div>
-          <b>${escapeHtml(title)}</b>
-          <small>Горизонтальное видео 16:9</small>
-        </div>
-      </div>
+      <iframe src="${embedUrl}" title="${escapeHtml(title)}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
     <div class="video-card__content">
       <span class="eyebrow">${escapeHtml(badge)}</span>
@@ -1235,28 +1505,101 @@ function serviceContent(service) {
   };
 }
 
+function serviceStepDescription(step, index, service) {
+  if (service.slug === 'audit-otdela-prodazh') {
+    return [
+      'Проводим 60-минутный звонок: разбираем текущий процесс продаж, смотрим на воронку, каналы лидов и роли команды.',
+      'Составляем карту потерь: где заявки теряются, зависают или обрабатываются без контроля.',
+      'Рисуем целевую схему воронки: этапы, поля, автоматизации и права доступа под ваш процесс.',
+      'Выделяем 3-5 быстрых улучшений, которые дадут результат до старта полного внедрения.',
+      'Вы получаете PDF-отчет: схему CRM, список задач и оценку стоимости проекта.',
+    ][index] || 'Фиксируем результат аудита и следующий шаг внедрения.';
+  }
+  if (/аудит|разбор|собираем|определяем/i.test(step)) return `На этом шаге по услуге «${service.name}» собираем факты, проверяем текущие инструменты и фиксируем реальные ограничения проекта.`;
+  if (/проект|схем|метрик|рол/i.test(step)) return 'Проектируем целевой процесс: этапы, ответственных, обязательные данные, контрольные точки и ожидаемые показатели.';
+  if (/настра|обмен|собираем источники/i.test(step)) return 'Настраиваем Битрикс24 или интеграцию на тестовых сценариях, чтобы команда увидела будущий рабочий процесс до запуска.';
+  if (/тест|провер/i.test(step)) return 'Проверяем работу на реальных данных: ищем дубли, ошибки прав, просрочки, неверные уведомления и слабые места сценария.';
+  if (/обуч|передаем|отчитываем/i.test(step)) return 'Передаем инструкции, обучаем пользователей и фиксируем, как поддерживать результат после завершения проекта.';
+  return 'Этап завершается конкретным артефактом: настройкой, документом, инструкцией или отчетом, который можно проверить в работе.';
+}
+
+function vnedrenieExtraBlock(service) {
+  if (service.slug !== 'vnedrenie-bitrix24') return '';
+  return `<section class="section section--white">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Сроки и результат</span>
+      <h2>Базовый запуск — 3-4 недели. Полный проект с 1С и интеграциями — 6-10 недель</h2>
+      <p class="section__sub">Срок зависит от количества воронок, пользователей, интеграций и объема обучения команды.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>До внедрения</th><th>После запуска</th></tr></thead>
+        <tbody>
+          <tr><td>Заявки живут в таблицах, чатах и у менеджеров в голове.</td><td>Все лиды попадают в Битрикс24, получают ответственного и задачу.</td></tr>
+          <tr><td>РОП собирает отчеты вручную и не видит реальную воронку.</td><td>Появляется план-факт, контроль этапов и просрочек по каждому менеджеру.</td></tr>
+          <tr><td>Менеджеры забывают касания, КП и повторные продажи.</td><td>CRM напоминает о следующем шаге, документах и повторных касаниях.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="role-grid" style="margin-top:22px">
+      <article class="role-card"><h3>Собственник</h3><p>Прозрачная воронка и план выручки на 30/60/90 дней.</p></article>
+      <article class="role-card"><h3>РОП</h3><p>Реальные данные по каждому менеджеру без ручных отчетов.</p></article>
+      <article class="role-card"><h3>Менеджер</h3><p>Все задачи и напоминания в одном окне, ничего не нужно держать в голове.</p></article>
+      <article class="role-card"><h3>Администратор</h3><p>Права, инструкции и backlog развития системы после запуска.</p></article>
+    </div>
+  </div>
+</section>`;
+}
+
+function supportExtraBlock(service) {
+  if (service.slug !== 'soprovozhdenie-crm') return '';
+  return `<section class="section section--white">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Ежемесячный сервис</span>
+      <h2>Что входит в сопровождение CRM Битрикс24</h2>
+      <p class="section__sub">Это не разовые правки “по просьбе”, а регулярное развитие системы продаж по backlog и SLA.</p>
+    </div>
+    <div class="grid grid--3">
+      <article class="card"><h3>10 часов — поддержка</h3><p>Ответы пользователям, мелкие настройки, права доступа, консультации и контроль ошибок.</p></article>
+      <article class="card"><h3>25 часов — развитие</h3><p>Доработка воронок, роботов, отчетов, обучение новых сотрудников и оптимизация процессов.</p></article>
+      <article class="card"><h3>50 часов — продуктовая команда</h3><p>Регулярные спринты развития CRM, интеграции, BI-отчеты и сопровождение изменений в продажах.</p></article>
+    </div>
+    <div class="loss-strip">
+      <b>Чем отличается от фрилансера:</b>
+      <span>работает команда с SLA, документацией, ответственным менеджером и пониманием всей системы продаж, а не один исполнитель без контекста.</span>
+      <a class="btn btn--cta" href="#audit">Подобрать пакет</a>
+    </div>
+  </div>
+</section>`;
+}
+
 function homePage() {
   const pathname = '/';
   const topServices = ['vnedrenie-bitrix24', 'audit-otdela-prodazh', 'integraciya-1s-bitrix24', 'licenzii-bitrix24', 'sistema-prodazh-bitrix24', 'reanimaciya-crm', 'tekhnicheskaya-podderzhka-bitrix24', 'obuchenie-bitrix24']
     .map((slug) => servicePages.find((service) => service.slug === slug));
-  const schema = [faqSchema(homeFaq)];
+  const schema = [faqSchema(homeFaq), ...reviewSchema()];
 
   const content = `<section class="hero">
   <div class="container hero__grid">
     <div>
       <span class="eyebrow">dm-marketing.pro · партнер Битрикс24</span>
-      <h1><span class="highlight">Агентство внедрения Битрикс24</span> и построения систем продаж для B2B-компаний</h1>
-      <p class="hero__lead">Помогаем торговым, производственным, сервисным и проектным компаниям навести порядок в продажах: от аудита и стратегии до CRM, интеграций, обучения и сопровождения.</p>
+      <h1><span class="highlight">Строим управляемые продажи</span> для торговых и производственных компаний — на базе Битрикс24</h1>
+      <p class="hero__lead">Не просто настраиваем CRM — проектируем систему: воронки, роли, KPI и автоматизации. В результате руководитель видит воронку в реальном времени, менеджеры работают по регламентам, а лиды не теряются.</p>
       <ul class="hero-proof">
         <li>Сначала разбираем процесс продаж, роли и KPI</li>
         <li>Затем внедряем Битрикс24, интеграции и отчеты</li>
         <li>После запуска обучаем команду и сопровождаем развитие</li>
       </ul>
       <div class="hero__actions">
-        <a class="btn btn--cta btn--lg" href="#audit">Познакомиться и обсудить задачу</a>
-        <a class="btn btn--ghost btn--lg" href="/uslugi/">Смотреть услуги</a>
+        <a class="btn btn--cta btn--lg" href="#audit">Получить бесплатный аудит продаж</a>
+        <a class="btn btn--ghost btn--lg" href="/kejsy/">Смотреть кейсы клиентов</a>
       </div>
       ${heroStats()}
+      <div class="hero-logo-bar" aria-label="Клиенты">
+        ${sourceLogos.slice(0, 6).map(([img, alt]) => `<span><img src="${dmAssetBase}/assets/logos-real/${img}" alt="${escapeHtml(alt)}" loading="lazy"></span>`).join('')}
+      </div>
     </div>
     ${videoBlock({
       title: 'Кто такие dm-marketing.pro и как мы работаем',
@@ -1315,7 +1658,14 @@ ${stagesSourceBlock()}
       <p class="section__sub">Так внедрение не превращается в набор разрозненных настроек. Каждый этап закрывает конкретный управленческий риск.</p>
     </div>
     <div class="steps">
-      ${['Аудит: где теряются лиды, деньги и контроль', 'Проектирование: воронки, роли, KPI и регламенты', 'Настройка: CRM, задачи, роботы и права доступа', 'Интеграции: 1С, сайт, телефония, мессенджеры', 'Обучение: менеджеры, РОП и руководитель', 'Контроль запуска: проверяем работу на реальных сделках'].map((step) => `<div class="step"><div><h3>${step}</h3><p>После этапа остается конкретный результат: схема, настройка, инструкция или проверенный сценарий.</p></div></div>`).join('')}
+      ${[
+        ['Аудит: где теряются лиды, деньги и контроль', 'Проводим разбор текущей воронки, источников заявок, ролей команды и отчетности, чтобы найти реальные причины потерь.'],
+        ['Проектирование: воронки, роли, KPI и регламенты', 'Фиксируем целевую схему продаж: этапы, обязательные поля, ответственных, KPI и правила работы менеджеров.'],
+        ['Настройка: CRM, задачи, роботы и права доступа', 'Переносим согласованную механику в Битрикс24: карточки, стадии, роботы, уведомления, права и контроль просрочек.'],
+        ['Интеграции: 1С, сайт, телефония, мессенджеры', 'Связываем CRM с рабочими системами, чтобы заявки, счета, звонки и переписки попадали в единый контур продаж.'],
+        ['Обучение: менеджеры, РОП и руководитель', 'Обучаем каждую роль на реальных сценариях: менеджер ведет сделку, РОП контролирует, руководитель читает отчеты.'],
+        ['Контроль запуска: проверяем работу на реальных сделках', 'Запускаем систему на живых заявках, исправляем ошибки и передаем backlog дальнейшего развития.'],
+      ].map(([step, desc]) => `<div class="step"><div><h3>${step}</h3><p>${desc}</p></div></div>`).join('')}
     </div>
   </div>
 </section>
@@ -1343,18 +1693,7 @@ ${teamSourceBlock()}
   </div>
 </section>
 
-<section class="section section--white">
-  <div class="container">
-    <div class="section__head">
-      <span class="eyebrow">Отзывы</span>
-      <h2>Клиенты ценят методологию и понятное сопровождение</h2>
-    </div>
-    <div class="grid grid--3">
-      ${['Производство металлоконструкций', 'Оптовый дистрибьютор', 'Сервисная компания'].map((name) => `
-      <blockquote class="quote"><p>Команда dm-marketing помогла не просто настроить CRM, а договориться о правилах работы отдела продаж.</p><b>${name}</b></blockquote>`).join('')}
-    </div>
-  </div>
-</section>
+${reviewsBlock()}
 
 <section class="section">
   <div class="container grid grid--2">
@@ -1395,9 +1734,9 @@ function servicesOverviewPage() {
   }, {});
   const content = `${pageHeroSection({
     crumbs,
-    eyebrow: '22 услуги',
-    h1: 'Услуги по внедрению Битрикс24 и построению системы продаж',
-    lead: 'От бесплатного аудита и покупки лицензии до интеграций, обучения, сопровождения и рекомендованных услуг для роста LTV.',
+    eyebrow: 'Точки входа',
+    h1: 'Все этапы построения системы продаж — от аудита до сопровождения',
+    lead: 'Выберите точку входа под вашу задачу: начать с аудита, запустить полный проект или оживить уже купленный Битрикс24, который не используется.',
     primary: ['Подобрать услугу', '#audit'],
     secondary: ['Смотреть цены', '/ceny/'],
     videoTitle: 'Как выбрать нужную услугу Битрикс24',
@@ -1411,7 +1750,15 @@ ${Object.entries(grouped).map(([category, services]) => `
       <span class="eyebrow">${escapeHtml(category)}</span>
       <h2>${escapeHtml(category)}</h2>
     </div>
-    ${cardGrid(services.map((service) => ({ href: servicePath(service), icon: service.category[0], title: service.name, text: service.short, tags: service.seo.slice(0, 2) })), 3)}
+    ${category === Object.keys(grouped)[0] ? servicesRoleFilter() : ''}
+    <div class="grid grid--3 service-role-grid">${services.map((service) => `
+      <a class="card card--link service-role-card" data-role="${roleForService(service)}" href="${servicePath(service)}">
+        <span class="card__icon">${escapeHtml(service.category[0])}</span>
+        <h3>${escapeHtml(service.name)}</h3>
+        <p>${escapeHtml(service.short)}</p>
+        <div class="tag-row">${service.seo.slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
+      </a>`).join('')}
+    </div>
   </div>
 </section>`).join('')}
 ${ctaBlock('Подберем услугу под вашу задачу', 'Расскажите, что сейчас не работает в продажах: лиды, 1С, отчеты, обучение или сопровождение. Подскажем оптимальный маршрут внедрения.')}`;
@@ -1420,7 +1767,15 @@ ${ctaBlock('Подберем услугу под вашу задачу', 'Рас
     title: 'Услуги внедрения Битрикс24 — dm-marketing.pro',
     description: 'Все услуги dm-marketing.pro: аудит отдела продаж, внедрение Битрикс24, интеграция 1С, лицензии, обучение и сопровождение CRM.',
     pathname,
-    schema: [breadcrumbSchema(crumbs)],
+    schema: [breadcrumbSchema(crumbs), {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: servicePages.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: { '@type': 'Service', name: service.name, url: url(servicePath(service)) },
+      })),
+    }],
     content,
   });
 }
@@ -1448,7 +1803,7 @@ function servicePage(service) {
       <h1>${escapeHtml(service.h1)}</h1>
       <p class="page-hero__lead">${escapeHtml(service.lead)}</p>
       <div class="hero__actions">
-        <a class="btn btn--cta btn--lg" href="#audit">Записаться на консультацию</a>
+        <a class="btn btn--cta btn--lg" href="#audit">Записаться на 60-минутный разбор</a>
         <a class="btn btn--ghost btn--lg" href="/ceny/">Посмотреть цены</a>
       </div>
     </div>
@@ -1515,7 +1870,7 @@ function servicePage(service) {
       <p class="section__sub">Каждый этап завершается понятным результатом: документом, настройкой, обучением или проверенным сценарием в CRM.</p>
     </div>
     <div class="steps">
-      ${serviceCopy.steps.map((step) => `<div class="step"><div><h3>${escapeHtml(step)}</h3><p>Показываем промежуточный результат и согласуем следующий шаг, чтобы проект не уходил в хаотичные доработки.</p></div></div>`).join('')}
+      ${serviceCopy.steps.map((step, index) => `<div class="step"><div><h3>${escapeHtml(step)}</h3><p>${escapeHtml(serviceStepDescription(step, index, service))}</p></div></div>`).join('')}
     </div>
   </div>
 </section>
@@ -1540,7 +1895,10 @@ function servicePage(service) {
     </article>
   </div>
 </section>
+${vnedrenieExtraBlock(service)}
+${supportExtraBlock(service)}
 
+${reviewsBlock()}
 ${ctaBlock(`Обсудить: ${service.name}`, 'Оставьте заявку, и мы покажем, как эта услуга будет выглядеть именно для вашей компании.')}
 ${faqBlock(faq)}
 <section class="section">
@@ -1557,7 +1915,7 @@ ${faqBlock(faq)}
     title: service.title,
     description: service.description,
     pathname,
-    schema: [breadcrumbSchema(crumbs), serviceSchema(service), faqSchema(faq)],
+    schema: [breadcrumbSchema(crumbs), serviceSchema(service), faqSchema(faq), ...reviewSchema()],
     content,
   });
 }
@@ -1659,7 +2017,7 @@ function industriesOverviewPage() {
     crumbs,
     eyebrow: 'Отраслевые решения',
     h1: 'Решения Битрикс24 по отраслям',
-    lead: 'Низкочастотные страницы с высокой конверсией: показываем боли конкретной отрасли и сценарии внедрения CRM.',
+    lead: 'Решения для торговых, производственных, строительных и сервисных компаний: типичные боли отрасли, сценарии внедрения CRM и примеры результатов.',
     primary: ['Подобрать отраслевое решение', '#audit'],
     secondary: ['Смотреть кейсы', '/kejsy/'],
     videoTitle: 'Как выбрать отраслевую конфигурацию Битрикс24',
@@ -1684,6 +2042,7 @@ ${ctaBlock('Подберем решение под вашу отрасль', 'Р
 function industryPage(industry) {
   const pathname = industryPath(industry);
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Решения', path: '/resheniya/' }, { name: industry.name, path: pathname }];
+  const [caseTitle, caseText] = industryCase(industry);
   const faq = [
     [`Чем отличается внедрение для отрасли «${industry.name}»?`, 'Мы учитываем типовой цикл сделки, роли сотрудников, документы, интеграции и управленческие отчеты именно для этой отрасли.'],
     ['Можно ли подключить 1С?', 'Да. Для торгово-производственных компаний интеграция с 1С обычно входит в дорожную карту внедрения.'],
@@ -1735,8 +2094,8 @@ function industryPage(industry) {
   <div class="container grid grid--2">
     <div class="card">
       <span class="eyebrow">Пример внедрения</span>
-      <h2>${escapeHtml(cases[0].h1)}</h2>
-      <p>${escapeHtml(cases[0].task)}</p>
+      <h2>${escapeHtml(caseTitle)}</h2>
+      <p>${escapeHtml(caseText)}</p>
       <a class="btn btn--ghost" href="${casePath(cases[0])}">Смотреть кейс</a>
     </div>
     <div class="steps">
@@ -1864,9 +2223,9 @@ function pricesPage() {
 <section class="section">
   <div class="container grid grid--3">
     ${[
-      ['Старт', '180 000', '1 воронка, базовые поля, источники лидов, обучение менеджеров'],
-      ['Бизнес', '320 000', 'Несколько воронок, автоматизация, телефония, отчеты, обучение РОПа'],
-      ['Премиум', '540 000', '1С, сайт, BI-отчеты, сложные роботы, регламенты и сопровождение запуска'],
+      ['Первый запуск', '180 000', '1 воронка, базовые поля, источники лидов, обучение менеджеров'],
+      ['Полная автоматизация', '320 000', 'Несколько воронок, автоматизация, телефония, отчеты, обучение РОПа'],
+      ['Под ключ с 1С', '540 000', '1С, сайт, BI-отчеты, сложные роботы, регламенты и сопровождение запуска'],
     ].map(([name, price, text]) => `<article class="card"><span class="eyebrow">${name}</span><div class="price"><strong>${price}</strong><span>₽ от</span></div><p>${text}</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article>`).join('')}
   </div>
 </section>
@@ -1895,7 +2254,7 @@ function pricesPage() {
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Работы</th><th>Старт</th><th>Бизнес</th><th>Премиум</th></tr></thead>
+        <thead><tr><th>Работы</th><th>Первый запуск</th><th>Полная автоматизация</th><th>Под ключ с 1С</th></tr></thead>
         <tbody>
           ${[
             ['Аудит и ТЗ', 'Экспресс', 'Подробно', 'Подробно + стратегия'],
@@ -1920,7 +2279,7 @@ function pricesPage() {
       <label>Пользователей CRM<input type="number" name="employees" min="1" max="300" value="12"></label>
       <label>Интеграций<select name="integrations"><option value="0">Нет</option><option value="1" selected>1 интеграция</option><option value="2">2 интеграции</option><option value="3">3+ интеграции</option></select></label>
       <label>Уровень автоматизации<select name="automation"><option value="1">Базовый</option><option value="2" selected>Средний</option><option value="4">Сложный</option></select></label>
-      <div class="calculator__result" data-calculator-result></div>
+      <div class="calculator__result" data-calculator-result>Ориентир: 440 000 - 650 000 ₽. Точную смету подготовим после аудита процессов.</div>
     </div>
   </div>
 </section>
@@ -1943,9 +2302,16 @@ ${ctaBlock('Получить точный расчет стоимости', 'П�
 ${faqBlock(faq)}`;
   return layout({
     title: 'Цены на внедрение Битрикс24 — прозрачная стоимость работ',
-    description: 'Стоимость внедрения Битрикс24: пакеты Старт, Бизнес и Премиум, таблица работ, калькулятор цены и FAQ по бюджету проекта.',
+    description: 'Стоимость внедрения Битрикс24: пакеты Первый запуск, Полная автоматизация и Под ключ с 1С, калькулятор цены и FAQ по бюджету.',
     pathname,
-    schema: [breadcrumbSchema(crumbs), faqSchema(faq)],
+    schema: [breadcrumbSchema(crumbs), faqSchema(faq), {
+      '@context': 'https://schema.org',
+      '@type': 'PriceSpecification',
+      priceCurrency: 'RUB',
+      minPrice: '180000',
+      maxPrice: '540000',
+      name: 'Стоимость внедрения Битрикс24',
+    }],
     content,
   });
 }
@@ -1957,7 +2323,7 @@ function blogOverviewPage() {
     crumbs,
     eyebrow: 'Блог',
     h1: 'Блог о Битрикс24, CRM и системах продаж',
-    lead: 'Статьи для SEO-трафика и прогрева аудитории: тарифы, сравнения, ошибки внедрения, интеграции и оцифровка продаж.',
+    lead: 'Практические материалы о Битрикс24, автоматизации продаж и CRM — для руководителей, РОПов и тех, кто хочет навести порядок в отделе продаж.',
     primary: ['Получить аудит', '#audit'],
     secondary: ['Услуги', '/uslugi/'],
     videoTitle: 'Как использовать блог перед внедрением CRM',
@@ -1966,7 +2332,15 @@ function blogOverviewPage() {
   })}
 <section class="section">
   <div class="container">
-    ${cardGrid(blogPosts.map((post) => ({ href: blogPath(post), icon: '✎', title: post.h1, text: post.description, tags: post.keywords })), 3)}
+    <div class="grid grid--3">${blogPosts.map((post) => `
+      <a class="card card--link blog-card" href="${blogPath(post)}">
+        <img class="case-card__shot" src="${dmAssetBase}/assets/cases/${post.image}" alt="${escapeHtml(post.h1)} — превью статьи" loading="lazy">
+        <span class="eyebrow">${escapeHtml(post.date)}</span>
+        <h3>${escapeHtml(post.h1)}</h3>
+        <p>${escapeHtml(post.description)}</p>
+        <div class="tag-row">${post.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
+      </a>`).join('')}
+    </div>
   </div>
 </section>
 ${ctaBlock('Обсудить тему из блога на аудите', 'Если статья похожа на вашу ситуацию, разберем ее на примере вашей компании и покажем план действий.')}`;
@@ -1996,6 +2370,7 @@ function blogPostPage(post) {
 <section class="section">
   <div class="container article">
     <p>Материал подготовлен для руководителей и владельцев компаний, которые хотят внедрить CRM осознанно: с понятными целями, этапами и метриками результата.</p>
+    <p><b>Дата публикации:</b> ${escapeHtml(post.date)} · <b>Теги:</b> ${post.tags.map(escapeHtml).join(', ')}</p>
     <h2>С чего начать</h2>
     <p>Начните с аудита отдела продаж. Важно понять, где появляются лиды, кто отвечает за первый контакт, какие этапы сделки уже есть и какие данные нужны руководителю.</p>
     <ul class="check-list">
@@ -2024,6 +2399,45 @@ ${ctaBlock('Разобрать вашу CRM-задачу', 'Покажем, ка
   });
 }
 
+function crmComparisonPage() {
+  const pathname = '/bitrix24-vs-amocrm/';
+  const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Bitrix24 vs amoCRM', path: pathname }];
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Сравнение CRM',
+    h1: 'Битрикс24 или amoCRM — что выбрать для B2B-продаж',
+    lead: 'Сравниваем две CRM по ключевым критериям: длинные сделки, задачи, автоматизация, интеграции с 1С, обучение команды и стоимость владения.',
+    primary: ['Получить аудит CRM', '#audit'],
+    secondary: ['Смотреть услуги', '/uslugi/'],
+    videoTitle: 'Bitrix24 vs amoCRM для B2B',
+    videoText: 'В видео объясняем, когда достаточно простой CRM, а когда бизнесу нужна экосистема Битрикс24 с задачами, интеграциями и отчетностью.',
+    videoBullets: ['Воронки и задачи', 'Интеграции и 1С', 'Стоимость внедрения'],
+  })}
+<section class="section">
+  <div class="container">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Критерий</th><th>Битрикс24</th><th>amoCRM</th></tr></thead>
+        <tbody>
+          <tr><td>B2B и длинные сделки</td><td>Подходит для сложных процессов, задач, проектов и согласований.</td><td>Хороша для простой воронки и быстрых продаж.</td></tr>
+          <tr><td>Интеграция с 1С</td><td>Чаще выбирают при связке CRM, склада, счетов и заказов.</td><td>Требует отдельной архитектуры обмена.</td></tr>
+          <tr><td>Управление командой</td><td>CRM + задачи + диск + база знаний + отчеты.</td><td>Фокус на продажах и коммуникациях.</td></tr>
+          <tr><td>Стоимость внедрения</td><td>Выше на старте, но шире контур автоматизации.</td><td>Ниже для простых сценариев.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+${ctaBlock('Поможем выбрать CRM под ваш процесс', 'На аудите сравним текущие задачи, цикл сделки, интеграции и бюджет, чтобы выбрать CRM без переплаты и лишней сложности.')}`;
+  return layout({
+    title: 'Битрикс24 vs amoCRM — что выбрать для B2B-продаж',
+    description: 'Сравнение Битрикс24 и amoCRM для B2B: воронки, интеграции, задачи, 1С, отчетность, стоимость внедрения и рекомендации.',
+    pathname,
+    schema: [breadcrumbSchema(crumbs)],
+    content,
+  });
+}
+
 function aboutPage() {
   const pathname = '/o-kompanii/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'О компании', path: pathname }];
@@ -2041,8 +2455,8 @@ function aboutPage() {
   })}
 <section class="section section--white">
   <div class="container grid grid--2">
-    <div class="card"><h2>Миссия</h2><p>Сделать продажи прозрачными, повторяемыми и управляемыми: от первого лида до повторной покупки.</p></div>
-    <div class="card"><h2>Подход</h2><p>Сначала описываем процесс и метрики, затем настраиваем CRM, интеграции, автоматизации и обучение.</p></div>
+    <div class="card"><h2>История</h2><p>Начали в 2015 году с аудитов отделов продаж и построения регламентов. С 2018 года развиваем направление внедрения Битрикс24 как официального партнера и соединяем CRM с методологией продаж.</p></div>
+    <div class="card"><h2>География и доверие</h2><p>Воронеж и вся Россия — онлайн-проекты для торговых, производственных, сервисных и B2B-компаний. В портфеле 80+ проектов и команды от 20 до 200+ пользователей.</p></div>
   </div>
 </section>
 <section class="section">
@@ -2080,16 +2494,31 @@ function teamPage() {
     videoBullets: ['CRM-архитектор', 'Аналитик продаж', 'Интегратор и методолог'],
   })}
 <section class="section">
-  <div class="container grid grid--4">
-    ${['CRM-архитектор', 'Бизнес-аналитик', 'Интегратор 1С', 'Методолог обучения', 'Специалист поддержки', 'Проектный менеджер', 'BI-аналитик', 'Маркетолог CRM'].map((role) => `<article class="card"><span class="card__icon">${role[0]}</span><h3>${role}</h3><p>Отвечает за свой блок работ и фиксирует результат в проектной документации.</p></article>`).join('')}
+  <div class="container">
+    <div class="team-grid">
+      ${sourceTeam.map(([img, name, role]) => `<article class="team-card">
+        <div class="team-card__photo"><img src="${dmAssetBase}/assets/team/${img}" alt="${escapeHtml(name)} — ${escapeHtml(role)}" loading="lazy"></div>
+        <h3 class="team-card__name">${escapeHtml(name)}</h3>
+        <div class="team-card__role">${escapeHtml(role)}</div>
+        <p>${name === 'Максим Дедяев' ? '9 лет в автоматизации продаж. 80+ проектов внедрения Битрикс24. Специализация: проектирование воронок, интеграции 1С, обучение команд.' : name === 'Дмитрий Андреев' ? 'Отвечает за архитектуру внедрения, качество настройки портала, сроки запуска и передачу проекта в сопровождение.' : name === 'Даяна Гаспарик' ? 'Помогает выстроить CRM-маркетинг, сегментацию базы, коммуникации и сценарии повторных продаж.' : 'Настраивает управленческую отчетность, BI-дашборды, план-факт и метрики эффективности отдела продаж.'}</p>
+      </article>`).join('')}
+    </div>
   </div>
 </section>
 ${ctaBlock('Обсудить проект с командой', 'Подключим нужных специалистов после экспресс-аудита и покажем состав работ.')}`;
+  const personSchema = sourceTeam.map(([img, name, role]) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name,
+    jobTitle: role,
+    image: `${baseUrl}${dmAssetBase}/assets/team/${img}`,
+    worksFor: { '@type': 'Organization', name: 'dm-marketing.pro' },
+  }));
   return layout({
     title: 'Команда dm-marketing.pro — эксперты по Битрикс24',
     description: 'Команда dm-marketing.pro: CRM-архитекторы, аналитики продаж, интеграторы, методологи обучения и специалисты сопровождения.',
     pathname,
-    schema: [breadcrumbSchema(crumbs)],
+    schema: [breadcrumbSchema(crumbs), ...personSchema],
     content,
   });
 }
@@ -2110,7 +2539,14 @@ function certificatesPage() {
   })}
 <section class="section">
   <div class="container grid grid--3">
-    ${['Партнер Битрикс24', 'CRM и продажи', 'Бизнес-процессы', 'Интеграции', 'Обучение пользователей', 'Сопровождение порталов'].map((cert) => `<article class="card"><span class="card__icon">✓</span><h3>${cert}</h3><p>Блок-плейсхолдер для размещения изображения сертификата и описания компетенции.</p></article>`).join('')}
+    ${[
+      ['Партнер Битрикс24', '2026', 'Подтверждает право подбирать лицензии, внедрять CRM и сопровождать порталы клиентов.'],
+      ['CRM и продажи', '2025', 'Компетенция по проектированию воронок, ролей, KPI и управленческой отчетности.'],
+      ['Бизнес-процессы', '2025', 'Настройка роботов, триггеров, автоматических задач и регламентов работы отдела продаж.'],
+      ['Интеграции', '2024', 'Связка Битрикс24 с 1С, сайтом, телефонией, мессенджерами и BI-отчетностью.'],
+      ['Обучение пользователей', '2024', 'Корпоративные тренинги для менеджеров, РОПа, руководителя и администратора портала.'],
+      ['Сопровождение порталов', '2026', 'SLA-поддержка, backlog развития CRM и ежемесячные улучшения системы продаж.'],
+    ].map(([cert, year, text]) => `<article class="card"><span class="card__icon">✓</span><h3>${cert}</h3><p><b>${year}</b> · ${text}</p></article>`).join('')}
   </div>
 </section>
 ${ctaBlock('Проверить компетенции на своем проекте', 'На аудите покажем, какие специалисты нужны для вашей задачи и какие риски важно закрыть.')}`;
@@ -2153,8 +2589,19 @@ function contactsPage() {
       <p><b>Email:</b> <a href="mailto:${email}">${email}</a></p>
       <p><b>Регион:</b> Воронеж, Воронежская область</p>
       <p><b>Формат:</b> онлайн по России, встречи в Воронеже по договоренности</p>
+      <div class="hero__actions">
+        <a class="btn btn--ghost" href="${whatsapp}">WhatsApp</a>
+        <a class="btn btn--ghost" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+      </div>
     </div>
     ${screenshotMockup('Маршрут заявки в Битрикс24', ['Заявка с сайта', 'Сделка в CRM', 'Ответственный менеджер'])}
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="map-card">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=39.200269%2C51.660781&z=11&l=map" title="dm-marketing.pro на карте Воронежа" loading="lazy"></iframe>
+    </div>
   </div>
 </section>
 ${ctaBlock('Записаться на бесплатный аудит', 'Разберем ваш отдел продаж, CRM, источники лидов и интеграции. Подготовим план внедрения и ориентир бюджета.')}`;
@@ -2187,6 +2634,7 @@ const pages = [
   { path: '/ceny/', html: pricesPage() },
   { path: '/blog/', html: blogOverviewPage() },
   ...blogPosts.map((post) => ({ path: blogPath(post), html: blogPostPage(post) })),
+  { path: '/bitrix24-vs-amocrm/', html: crmComparisonPage() },
   { path: '/o-kompanii/', html: aboutPage() },
   { path: '/o-kompanii/komanda/', html: teamPage() },
   { path: '/o-kompanii/sertifikaty/', html: certificatesPage() },
@@ -2199,7 +2647,7 @@ for (const page of pages) {
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((page) => `  <url><loc>${url(page.path)}</loc><changefreq>weekly</changefreq><priority>${page.path === '/' ? '1.0' : '0.8'}</priority></url>`).join('\n')}
+${pages.map((page) => `  <url><loc>${url(page.path)}</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>${page.path === '/' ? '1.0' : '0.8'}</priority></url>`).join('\n')}
 </urlset>
 `;
 fs.writeFileSync(path.join(rootDir, 'sitemap.xml'), sitemap, 'utf8');
