@@ -912,7 +912,6 @@ function navDropdown(items) {
 
 function header() {
   const topServices = servicePages
-    .filter((service) => ['vnedrenie-bitrix24', 'audit-otdela-prodazh', 'integraciya-1s-bitrix24', 'licenzii-bitrix24', 'reanimaciya-crm', 'soprovozhdenie-crm'].includes(service.slug))
     .map((service) => ({ href: servicePath(service), title: service.name, caption: service.short }));
 
   return `<a class="skip-link" href="#content">Перейти к содержанию</a>
