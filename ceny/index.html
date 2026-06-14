@@ -278,9 +278,18 @@
   </aside>
   </div>
 </section>
+<section class="section section--white">
+  <div class="container">
+    <div class="loss-strip">
+      <b>Почему такая стоимость оправдана:</b>
+      <span>Один потерянный B2B-клиент с LTV 500 000 ₽ окупает весь проект внедрения. Наши клиенты в среднем сокращают потери лидов в 6 раз — уже в первые 2 месяца.</span>
+      <a class="btn btn--cta" href="#calculator">Посчитать ориентир</a>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container grid grid--3">
-    <article class="card"><span class="eyebrow">Первый запуск</span><div class="price"><strong>180 000</strong><span>₽ от</span></div><p>1 воронка, базовые поля, источники лидов, обучение менеджеров</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article><article class="card"><span class="eyebrow">Полная автоматизация</span><div class="price"><strong>320 000</strong><span>₽ от</span></div><p>Несколько воронок, автоматизация, телефония, отчеты, обучение РОПа</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article><article class="card"><span class="eyebrow">Под ключ с 1С</span><div class="price"><strong>540 000</strong><span>₽ от</span></div><p>1С, сайт, BI-отчеты, сложные роботы, регламенты и сопровождение запуска</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article>
+    <article class="card"><span class="eyebrow">Первый запуск</span><div class="price"><strong>180 000</strong><span>₽ от</span></div><p>После этого пакета руководитель видит все заявки в одном месте, менеджеры работают по единой воронке, ни один лид не теряется. Старт за 3-4 недели.</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article><article class="card"><span class="eyebrow">Полная автоматизация</span><div class="price"><strong>320 000</strong><span>₽ от</span></div><p>CRM сама ставит задачи, отправляет напоминания и уведомляет о просрочках. РОП управляет отделом через дашборд, а не через ручные отчеты.</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article><article class="card"><span class="eyebrow">Под ключ с 1С</span><div class="price"><strong>540 000</strong><span>₽ от</span></div><p>Заявка с сайта автоматически становится сделкой в CRM и заказом в 1С. Ноль ручного переноса данных между системами.</p><a class="btn btn--cta btn--block" href="#audit">Рассчитать пакет</a></article>
   </div>
 </section>
 <section class="section section--white">
@@ -305,7 +314,7 @@
       <table>
         <thead><tr><th>Работы</th><th>Первый запуск</th><th>Полная автоматизация</th><th>Под ключ с 1С</th></tr></thead>
         <tbody>
-          <tr><td>Аудит и ТЗ</td><td>Экспресс</td><td>Подробно</td><td>Подробно + стратегия</td></tr><tr><td>Воронки продаж</td><td>1</td><td>2-4</td><td>5+ и отраслевые сценарии</td></tr><tr><td>Автоматизация</td><td>Базовые задачи</td><td>Роботы и уведомления</td><td>Сложные бизнес-процессы</td></tr><tr><td>Интеграции</td><td>Формы сайта</td><td>Телефония и мессенджеры</td><td>1С, сайт, аналитика</td></tr><tr><td>Обучение</td><td>1 тренинг</td><td>2 тренинга</td><td>Программа + база знаний</td></tr>
+          <tr><td>Аудит и ТЗ</td><td>Экспресс</td><td>Подробно</td><td>Подробно + стратегия</td></tr><tr><td>Воронки продаж</td><td>1</td><td>2-4</td><td>5+ и отраслевые сценарии</td></tr><tr><td>Автоматизация</td><td>Базовые задачи</td><td>Роботы и уведомления</td><td>Сложные бизнес-процессы</td></tr><tr><td>Интеграции</td><td>Формы сайта</td><td>Телефония и мессенджеры</td><td>1С, сайт, аналитика</td></tr><tr><td>Обучение</td><td>1 тренинг</td><td>2 тренинга</td><td>Программа + база знаний</td></tr><tr><td>Результат для руководителя</td><td>Все заявки в одном месте</td><td>Управление отделом через дашборд</td><td>Единый контур CRM + 1С + сайт</td></tr><tr><td>Кому подходит</td><td>Стартовый запуск</td><td>Активный рост</td><td>Сложная инфраструктура</td></tr>
         </tbody>
       </table>
     </div>
@@ -320,9 +329,13 @@
     </div>
     <div class="card calculator" data-calculator>
       <label>Пользователей CRM<input type="number" name="employees" min="1" max="300" value="12"></label>
+      <label>Количество воронок<input type="number" name="funnels" min="1" max="20" value="2"></label>
       <label>Интеграций<select name="integrations"><option value="0">Нет</option><option value="1" selected>1 интеграция</option><option value="2">2 интеграции</option><option value="3">3+ интеграции</option></select></label>
+      <label>Интеграция с 1С<select name="oneC"><option value="0">Нет</option><option value="1">Да</option></select></label>
+      <label>Обучение команды<select name="training"><option value="0">Не нужно</option><option value="1" selected>Нужно</option></select></label>
       <label>Уровень автоматизации<select name="automation"><option value="1">Базовый</option><option value="2" selected>Средний</option><option value="4">Сложный</option></select></label>
       <div class="calculator__result" data-calculator-result>Ориентир: 440 000 - 650 000 ₽. Точную смету подготовим после аудита процессов.</div>
+      <p class="form__note">Это ориентир. Точную смету подготовим на бесплатном аудите за 60 минут.</p>
     </div>
   </div>
 </section>
@@ -352,6 +365,10 @@
           <li>Бесплатный доступ к Битрикс24 на 2 недели</li>
         </ul>
         <p class="cta-social">За последний месяц экспресс-аудит прошли <b>12 компаний из России</b>.</p>
+        <div class="cta-next">
+          <b>Что произойдет после заявки:</b>
+          <span>1) Перезвоним в течение 30 минут в рабочее время. 2) За 60 минут разберем вашу ситуацию. 3) Дадим КП с ценами и сроками — еще на встрече. Аудит бесплатный и ни к чему не обязывает.</span>
+        </div>
       </div>
       <div class="cta-form">
         <h3>Записаться на экспресс-аудит</h3>
@@ -378,6 +395,7 @@
     <div class="form__status" data-form-status></div>
     <div class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Свяжемся в рабочее время и предложим ближайшее окно для аудита.</div>
   </form>
+        <p class="cta-safe">Без спама. Без навязчивых звонков. Только по делу.</p>
       </div>
     </div>
   </div>

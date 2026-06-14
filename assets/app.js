@@ -85,7 +85,10 @@
   const calculator = document.querySelector('[data-calculator]');
   if (calculator) {
     const employees = calculator.querySelector('[name="employees"]');
+    const funnels = calculator.querySelector('[name="funnels"]');
     const integrations = calculator.querySelector('[name="integrations"]');
+    const oneC = calculator.querySelector('[name="oneC"]');
+    const training = calculator.querySelector('[name="training"]');
     const automation = calculator.querySelector('[name="automation"]');
     const result = calculator.querySelector('[data-calculator-result]');
 
@@ -95,16 +98,19 @@
 
     function recalc() {
       const employeeCount = Number(employees.value || 0);
+      const funnelCount = Number(funnels.value || 1);
       const integrationCount = Number(integrations.value || 0);
+      const oneCEnabled = Number(oneC.value || 0);
+      const trainingEnabled = Number(training.value || 0);
       const automationLevel = Number(automation.value || 1);
       const base = 180000;
-      const total = base + employeeCount * 9000 + integrationCount * 85000 + automationLevel * 70000;
+      const total = base + employeeCount * 9000 + funnelCount * 45000 + integrationCount * 85000 + oneCEnabled * 140000 + trainingEnabled * 60000 + automationLevel * 70000;
       const min = Math.round(total * .85 / 1000) * 1000;
       const max = Math.round(total * 1.25 / 1000) * 1000;
-      result.textContent = `Ориентир: ${formatPrice(min)} - ${formatPrice(max)} ₽. Точную смету подготовим после аудита процессов.`;
+      result.textContent = `Ориентир: ${formatPrice(min)} - ${formatPrice(max)} ₽. Формула: ${employeeCount} пользователей + ${funnelCount} воронк(и) + ${integrationCount} интеграци(и)${oneCEnabled ? ' + 1С' : ''}${trainingEnabled ? ' + обучение команды' : ''}. Точную смету подготовим на аудите.`;
     }
 
-    [employees, integrations, automation].forEach((control) => {
+    [employees, funnels, integrations, oneC, training, automation].forEach((control) => {
       control.addEventListener('input', recalc);
       control.addEventListener('change', recalc);
     });
@@ -115,15 +121,20 @@
   if (quiz) {
     const result = quiz.querySelector('[data-quiz-result]');
     quiz.addEventListener('change', () => {
-      const answers = [...quiz.querySelectorAll('input:checked')].map((input) => input.value);
+      const checked = Object.fromEntries([...quiz.querySelectorAll('input:checked')].map((input) => [input.name, input.value]));
+      const answers = Object.values(checked);
       if (!answers.length) return;
       const score = answers.reduce((sum, value) => sum + Number(value), 0);
-      if (score <= 4) {
-        result.textContent = 'Подойдет экспресс-аудит и базовая настройка воронок. Начните с диагностики отдела продаж.';
+      if (checked.q1 === '1' || checked.q1 === '2') {
+        result.textContent = 'Для вашей ситуации подходит пакет «Первый запуск»: 1 воронка, базовая автоматизация и обучение команды. Стоимость от 180 000 ₽. На основе ваших ответов предлагаем встречу — покажем, как это выглядит в вашей отрасли.';
+      } else if (checked.q5 === '2') {
+        result.textContent = 'Рекомендуем «Реанимацию CRM»: за 2-3 недели найдем, почему портал не прижился, упростим воронку и перезапустим команду без хаоса. Стоимость от 90 000 ₽.';
+      } else if (checked.q3 === '2') {
+        result.textContent = 'Ваш случай — интеграция с 1С, сайтом или другими системами. Средний срок 4-6 недель, стоимость от 320 000 ₽. На встрече покажем схему обмена и риски до старта работ.';
       } else if (score <= 8) {
-        result.textContent = 'Рекомендуем проект внедрения Битрикс24 с автоматизациями, регламентами и обучением команды.';
+        result.textContent = 'Рекомендуем проект внедрения Битрикс24 с автоматизациями, регламентами и обучением команды. На аудите определим, какие этапы запускать первыми.';
       } else {
-        result.textContent = 'Нужна комплексная система продаж: интеграции с 1С/сайтом, сквозная аналитика и регулярное сопровождение.';
+        result.textContent = 'Нужна комплексная система продаж: интеграции, сквозная аналитика и регулярное сопровождение. Предлагаем 60-минутный разбор, чтобы оценить бюджет и последовательность запуска.';
       }
     });
   }
@@ -157,6 +168,21 @@
         buttons.forEach((item) => item.classList.toggle('is-active', item === button));
         cards.forEach((card) => {
           card.hidden = role !== 'all' && card.dataset.role !== role;
+        });
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-case-filter]').forEach((filter) => {
+    const buttons = [...filter.querySelectorAll('[data-case]')];
+    const cards = [...document.querySelectorAll('.case-card[data-case]')];
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.case;
+        buttons.forEach((item) => item.classList.toggle('is-active', item === button));
+        cards.forEach((card) => {
+          const values = (card.dataset.case || '').split(/\s+/);
+          card.hidden = value !== 'all' && !values.includes(value);
         });
       });
     });

@@ -878,6 +878,43 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid--5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.section-cta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.service-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--grad-cta);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.service-value-card--featured {
+  border-color: rgba(209, 37, 79, .2);
+  background: linear-gradient(180deg, #fff, #fff8f5);
+}
+
+.case-mini {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--c-navy);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .card {
   position: relative;
   overflow: hidden;
@@ -982,6 +1019,14 @@ h3 {
     linear-gradient(90deg, rgba(31, 58, 120, .04) 1px, transparent 1px),
     linear-gradient(rgba(31, 58, 120, .04) 1px, transparent 1px);
   background-size: 28px 28px;
+}
+
+.screenshot-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px -20px rgba(31, 58, 120, .35);
 }
 
 .screenshot-card small {
@@ -1271,6 +1316,27 @@ h3 {
 
 .cta-social b {
   color: #fff;
+}
+
+.cta-next {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: rgba(255, 255, 255, .84);
+  background: rgba(255, 255, 255, .08);
+}
+
+.cta-next b {
+  color: #fff;
+}
+
+.cta-safe {
+  margin: 0;
+  color: var(--c-muted);
+  font-size: 12px;
+  text-align: center;
 }
 
 .cta-form {
@@ -1827,6 +1893,13 @@ h3 {
   font-weight: 800;
 }
 
+.letter p {
+  margin: 0;
+  color: var(--c-muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .letters-hint {
   margin-top: 16px;
   text-align: center;
@@ -1883,6 +1956,14 @@ h3 {
   font-size: 14px;
 }
 
+.team-card__link {
+  display: inline-flex;
+  margin-top: 10px;
+  color: var(--c-navy);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .review-card {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1920,6 +2001,13 @@ h3 {
 .review-card p {
   margin-top: 12px;
   color: var(--c-text-soft);
+}
+
+.review-card__logo {
+  max-width: 96px;
+  max-height: 34px;
+  object-fit: contain;
+  margin: 8px 0;
 }
 
 .stars {
@@ -2491,6 +2579,7 @@ tr:last-child td {
   .hero__stats,
   .grid--3,
   .grid--4,
+  .grid--5,
   .segment-grid,
   .role-grid,
   .case-result,
@@ -2540,6 +2629,7 @@ tr:last-child td {
   .hero__stats,
   .grid--3,
   .grid--4,
+  .grid--5,
   .segment-grid,
   .role-grid,
   .case-result,
