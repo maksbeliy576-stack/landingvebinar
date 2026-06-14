@@ -139,6 +139,23 @@
     });
   }
 
+  document.querySelectorAll('[data-tariff-calculator]').forEach((calculator) => {
+    const users = calculator.querySelector('[name="users"]');
+    const need = calculator.querySelector('[name="need"]');
+    const result = calculator.querySelector('[data-tariff-result]');
+    function updateTariff() {
+      const userCount = Number(users.value);
+      const needValue = need.value;
+      let text = 'Рекомендация: начните с Базового тарифа, если команда до 5 пользователей и нужен простой запуск CRM.';
+      if (needValue === 'box') text = 'Рекомендация: рассмотрите коробочную версию, если данные должны храниться на вашем сервере или нужна глубокая кастомизация.';
+      else if (needValue === 'bi' || userCount > 50) text = 'Рекомендация: Профессиональный или Энтерпрайз — если нужны сложные роботы, отчеты, BI и большое количество пользователей.';
+      else if (needValue === 'marketing' || userCount > 5) text = 'Рекомендация: Стандартный тариф — если нужны CRM-маркетинг, расширенные коммуникации и команда до 50 пользователей.';
+      result.textContent = `${text} Перед покупкой проверим актуальные цены и скидки партнера.`;
+    }
+    [users, need].forEach((control) => control.addEventListener('change', updateTariff));
+    updateTariff();
+  });
+
   document.querySelectorAll('.stages').forEach((stages) => {
     const tabs = [...stages.querySelectorAll('.stage-tab')];
     const panels = [...stages.querySelectorAll('.stage-panel')];

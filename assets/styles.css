@@ -988,6 +988,30 @@ h3 {
   color: var(--c-text-soft);
 }
 
+.not-fit {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid rgba(209, 37, 79, .18);
+  border-radius: var(--radius-lg);
+  background: #fff7f8;
+}
+
+.not-fit h3 {
+  color: var(--c-accent);
+}
+
+.not-fit ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.not-fit li {
+  color: var(--c-text-soft);
+  list-style: disc;
+  margin-left: 20px;
+}
+
 .screenshot-card {
   overflow: hidden;
   border: 1px solid var(--c-line);
@@ -1973,6 +1997,10 @@ h3 {
   border-radius: var(--radius-lg);
   background: #fff;
   box-shadow: var(--shadow-card);
+}
+
+.review-card--wide {
+  max-width: 920px;
 }
 
 .review-card__avatar {
