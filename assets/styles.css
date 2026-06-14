@@ -236,6 +236,30 @@ h3 {
   background: var(--c-bg-soft);
 }
 
+.nav__dropdown--grouped {
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  min-width: min(1120px, calc(100vw - 48px));
+}
+
+.nav__group {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.nav__group h4 {
+  margin: 0 0 6px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: var(--c-navy);
+  background: rgba(31, 58, 120, .08);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
 .nav__dropdown b {
   color: var(--c-text);
   font-size: 14px;
@@ -2303,11 +2327,22 @@ tr:last-child td {
     position: static;
     grid-template-columns: 1fr;
     min-width: 0;
+    max-height: none;
+    overflow: visible;
+    display: none;
     padding: 8px;
     box-shadow: none;
     opacity: 1;
     visibility: visible;
     transform: none;
+  }
+
+  .nav__item.is-open .nav__dropdown {
+    display: grid;
+  }
+
+  .nav__dropdown--grouped {
+    grid-template-columns: 1fr;
   }
 
   .hero {

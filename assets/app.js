@@ -10,7 +10,18 @@
     });
 
     nav.addEventListener('click', (event) => {
-      if (event.target.closest('a')) {
+      const link = event.target.closest('a');
+      const item = event.target.closest('.nav__item');
+      if (link?.classList.contains('nav__link') && item?.querySelector('.nav__dropdown') && window.matchMedia('(max-width: 900px)').matches) {
+        event.preventDefault();
+        const wasOpen = item.classList.contains('is-open');
+        nav.querySelectorAll('.nav__item.is-open').forEach((openItem) => {
+          if (openItem !== item) openItem.classList.remove('is-open');
+        });
+        item.classList.toggle('is-open', !wasOpen);
+        return;
+      }
+      if (link) {
         body.classList.remove('menu-open');
         menuToggle.setAttribute('aria-expanded', 'false');
       }
@@ -34,8 +45,8 @@
       const name = form.querySelector('[name="name"]')?.value?.trim();
       if (status) {
         status.textContent = name
-          ? `${name}, заявка подготовлена. Подключите вебхук Битрикс24, чтобы отправлять ее в CRM.`
-          : 'Заявка подготовлена. Подключите вебхук Битрикс24, чтобы отправлять ее в CRM.';
+          ? `${name}, заявка подготовлена. Мы свяжемся с вами и согласуем время экспресс-аудита.`
+          : 'Заявка подготовлена. Мы свяжемся с вами и согласуем время экспресс-аудита.';
       }
       form.reset();
     });

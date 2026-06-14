@@ -910,9 +910,51 @@ function navDropdown(items) {
   </div>`;
 }
 
+function navServiceItem(slug) {
+  const service = servicePages.find((item) => item.slug === slug);
+  if (!service) throw new Error(`Unknown service slug in navigation: ${slug}`);
+  return { href: servicePath(service), title: service.name, caption: service.short };
+}
+
+function navGroupedDropdown(groups) {
+  return `<div class="nav__dropdown nav__dropdown--grouped">${groups.map((group) => `
+    <section class="nav__group">
+      <h4>${escapeHtml(group.title)}</h4>
+      ${group.items.map((item) => `
+        <a href="${item.href}">
+          <b>${escapeHtml(item.title)}</b>
+          <span>${escapeHtml(item.caption)}</span>
+        </a>`).join('')}
+    </section>`).join('')}
+  </div>`;
+}
+
 function header() {
-  const topServices = servicePages
-    .map((service) => ({ href: servicePath(service), title: service.name, caption: service.short }));
+  const serviceGroups = [
+    {
+      title: 'Аудит и стратегия',
+      items: ['audit-otdela-prodazh', 'strategiya-prodazh'].map(navServiceItem),
+    },
+    {
+      title: 'Внедрение',
+      items: ['vnedrenie-bitrix24', 'sistema-prodazh-bitrix24', 'bitrix24-dlya-malogo-biznesa', 'reanimaciya-crm', 'razrabotka-korobki-bitrix24'].map(navServiceItem),
+    },
+    {
+      title: 'Интеграции',
+      items: ['integraciya-1s-bitrix24', 'integraciya-sayt-1s-bitrix24', 'integraciya-telefonii-bitrix24', 'integraciya-messengerov-bitrix24', 'migraciya-v-bitrix24', 'integraciya-marketplejsy-bitrix24'].map(navServiceItem),
+    },
+    {
+      title: 'Поддержка и развитие',
+      items: ['tekhnicheskaya-podderzhka-bitrix24', 'soprovozhdenie-crm', 'crm-marketing-bitrix24', 'hr-avtomatizaciya-bitrix24'].map(navServiceItem),
+    },
+    {
+      title: 'Аналитика и регламенты',
+      items: ['skvoznaya-analitika-bitrix24', 'skripty-regulamenty-prodazh', 'dashbordy-bitrix24'].map(navServiceItem)
+        .concat([{ href: '/ceny/', title: 'Стоимость внедрения', caption: 'пакеты, калькулятор и примеры смет' }]),
+    },
+  ];
+  const licenseItems = ['licenzii-bitrix24', 'tarify-bitrix24'].map(navServiceItem);
+  const trainingItems = ['obuchenie-bitrix24', 'trening-po-prodazham-crm'].map(navServiceItem);
 
   return `<a class="skip-link" href="#content">Перейти к содержанию</a>
 <header class="header">
@@ -923,15 +965,22 @@ function header() {
     <nav class="nav" data-nav aria-label="Основное меню">
       <div class="nav__item">
         <a class="nav__link" href="/uslugi/">Услуги</a>
-        ${navDropdown(topServices)}
+        ${navGroupedDropdown(serviceGroups)}
+      </div>
+      <div class="nav__item">
+        <a class="nav__link" href="/uslugi/licenzii-bitrix24/">Лицензии</a>
+        ${navDropdown(licenseItems)}
       </div>
       <div class="nav__item">
         <a class="nav__link" href="/resheniya/">Решения</a>
         ${navDropdown(industries.map((industry) => ({ href: industryPath(industry), title: industry.name, caption: industry.keywords[0] })))}
       </div>
-      <a class="nav__link" href="/kejsy/">Кейсы</a>
-      <a class="nav__link" href="/ceny/">Цены</a>
+      <div class="nav__item">
+        <a class="nav__link" href="/uslugi/obuchenie-bitrix24/">Обучение</a>
+        ${navDropdown(trainingItems)}
+      </div>
       <a class="nav__link" href="/blog/">Блог</a>
+      <a class="nav__link" href="/kejsy/">Кейсы</a>
       <div class="nav__item">
         <a class="nav__link" href="/o-kompanii/">О компании</a>
         ${navDropdown([
