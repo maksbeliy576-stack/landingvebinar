@@ -222,11 +222,24 @@
           <span class="eyebrow eyebrow--white">Лид-магнит</span>
           <h2>Обсудить Битрикс24 для отрасли: Оптовая торговля</h2>
           <p>Покажем, какие процессы стоит автоматизировать в первую очередь и какой бюджет потребуется.</p>
+          <ul class="cta-points">
+            <li>короткий аудит текущей схемы продаж;</li>
+            <li>список узких мест и потерь в воронке;</li>
+            <li>рекомендацию по этапам внедрения;</li>
+            <li>ориентир по бюджету и срокам запуска.</li>
+          </ul>
         </div>
         <form class="form" data-form data-source="audit">
     <input type="hidden" name="source" value="audit">
     <input name="name" autocomplete="name" placeholder="Ваше имя" required>
     <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+    <select name="scenario" aria-label="Что нужно обсудить">
+      <option value="audit">Нужен аудит CRM / отдела продаж</option>
+      <option value="implementation">Нужно внедрение Битрикс24</option>
+      <option value="rescue">Нужно спасти текущий Битрикс24</option>
+      <option value="integration">Нужна интеграция с 1С / сайтом</option>
+      <option value="license">Нужно купить или подобрать тариф</option>
+    </select>
     <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
     <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
     <div class="form__status" data-form-status></div>
@@ -314,6 +327,13 @@
     <input type="hidden" name="source" value="exit-modal">
     <input name="name" autocomplete="name" placeholder="Ваше имя" required>
     <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+    <select name="scenario" aria-label="Что нужно обсудить">
+      <option value="audit">Нужен аудит CRM / отдела продаж</option>
+      <option value="implementation">Нужно внедрение Битрикс24</option>
+      <option value="rescue">Нужно спасти текущий Битрикс24</option>
+      <option value="integration">Нужна интеграция с 1С / сайтом</option>
+      <option value="license">Нужно купить или подобрать тариф</option>
+    </select>
     <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
     <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
     <div class="form__status" data-form-status></div>

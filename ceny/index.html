@@ -188,6 +188,18 @@
 <section class="section section--white">
   <div class="container">
     <div class="section__head">
+      <span class="eyebrow">От чего зависит стоимость</span>
+      <h2>Считаем бюджет по типу задачи, а не по абстрактному “внедрению CRM”</h2>
+      <p class="section__sub">На аудите определяем, какой сценарий у вас: базовый запуск, интеграция с 1С, реанимация текущей CRM или обучение команды.</p>
+    </div>
+    <div class="grid grid--4">
+      <article class="card"><span class="eyebrow">от 180 000 ₽</span><h3>Базовый запуск CRM</h3><p>1-2 воронки, поля, источники лидов, базовые роботы и обучение менеджеров.</p><a class="btn btn--ghost" href="#audit">Уточнить смету</a></article><article class="card"><span class="eyebrow">от 320 000 ₽</span><h3>Внедрение с 1С</h3><p>CRM, обмен заказами/счетами/контрагентами, тестирование и контроль ошибок.</p><a class="btn btn--ghost" href="#audit">Уточнить смету</a></article><article class="card"><span class="eyebrow">от 90 000 ₽</span><h3>Реанимация Битрикс24</h3><p>Аудит портала, чистка воронок, быстрые настройки и перезапуск команды.</p><a class="btn btn--ghost" href="#audit">Уточнить смету</a></article><article class="card"><span class="eyebrow">от 60 000 ₽</span><h3>Обучение и регламенты</h3><p>Тренинг по ролям, инструкции, чек-листы и стандарты ведения сделок.</p><a class="btn btn--ghost" href="#audit">Уточнить смету</a></article>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section__head">
       <span class="eyebrow">Что входит</span>
       <h2>Сравнение пакетов</h2>
     </div>
@@ -216,6 +228,17 @@
     </div>
   </div>
 </section>
+<section class="section section--white">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Примеры смет</span>
+      <h2>Как может выглядеть расчет для разных компаний</h2>
+    </div>
+    <div class="grid grid--3">
+      <article class="card"><h3>Оптовая торговля, 8 менеджеров</h3><div class="price"><strong>260 000-380 000 ₽</strong></div><p>CRM, повторные продажи, дебиторка, телефония, обучение РОПа и менеджеров.</p></article><article class="card"><h3>Производство, 15 пользователей</h3><div class="price"><strong>420 000-650 000 ₽</strong></div><p>Воронки по типам сделок, КП, интеграция с 1С, отчеты и регламенты.</p></article><article class="card"><h3>CRM куплена, но не используется</h3><div class="price"><strong>90 000-180 000 ₽</strong></div><p>Аудит, чистка портала, новая воронка, быстрые роботы и перезапуск команды.</p></article>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container">
     <div class="cta-band" id="audit">
@@ -224,11 +247,24 @@
           <span class="eyebrow eyebrow--white">Лид-магнит</span>
           <h2>Получить точный расчет стоимости</h2>
           <p>Проведем диагностику процессов и подготовим смету с этапами, сроками и приоритетами запуска.</p>
+          <ul class="cta-points">
+            <li>короткий аудит текущей схемы продаж;</li>
+            <li>список узких мест и потерь в воронке;</li>
+            <li>рекомендацию по этапам внедрения;</li>
+            <li>ориентир по бюджету и срокам запуска.</li>
+          </ul>
         </div>
         <form class="form" data-form data-source="audit">
     <input type="hidden" name="source" value="audit">
     <input name="name" autocomplete="name" placeholder="Ваше имя" required>
     <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+    <select name="scenario" aria-label="Что нужно обсудить">
+      <option value="audit">Нужен аудит CRM / отдела продаж</option>
+      <option value="implementation">Нужно внедрение Битрикс24</option>
+      <option value="rescue">Нужно спасти текущий Битрикс24</option>
+      <option value="integration">Нужна интеграция с 1С / сайтом</option>
+      <option value="license">Нужно купить или подобрать тариф</option>
+    </select>
     <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
     <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
     <div class="form__status" data-form-status></div>
@@ -316,6 +352,13 @@
     <input type="hidden" name="source" value="exit-modal">
     <input name="name" autocomplete="name" placeholder="Ваше имя" required>
     <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+    <select name="scenario" aria-label="Что нужно обсудить">
+      <option value="audit">Нужен аудит CRM / отдела продаж</option>
+      <option value="implementation">Нужно внедрение Битрикс24</option>
+      <option value="rescue">Нужно спасти текущий Битрикс24</option>
+      <option value="integration">Нужна интеграция с 1С / сайтом</option>
+      <option value="license">Нужно купить или подобрать тариф</option>
+    </select>
     <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
     <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
     <div class="form__status" data-form-status></div>
