@@ -836,6 +836,142 @@ function heroStats() {
   </div>`;
 }
 
+function videoBlock({ title, text, bullets = [], badge = 'Видео от эксперта' }) {
+  return `<aside class="video-card">
+    <div class="video-frame" aria-label="${escapeHtml(title)}">
+      <div class="video-frame__top">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="video-frame__body">
+        <button class="play-button" type="button" aria-label="Смотреть видео">▶</button>
+        <div>
+          <b>${escapeHtml(title)}</b>
+          <small>Горизонтальное видео 16:9</small>
+        </div>
+      </div>
+    </div>
+    <div class="video-card__content">
+      <span class="eyebrow">${escapeHtml(badge)}</span>
+      <h3>${escapeHtml(title)}</h3>
+      <p>${escapeHtml(text)}</p>
+      ${bullets.length ? `<ul class="video-card__list">${bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+    </div>
+  </aside>`;
+}
+
+function pageHeroSection({ crumbs, eyebrow, h1, lead, primary = ['Получить консультацию', '#audit'], secondary, videoTitle, videoText, videoBullets = [], stats = '' }) {
+  return `<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      ${crumbs ? breadcrumbs(crumbs) : ''}
+      <span class="eyebrow">${escapeHtml(eyebrow)}</span>
+      <h1>${escapeHtml(h1)}</h1>
+      <p class="page-hero__lead">${escapeHtml(lead)}</p>
+      <div class="hero__actions">
+        <a class="btn btn--cta btn--lg" href="${primary[1]}">${escapeHtml(primary[0])}</a>
+        ${secondary ? `<a class="btn btn--ghost btn--lg" href="${secondary[1]}">${escapeHtml(secondary[0])}</a>` : ''}
+      </div>
+      ${stats}
+    </div>
+    ${videoBlock({
+      title: videoTitle || h1,
+      text: videoText || 'В этом видео эксперт dm-marketing объясняет, какие задачи решает страница, кому подходит решение и с чего начать проект.',
+      bullets: videoBullets,
+    })}
+  </div>
+</section>`;
+}
+
+function screenshotMockup(title, items = []) {
+  return `<div class="screenshot-card">
+    <div class="screenshot-card__bar"><span></span><span></span><span></span></div>
+    <div class="screenshot-card__body">
+      <div>
+        <small>Место для скриншота</small>
+        <h3>${escapeHtml(title)}</h3>
+      </div>
+      <div class="screenshot-lines">
+        ${(items.length ? items : ['Воронка сделок', 'Карточка клиента', 'Отчет руководителя']).map((item, index) => `<span style="--w:${82 - index * 12}%">${escapeHtml(item)}</span>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function iconFeatureGrid(items) {
+  return `<div class="feature-grid">${items.map((item, index) => `
+    <article class="feature-card">
+      <span class="feature-card__icon">${item.icon || String(index + 1).padStart(2, '0')}</span>
+      <div>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.text)}</p>
+      </div>
+    </article>`).join('')}
+  </div>`;
+}
+
+function serviceContent(service) {
+  const categoryContent = {
+    'Стратегия': {
+      pains: ['Нет единой картины, где теряются лиды и деньги', 'Воронка построена по привычке, а не по реальному циклу сделки', 'Руководителю сложно выбрать, что автоматизировать первым'],
+      includes: ['Интервью с руководителем и РОПом', 'Разбор воронок, ролей и KPI', 'Карта потерь лидов и ручной работы', 'Дорожная карта внедрения по приоритетам'],
+      steps: ['Собираем факты и текущие регламенты', 'Находим узкие места в продажах', 'Проектируем целевую схему CRM', 'Приоритизируем быстрые улучшения', 'Передаем документ и план запуска'],
+      outcomes: ['Понятный план действий', 'Список быстрых улучшений', 'Основа для ТЗ на внедрение'],
+      screens: ['Карта текущей воронки', 'Матрица проблем', 'Дорожная карта CRM'],
+    },
+    'Внедрение': {
+      pains: ['Битрикс24 есть, но команда продолжает работать в таблицах', 'Нет регламентов, автоматизаций и ответственности за этапы', 'Сделки зависают, а руководитель не видит прогноз'],
+      includes: ['Проектирование воронок и карточек CRM', 'Настройка роботов, задач и уведомлений', 'Регламенты и скрипты для команды', 'Обучение и сопровождение первого запуска'],
+      steps: ['Аудит процесса продаж', 'ТЗ и прототип будущей CRM', 'Настройка портала и прав доступа', 'Тест на реальных сделках', 'Обучение и запуск в работу'],
+      outcomes: ['CRM используется ежедневно', 'Меньше ручной рутины', 'Прозрачный контроль продаж'],
+      screens: ['Воронка продаж', 'Карточка сделки', 'Панель руководителя'],
+    },
+    'Интеграции': {
+      pains: ['Данные приходится переносить вручную между системами', 'Менеджеры не видят актуальные статусы, счета и остатки', 'Ошибки обмена обнаруживаются слишком поздно'],
+      includes: ['Аудит систем и справочников', 'Схема обмена и правила синхронизации', 'Настройка интеграции и журнал ошибок', 'Тестирование на реальных сценариях'],
+      steps: ['Описываем потоки данных', 'Согласуем справочники и статусы', 'Настраиваем обмен', 'Тестируем ошибки и дубли', 'Запускаем мониторинг интеграции'],
+      outcomes: ['Единые данные без дублей', 'Быстрее обработка заказов', 'Контроль ошибок обмена'],
+      screens: ['Схема обмена', 'Журнал синхронизации', 'Карточка заказа'],
+    },
+    'Сопровождение': {
+      pains: ['После запуска появляются новые задачи, но их некому быстро закрывать', 'Пользователи задают одни и те же вопросы', 'CRM перестает развиваться вместе с отделом продаж'],
+      includes: ['SLA и единый канал поддержки', 'Администрирование портала и прав', 'Ежемесячные доработки и отчеты', 'Обучение новых сотрудников'],
+      steps: ['Фиксируем backlog улучшений', 'Назначаем SLA и приоритеты', 'Выполняем доработки по пакету часов', 'Проводим мини-обучения', 'Отчитываемся по изменениям'],
+      outcomes: ['CRM не деградирует после запуска', 'Пользователи быстрее получают помощь', 'Система развивается по плану'],
+      screens: ['Backlog задач', 'SLA-панель', 'Отчет сопровождения'],
+    },
+    'Лицензии': {
+      pains: ['Непонятно, какой тариф нужен компании', 'Есть риск переплатить за лишние опции', 'Коробочная и облачная версии сравниваются без учета задач'],
+      includes: ['Расчет пользователей и ролей', 'Сравнение облака и коробки', 'Подбор тарифа с учетом роста', 'Оформление покупки и запуск портала'],
+      steps: ['Считаем пользователей', 'Выбираем облако или коробку', 'Согласуем тариф и скидку', 'Оформляем покупку', 'Помогаем с первым запуском'],
+      outcomes: ['Тариф без переплаты', 'Понятный план масштабирования', 'Помощь официального партнера'],
+      screens: ['Сравнение тарифов', 'Расчет пользователей', 'План перехода'],
+    },
+    'Обучение': {
+      pains: ['Сотрудники не понимают, зачем вести CRM', 'Каждый менеджер работает по-своему', 'Руководитель не получает качественные данные для контроля'],
+      includes: ['Программа под роли сотрудников', 'Практика на реальных сделках', 'Инструкции и записи занятий', 'Проверка усвоения и ответы на вопросы'],
+      steps: ['Согласуем роли и сценарии', 'Готовим учебные материалы', 'Проводим практический тренинг', 'Разбираем ошибки пользователей', 'Передаем записи и чек-листы'],
+      outcomes: ['Команда работает по единым правилам', 'Меньше сопротивления CRM', 'Руководитель получает качественные данные'],
+      screens: ['Учебная воронка', 'Чек-лист менеджера', 'База знаний'],
+    },
+    'Маркетинг и аналитика': {
+      pains: ['Непонятно, какие каналы реально приносят деньги', 'Повторные продажи зависят от ручных напоминаний', 'Руководитель не видит план-факт и качество воронки'],
+      includes: ['Сегменты, источники и события CRM', 'Автоматические коммуникации и отчеты', 'Дашборды для руководителя', 'Рекомендации по улучшению конверсии'],
+      steps: ['Определяем метрики', 'Собираем источники данных', 'Настраиваем отчеты и сценарии', 'Проверяем корректность цифр', 'Передаем регламент анализа'],
+      outcomes: ['Понятный ROI', 'Автоматические касания', 'Управленческие решения на данных'],
+      screens: ['ROI-дашборд', 'Сегменты клиентов', 'Отчет по каналам'],
+    },
+  };
+  const base = categoryContent[service.category] || categoryContent['Внедрение'];
+  return {
+    pains: base.pains.map((item) => item.replace('Битрикс24', service.name.includes('Битрикс24') ? 'Битрикс24' : 'CRM')),
+    includes: base.includes,
+    steps: base.steps,
+    outcomes: base.outcomes,
+    screens: base.screens,
+    promise: `${service.name}: показываем бизнес-смысл, настраиваем понятный процесс и оставляем команде рабочие инструкции, а не абстрактную CRM.`,
+  };
+}
+
 function homePage() {
   const pathname = '/';
   const topServices = ['vnedrenie-bitrix24', 'audit-otdela-prodazh', 'integraciya-1s-bitrix24', 'licenzii-bitrix24', 'sistema-prodazh-bitrix24', 'reanimaciya-crm', 'tekhnicheskaya-podderzhka-bitrix24', 'obuchenie-bitrix24']
@@ -854,19 +990,11 @@ function homePage() {
       </div>
       ${heroStats()}
     </div>
-    <aside class="hero-card">
-      <div class="hero-card__inner">
-        <span class="eyebrow eyebrow--white">Экспресс-аудит за 60 минут</span>
-        <h2>Покажем, как будет выглядеть ваша система продаж в Битрикс24</h2>
-        <p>На встрече разберем текущие источники лидов, воронку, роли менеджеров и управленческие отчеты.</p>
-        <ul class="hero-card__list">
-          <li>Карта потерь заявок и повторных продаж</li>
-          <li>Приоритеты автоматизации и интеграций</li>
-          <li>Оценка бюджета, сроков и состава проекта</li>
-        </ul>
-        <a class="btn btn--cta btn--block" href="/kontakty/#audit">Записаться на аудит</a>
-      </div>
-    </aside>
+    ${videoBlock({
+      title: 'Как мы строим систему продаж на Битрикс24',
+      text: 'В видео расскажу, почему внедрение начинается не с кнопок в CRM, а с воронки, регламентов и контроля руководителя.',
+      bullets: ['Где чаще всего теряются заявки', 'Какие блоки Битрикс24 нужны торгово-производственной компании', 'Как проходит бесплатный аудит'],
+    })}
   </div>
 </section>
 
@@ -976,14 +1104,17 @@ function servicesOverviewPage() {
     acc[service.category].push(service);
     return acc;
   }, {});
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">22 услуги</span>
-    <h1>Услуги по внедрению Битрикс24 и построению системы продаж</h1>
-    <p class="page-hero__lead">От бесплатного аудита и покупки лицензии до интеграций, обучения, сопровождения и рекомендованных услуг для роста LTV.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: '22 услуги',
+    h1: 'Услуги по внедрению Битрикс24 и построению системы продаж',
+    lead: 'От бесплатного аудита и покупки лицензии до интеграций, обучения, сопровождения и рекомендованных услуг для роста LTV.',
+    primary: ['Подобрать услугу', '#audit'],
+    secondary: ['Смотреть цены', '/ceny/'],
+    videoTitle: 'Как выбрать нужную услугу Битрикс24',
+    videoText: 'Расскажу, когда нужен аудит, когда полноценное внедрение, а когда достаточно интеграции, обучения или сопровождения.',
+    videoBullets: ['Маршрут от аудита до запуска', 'Как не переплатить за лишний объем', 'Какие страницы услуг смотреть в первую очередь'],
+  })}
 ${Object.entries(grouped).map(([category, services]) => `
 <section class="section section--tight">
   <div class="container">
@@ -1008,6 +1139,7 @@ ${ctaBlock('Подберем услугу под вашу задачу', 'Рас
 function servicePage(service) {
   const pathname = servicePath(service);
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Услуги', path: '/uslugi/' }, { name: service.name, path: pathname }];
+  const serviceCopy = serviceContent(service);
   const related = servicePages
     .filter((item) => item.slug !== service.slug && item.category === service.category)
     .concat(servicePages.filter((item) => item.slug !== service.slug && item.category !== service.category))
@@ -1018,14 +1150,6 @@ function servicePage(service) {
     ['Можно ли начать с небольшого объема?', 'Да. Мы выделяем быстрый первый этап, который дает измеримый результат и снижает риски дальнейшего внедрения.'],
     ['Сколько стоит проект?', service.price],
     ['Вы передаете инструкции после проекта?', 'Да. Подготавливаем регламенты, чек-листы и проводим обучение пользователей и руководителя.'],
-  ];
-  const includeItems = [
-    'Аудит текущих процессов, источников лидов и CRM-настроек',
-    'Проектирование целевой схемы: воронки, роли, статусы, KPI',
-    'Настройка Битрикс24, автоматизаций, прав доступа и уведомлений',
-    'Интеграции с ключевыми системами и тестирование сценариев',
-    'Обучение команды, инструкции и контроль первого запуска',
-    'Рекомендации по развитию системы продаж после внедрения',
   ];
   const content = `<section class="page-hero">
   <div class="container page-hero__grid">
@@ -1039,11 +1163,11 @@ function servicePage(service) {
         <a class="btn btn--ghost btn--lg" href="/ceny/">Посмотреть цены</a>
       </div>
     </div>
-    <aside class="mini-card">
-      <h3>Что получит клиент</h3>
-      <p>Понятный план работ, настроенную CRM, обученную команду и контроль результата в цифрах.</p>
-      <div class="tag-row">${service.seo.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
-    </aside>
+    ${videoBlock({
+      title: `Видео про услугу: ${service.name}`,
+      text: `В этом ролике объясняем, кому нужна услуга «${service.name}», какие проблемы она закрывает и какой результат вы получите после запуска.`,
+      bullets: [service.short, service.price, `Ключ: ${service.seo[0]}`],
+    })}
   </div>
 </section>
 
@@ -1051,22 +1175,26 @@ function servicePage(service) {
   <div class="container">
     <div class="section__head">
       <span class="eyebrow">Узнаете ситуацию?</span>
-      <h2>Типовые проблемы, которые решает услуга</h2>
+      <h2>${escapeHtml(service.name)}: какие проблемы закрываем в первую очередь</h2>
+      <p class="section__sub">${escapeHtml(serviceCopy.promise)}</p>
     </div>
-    <div class="grid grid--3">
-      ${['Заявки и задачи теряются между менеджерами и каналами', 'Руководитель не видит реальную конверсию и прогноз продаж', 'Сотрудники работают по-разному и обходят CRM', 'Данные приходится переносить вручную между системами', 'Нет понятных регламентов и ответственности за этапы'].map((pain) => `<article class="card pain-card"><h3>${pain}</h3><p>Фиксируем проблему в процессе и закрываем ее настройками, регламентом или интеграцией.</p></article>`).join('')}
-    </div>
+    ${iconFeatureGrid(serviceCopy.pains.map((pain, index) => ({
+      icon: ['!', '↯', '?'][index] || '!',
+      title: pain,
+      text: 'Разбираем причину, показываем влияние на продажи и закрываем ее конкретной настройкой, регламентом или интеграцией.',
+    })))}
   </div>
 </section>
 
 <section class="section">
-  <div class="container grid grid--2">
+  <div class="container split-panel">
     <div>
       <span class="eyebrow">Что включает услуга</span>
-      <h2>Конкретный перечень работ</h2>
-      <p class="section__sub">Состав проекта адаптируем под вашу отрасль, количество пользователей и текущий уровень зрелости CRM.</p>
+      <h2>Что именно делаем по направлению «${escapeHtml(service.name)}»</h2>
+      <p class="section__sub">Состав проекта адаптируем под вашу отрасль, количество пользователей и текущий уровень зрелости CRM. Ниже - не абстрактный список, а рабочие артефакты проекта.</p>
+      <ul class="check-list">${serviceCopy.includes.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
     </div>
-    <ul class="check-list">${includeItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+    ${screenshotMockup(`${service.name}: пример экрана`, serviceCopy.screens)}
   </div>
 </section>
 
@@ -1074,10 +1202,11 @@ function servicePage(service) {
   <div class="container grid grid--2">
     <div>
       <span class="eyebrow">Этапы работы</span>
-      <h2>Как проходит проект</h2>
+      <h2>Пошаговый сценарий: от диагностики до результата</h2>
+      <p class="section__sub">Каждый этап завершается понятным результатом: документом, настройкой, обучением или проверенным сценарием в CRM.</p>
     </div>
     <div class="steps">
-      ${['Бриф и экспресс-аудит', 'Техническое задание и дорожная карта', 'Настройка портала и интеграций', 'Тестирование на реальных сценариях', 'Обучение и запуск', 'Сопровождение улучшений'].map((step) => `<div class="step"><div><h3>${step}</h3><p>Этап завершается понятным артефактом: документом, настройкой, инструкцией или отчетом.</p></div></div>`).join('')}
+      ${serviceCopy.steps.map((step) => `<div class="step"><div><h3>${escapeHtml(step)}</h3><p>Показываем промежуточный результат и согласуем следующий шаг, чтобы проект не уходил в хаотичные доработки.</p></div></div>`).join('')}
     </div>
   </div>
 </section>
@@ -1086,18 +1215,18 @@ function servicePage(service) {
   <div class="container grid grid--3">
     <article class="card">
       <span class="card__icon">₽</span>
-      <h3>Стоимость</h3>
+      <h3>Бюджет и формат</h3>
       <p>${escapeHtml(service.price)}</p>
     </article>
     <article class="card">
-      <span class="card__icon">%</span>
-      <h3>Результат в цифрах</h3>
-      <p>После внедрения проще контролировать конверсию, скорость реакции, план-факт и повторные продажи.</p>
+      <span class="card__icon">↗</span>
+      <h3>Что изменится после запуска</h3>
+      <p>${escapeHtml(serviceCopy.outcomes.join(', '))}. Руководитель видит процесс, а команда работает по единому сценарию.</p>
     </article>
     <article class="card">
       <span class="card__icon">✓</span>
-      <h3>Мини-кейс</h3>
-      <p>${escapeHtml(cases[0].results.join(', '))} — результат проекта для производственной компании.</p>
+      <h3>Релевантный пример</h3>
+      <p>${escapeHtml(cases[0].results.join(', '))} - результат проекта, где CRM стала управляемой системой продаж.</p>
       <a class="btn btn--ghost" href="${casePath(cases[0])}">Смотреть кейс</a>
     </article>
   </div>
@@ -1124,17 +1253,110 @@ ${faqBlock(faq)}
   });
 }
 
+function licenseServicePage(service) {
+  const pathname = servicePath(service);
+  const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Услуги', path: '/uslugi/' }, { name: service.name, path: pathname }];
+  const cloudTariffs = [
+    ['Бесплатный', '0 ₽', 'неограниченно', ['CRM, задачи и диск для старта', '5 ГБ места', 'Базовые коммуникации']],
+    ['Базовый', '1 990 ₽/мес', 'до 5 пользователей', ['CRM для небольшой команды', '24 ГБ места', 'Совместная работа и задачи']],
+    ['Стандартный', '5 590 ₽/мес', 'до 50 пользователей', ['CRM-маркетинг', '100 ГБ места', 'Расширенные коммуникации']],
+    ['Профессиональный', '11 190 ₽/мес', 'до 100 пользователей', ['Автоматизация продаж', '1 024 ГБ места', 'Сквозные процессы и отчеты']],
+    ['Энтерпрайз 250', '33 990 ₽/мес', 'до 250 пользователей', ['Масштабирование отделов', '3 ТБ места', 'Расширенное администрирование']],
+    ['Энтерпрайз 500', '59 990 ₽/мес', 'до 500 пользователей', ['Для распределенных команд', '5 ТБ места', 'Повышенные лимиты']],
+    ['Энтерпрайз 1000', '99 990 ₽/мес', 'до 1000 пользователей', ['Корпоративное внедрение', '10 ТБ места', 'Приоритетные сценарии']],
+    ['Энтерпрайз 2000', '199 990 ₽/мес', 'до 2000 пользователей', ['Крупный бизнес', '20 ТБ места', 'Максимальное масштабирование']],
+  ];
+  const boxTariffs = [
+    ['Интернет-магазин + CRM', '99 000 ₽', '12 пользователей', ['Коробочная CRM и магазин', 'Размещение на вашем сервере', 'Доступ к коду и кастомизация']],
+    ['Корпоративный портал', '159 000 ₽', '50 пользователей', ['Портал компании', 'CRM, задачи, диск', 'Гибкие права доступа']],
+    ['Энтерпрайз', '399 000 ₽', '250 пользователей', ['Высокая нагрузка', 'Многодепартаментность', 'Расширенная безопасность']],
+    ['Энтерпрайз 500+', 'по запросу', '500+ пользователей', ['Индивидуальная конфигурация', 'Кластеризация', 'Проектирование инфраструктуры']],
+  ];
+  const faq = [
+    ['Что выбрать: облако или коробку?', 'Облако быстрее запускать и проще поддерживать. Коробка нужна, когда важны локальная инфраструктура, глубокая кастомизация и особые требования безопасности.'],
+    ['Цены окончательные?', 'Цены указаны как ориентир для витрины тарифов. Перед покупкой мы проверяем актуальность, акции и партнерские скидки.'],
+    ['Можно ли купить тариф через партнера?', 'Да. Нажмите «Купить тариф», оставьте контакты, и мы подготовим счет, поможем выбрать тариф и запустить портал.'],
+    ['Помогаете ли вы с переходом между тарифами?', 'Да. Рассчитываем пользователей, место, ограничения и план перехода без потери данных.'],
+  ];
+  const tariffCard = ([name, price, users, features], type) => `<article class="card tariff-card">
+    <span class="eyebrow">${type}</span>
+    <h3>${escapeHtml(name)}</h3>
+    <div class="price"><strong>${escapeHtml(price)}</strong></div>
+    <div class="tariff-card__meta">${escapeHtml(users)}</div>
+    <ul>${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join('')}</ul>
+    <a class="btn btn--cta btn--block" href="/kontakty/#audit">Купить тариф</a>
+  </article>`;
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Лицензии Битрикс24',
+    h1: service.h1,
+    lead: `${service.lead} На этой странице собраны облачные и коробочные версии Битрикс24 с ценами, назначением и кнопками покупки через партнера.`,
+    primary: ['Подобрать тариф', '#audit'],
+    secondary: ['Сравнить цены', '#cloud'],
+    videoTitle: 'Как выбрать тариф Битрикс24 без переплаты',
+    videoText: 'В видео расскажу, когда достаточно облачного тарифа, когда нужна коробка и как рассчитать пользователей, место и ограничения.',
+    videoBullets: ['Облако против коробки', 'Скидки и покупка через партнера', 'Переход на старшие тарифы'],
+  })}
+<section class="section section--white" id="cloud">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Облачная версия</span>
+      <h2>Все облачные тарифы Битрикс24</h2>
+      <p class="section__sub">Подходят для быстрого запуска CRM без собственной серверной инфраструктуры. Мы помогаем выбрать тариф, купить лицензию и настроить портал.</p>
+    </div>
+    <div class="tariff-grid">${cloudTariffs.map((tariff) => tariffCard(tariff, 'Облако')).join('')}</div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Коробочная версия</span>
+      <h2>Коробочные редакции Битрикс24</h2>
+      <p class="section__sub">Коробка нужна для on-premise размещения, глубоких доработок, интеграций и особых требований безопасности.</p>
+    </div>
+    <div class="tariff-grid">${boxTariffs.map((tariff) => tariffCard(tariff, 'Коробка')).join('')}</div>
+  </div>
+</section>
+<section class="section section--white">
+  <div class="container split-panel">
+    <div>
+      <span class="eyebrow">Как выбрать</span>
+      <h2>Мы подбираем тариф под структуру компании, а не по принципу «самый дорогой»</h2>
+      <ul class="check-list">
+        <li>Считаем активных пользователей и роли: менеджеры, РОП, склад, бухгалтерия, руководители.</li>
+        <li>Проверяем, какие функции нужны сразу: CRM-маркетинг, бизнес-процессы, телефония, BI, права.</li>
+        <li>Оцениваем рост: сколько пользователей и данных появится через 6-12 месяцев.</li>
+        <li>Сравниваем стоимость облака, коробки и внедрения под вашу задачу.</li>
+      </ul>
+    </div>
+    ${screenshotMockup('Калькулятор подбора тарифа', ['Пользователи и роли', 'Нужные модули', 'Рекомендованный тариф'])}
+  </div>
+</section>
+${ctaBlock('Купить или подобрать лицензию Битрикс24', 'Оставьте заявку: проверим актуальные цены, акции и скидки партнера, подберем облачный или коробочный тариф и поможем с запуском.')}
+${faqBlock(faq)}`;
+  return layout({
+    title: service.title,
+    description: service.description,
+    pathname,
+    schema: [breadcrumbSchema(crumbs), serviceSchema(service), faqSchema(faq)],
+    content,
+  });
+}
+
 function industriesOverviewPage() {
   const pathname = '/resheniya/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Решения по отраслям', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Отраслевые решения</span>
-    <h1>Решения Битрикс24 по отраслям</h1>
-    <p class="page-hero__lead">Низкочастотные страницы с высокой конверсией: показываем боли конкретной отрасли и сценарии внедрения CRM.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Отраслевые решения',
+    h1: 'Решения Битрикс24 по отраслям',
+    lead: 'Низкочастотные страницы с высокой конверсией: показываем боли конкретной отрасли и сценарии внедрения CRM.',
+    primary: ['Подобрать отраслевое решение', '#audit'],
+    secondary: ['Смотреть кейсы', '/kejsy/'],
+    videoTitle: 'Как выбрать отраслевую конфигурацию Битрикс24',
+    videoText: 'Покажу, почему для производства, опта, строительства и сервиса нужны разные воронки, роли и отчеты.',
+    videoBullets: ['Отраслевые боли', 'Интеграции с 1С и сайтом', 'Как выглядит первый запуск'],
+  })}
 <section class="section">
   <div class="container">
     ${cardGrid(industries.map((industry) => ({ href: industryPath(industry), icon: 'B24', title: industry.name, text: industry.description, tags: industry.keywords })), 3)}
@@ -1168,10 +1390,11 @@ function industryPage(industry) {
       <p class="page-hero__lead">${escapeHtml(industry.description)}</p>
       <div class="hero__actions"><a class="btn btn--cta btn--lg" href="#audit">Получить отраслевой аудит</a></div>
     </div>
-    <aside class="mini-card">
-      <h3>Ключевые запросы</h3>
-      <div class="tag-row">${industry.keywords.map((keyword) => `<span class="tag">${escapeHtml(keyword)}</span>`).join('')}</div>
-    </aside>
+    ${videoBlock({
+      title: `Битрикс24 для отрасли: ${industry.name}`,
+      text: `Рассказываем, какие процессы важны для отрасли «${industry.name}», какие ошибки чаще всего мешают продажам и как CRM закрывает эти разрывы.`,
+      bullets: industry.keywords,
+    })}
   </div>
 </section>
 <section class="section section--white">
@@ -1226,14 +1449,17 @@ ${faqBlock(faq)}`;
 function casesOverviewPage() {
   const pathname = '/kejsy/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Кейсы', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Кейсы</span>
-    <h1>Кейсы внедрения Битрикс24 — реальные результаты клиентов</h1>
-    <p class="page-hero__lead">Примеры проектов для производственных, оптовых и строительных компаний: задачи, этапы работ и результаты в цифрах.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Кейсы',
+    h1: 'Кейсы внедрения Битрикс24 — реальные результаты клиентов',
+    lead: 'Примеры проектов для производственных, оптовых и строительных компаний: задачи, этапы работ и результаты в цифрах.',
+    primary: ['Разобрать ваш проект', '#audit'],
+    secondary: ['Смотреть цены', '/ceny/'],
+    videoTitle: 'Как читать кейсы внедрения Битрикс24',
+    videoText: 'В видео объясню, на какие цифры смотреть: конверсия, скорость реакции, ручная работа, повторные продажи и контроль руководителя.',
+    videoBullets: ['Задача клиента', 'Что сделали по этапам', 'Как измерили результат'],
+  })}
 <section class="section">
   <div class="container">
     <div class="grid grid--3">${cases.map((item) => `
@@ -1259,14 +1485,17 @@ ${ctaBlock('Хотите похожий результат?', 'Разберем 
 function casePage(item) {
   const pathname = casePath(item);
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Кейсы', path: '/kejsy/' }, { name: item.name, path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Кейс</span>
-    <h1>${escapeHtml(item.h1)}</h1>
-    <p class="page-hero__lead">${escapeHtml(item.description)}</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Кейс',
+    h1: item.h1,
+    lead: item.description,
+    primary: ['Хочу похожий результат', '#audit'],
+    secondary: ['Все кейсы', '/kejsy/'],
+    videoTitle: `Разбор кейса: ${item.name}`,
+    videoText: `В видео расскажем, какая была задача у клиента, какие настройки Битрикс24 дали результат и что можно повторить в вашей компании.`,
+    videoBullets: item.results,
+  })}
 <section class="section">
   <div class="container article">
     <h2>Задача клиента</h2>
@@ -1302,14 +1531,17 @@ function pricesPage() {
     ['Лицензия Битрикс24 входит в стоимость?', 'Лицензия оплачивается отдельно по официальным тарифам Битрикс24. Мы помогаем подобрать тариф и оформить скидку партнера.'],
     ['Как получить точную смету?', 'Оставьте заявку на аудит. После диагностики мы подготовим состав работ, сроки и бюджет.'],
   ];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Пакеты и калькулятор</span>
-    <h1>Стоимость внедрения Битрикс24 — пакеты и калькулятор цен</h1>
-    <p class="page-hero__lead">Прозрачные ориентиры для старта. Точная стоимость фиксируется после аудита процессов и интеграций.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Пакеты и калькулятор',
+    h1: 'Стоимость внедрения Битрикс24 — пакеты и калькулятор цен',
+    lead: 'Прозрачные ориентиры для старта. Точная стоимость фиксируется после аудита процессов и интеграций.',
+    primary: ['Рассчитать стоимость', '#audit'],
+    secondary: ['Калькулятор', '#calculator'],
+    videoTitle: 'Из чего складывается цена внедрения',
+    videoText: 'Рассказываю, почему бюджет зависит от воронок, пользователей, интеграций, обучения и уровня автоматизации.',
+    videoBullets: ['Пакеты Старт, Бизнес, Премиум', 'Что влияет на смету', 'Как получить точный расчет'],
+  })}
 <section class="section">
   <div class="container grid grid--3">
     ${[
@@ -1341,7 +1573,7 @@ function pricesPage() {
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section" id="calculator">
   <div class="container grid grid--2">
     <div>
       <span class="eyebrow">Калькулятор</span>
@@ -1370,19 +1602,23 @@ ${faqBlock(faq)}`;
 function blogOverviewPage() {
   const pathname = '/blog/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Блог', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Блог</span>
-    <h1>Блог о Битрикс24, CRM и системах продаж</h1>
-    <p class="page-hero__lead">Статьи для SEO-трафика и прогрева аудитории: тарифы, сравнения, ошибки внедрения, интеграции и оцифровка продаж.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Блог',
+    h1: 'Блог о Битрикс24, CRM и системах продаж',
+    lead: 'Статьи для SEO-трафика и прогрева аудитории: тарифы, сравнения, ошибки внедрения, интеграции и оцифровка продаж.',
+    primary: ['Получить аудит', '#audit'],
+    secondary: ['Услуги', '/uslugi/'],
+    videoTitle: 'Как использовать блог перед внедрением CRM',
+    videoText: 'Покажу, какие статьи помогают выбрать тариф, сравнить CRM, избежать ошибок и подготовить отдел продаж к запуску.',
+    videoBullets: ['Тарифы и сравнения', 'Ошибки внедрения', 'Интеграция 1С и CRM'],
+  })}
 <section class="section">
   <div class="container">
     ${cardGrid(blogPosts.map((post) => ({ href: blogPath(post), icon: '✎', title: post.h1, text: post.description, tags: post.keywords })), 3)}
   </div>
-</section>`;
+</section>
+${ctaBlock('Обсудить тему из блога на аудите', 'Если статья похожа на вашу ситуацию, разберем ее на примере вашей компании и покажем план действий.')}`;
   return layout({
     title: 'Блог о Битрикс24 и CRM — dm-marketing.pro',
     description: 'Практические статьи о Битрикс24, CRM, интеграции 1С, тарифах, ошибках внедрения и оцифровке отдела продаж.',
@@ -1395,14 +1631,17 @@ function blogOverviewPage() {
 function blogPostPage(post) {
   const pathname = blogPath(post);
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'Блог', path: '/blog/' }, { name: post.h1, path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Статья</span>
-    <h1>${escapeHtml(post.h1)}</h1>
-    <p class="page-hero__lead">${escapeHtml(post.description)}</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Статья',
+    h1: post.h1,
+    lead: post.description,
+    primary: ['Разобрать задачу', '#audit'],
+    secondary: ['Все статьи', '/blog/'],
+    videoTitle: `Видео по теме: ${post.h1}`,
+    videoText: 'Коротко объясняем главные выводы статьи и показываем, как применить их в реальном проекте внедрения Битрикс24.',
+    videoBullets: post.keywords,
+  })}
 <section class="section">
   <div class="container article">
     <p>Материал подготовлен для руководителей и владельцев компаний, которые хотят внедрить CRM осознанно: с понятными целями, этапами и метриками результата.</p>
@@ -1437,15 +1676,18 @@ ${ctaBlock('Разобрать вашу CRM-задачу', 'Покажем, ка
 function aboutPage() {
   const pathname = '/o-kompanii/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'О компании', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">О компании</span>
-    <h1>dm-marketing.pro — сертифицированный партнер Битрикс24</h1>
-    <p class="page-hero__lead">Мы помогаем компаниям перейти от хаотичных продаж к управляемой системе на базе Битрикс24.</p>
-    ${heroStats()}
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'О компании',
+    h1: 'dm-marketing.pro — сертифицированный партнер Битрикс24',
+    lead: 'Мы помогаем компаниям перейти от хаотичных продаж к управляемой системе на базе Битрикс24.',
+    primary: ['Познакомиться на аудите', '#audit'],
+    secondary: ['Команда', '/o-kompanii/komanda/'],
+    videoTitle: 'Кто мы и как внедряем Битрикс24',
+    videoText: 'Расскажем про подход dm-marketing: сначала продажи и методология, затем CRM, интеграции, обучение и сопровождение.',
+    videoBullets: ['Методология продаж', 'Команда проекта', 'Сопровождение после запуска'],
+    stats: heroStats(),
+  })}
 <section class="section section--white">
   <div class="container grid grid--2">
     <div class="card"><h2>Миссия</h2><p>Сделать продажи прозрачными, повторяемыми и управляемыми: от первого лида до повторной покупки.</p></div>
@@ -1475,14 +1717,17 @@ ${ctaBlock('Познакомиться на аудите', 'Расскажите
 function teamPage() {
   const pathname = '/o-kompanii/komanda/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'О компании', path: '/o-kompanii/' }, { name: 'Команда', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Команда</span>
-    <h1>Наша команда — эксперты по Битрикс24 и системам продаж</h1>
-    <p class="page-hero__lead">В проектах участвуют CRM-архитектор, аналитик продаж, интегратор, методолог обучения и менеджер сопровождения.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Команда',
+    h1: 'Наша команда — эксперты по Битрикс24 и системам продаж',
+    lead: 'В проектах участвуют CRM-архитектор, аналитик продаж, интегратор, методолог обучения и менеджер сопровождения.',
+    primary: ['Обсудить проект', '#audit'],
+    secondary: ['Сертификаты', '/o-kompanii/sertifikaty/'],
+    videoTitle: 'Какие специалисты нужны для внедрения',
+    videoText: 'Покажем, кто отвечает за аналитику, настройку CRM, интеграции, обучение и сопровождение после запуска.',
+    videoBullets: ['CRM-архитектор', 'Аналитик продаж', 'Интегратор и методолог'],
+  })}
 <section class="section">
   <div class="container grid grid--4">
     ${['CRM-архитектор', 'Бизнес-аналитик', 'Интегратор 1С', 'Методолог обучения', 'Специалист поддержки', 'Проектный менеджер', 'BI-аналитик', 'Маркетолог CRM'].map((role) => `<article class="card"><span class="card__icon">${role[0]}</span><h3>${role}</h3><p>Отвечает за свой блок работ и фиксирует результат в проектной документации.</p></article>`).join('')}
@@ -1501,14 +1746,17 @@ ${ctaBlock('Обсудить проект с командой', 'Подключ�
 function certificatesPage() {
   const pathname = '/o-kompanii/sertifikaty/';
   const crumbs = [{ name: 'Главная', path: '/' }, { name: 'О компании', path: '/o-kompanii/' }, { name: 'Сертификаты', path: pathname }];
-  const content = `<section class="page-hero">
-  <div class="container">
-    ${breadcrumbs(crumbs)}
-    <span class="eyebrow">Сертификаты</span>
-    <h1>Сертифицированный партнер Битрикс24 — наши компетенции</h1>
-    <p class="page-hero__lead">Размещаем сертификаты партнера Битрикс24, подтверждение компетенций по CRM, бизнес-процессам и интеграциям.</p>
-  </div>
-</section>
+  const content = `${pageHeroSection({
+    crumbs,
+    eyebrow: 'Сертификаты',
+    h1: 'Сертифицированный партнер Битрикс24 — наши компетенции',
+    lead: 'Размещаем сертификаты партнера Битрикс24, подтверждение компетенций по CRM, бизнес-процессам и интеграциям.',
+    primary: ['Проверить компетенции', '#audit'],
+    secondary: ['О компании', '/o-kompanii/'],
+    videoTitle: 'Какие компетенции важны при выборе интегратора',
+    videoText: 'В видео объясним, почему сертификаты важны, но решающим остается опыт в продажах, интеграциях и обучении команды.',
+    videoBullets: ['CRM и бизнес-процессы', 'Интеграции', 'Обучение и поддержка'],
+  })}
 <section class="section">
   <div class="container grid grid--3">
     ${['Партнер Битрикс24', 'CRM и продажи', 'Бизнес-процессы', 'Интеграции', 'Обучение пользователей', 'Сопровождение порталов'].map((cert) => `<article class="card"><span class="card__icon">✓</span><h3>${cert}</h3><p>Блок-плейсхолдер для размещения изображения сертификата и описания компетенции.</p></article>`).join('')}
@@ -1539,13 +1787,23 @@ function contactsPage() {
         <a class="btn btn--ghost btn--lg" href="${whatsapp}">Написать в WhatsApp</a>
       </div>
     </div>
-    <aside class="card">
+    ${videoBlock({
+      title: 'Как проходит первая консультация',
+      text: 'Расскажем, какие вопросы зададим на первой встрече, какие данные лучше подготовить и что вы получите после аудита.',
+      bullets: ['Диагностика отдела продаж', 'Оценка текущей CRM', 'План внедрения и бюджет'],
+    })}
+  </div>
+</section>
+<section class="section section--white">
+  <div class="container grid grid--2">
+    <div class="card">
       <h3>Реквизиты для связи</h3>
       <p><b>Телефон:</b> <a href="tel:${phoneHref}">${phoneDisplay}</a></p>
       <p><b>Email:</b> <a href="mailto:${email}">${email}</a></p>
       <p><b>Регион:</b> Воронеж, Воронежская область</p>
       <p><b>Формат:</b> онлайн по России, встречи в Воронеже по договоренности</p>
-    </aside>
+    </div>
+    ${screenshotMockup('Маршрут заявки в Битрикс24', ['Заявка с сайта', 'Сделка в CRM', 'Ответственный менеджер'])}
   </div>
 </section>
 ${ctaBlock('Записаться на бесплатный аудит', 'Разберем ваш отдел продаж, CRM, источники лидов и интеграции. Подготовим план внедрения и ориентир бюджета.')}`;
@@ -1570,7 +1828,7 @@ function writePage(pathname, html) {
 const pages = [
   { path: '/', html: homePage() },
   { path: '/uslugi/', html: servicesOverviewPage() },
-  ...servicePages.map((service) => ({ path: servicePath(service), html: servicePage(service) })),
+  ...servicePages.map((service) => ({ path: servicePath(service), html: service.slug === 'licenzii-bitrix24' ? licenseServicePage(service) : servicePage(service) })),
   { path: '/resheniya/', html: industriesOverviewPage() },
   ...industries.map((industry) => ({ path: industryPath(industry), html: industryPage(industry) })),
   { path: '/kejsy/', html: casesOverviewPage() },

@@ -146,11 +146,38 @@
 </header>
 <main id="content">
 <section class="page-hero">
-  <div class="container">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки"><span><a href="/">Главная</a></span><span>Блог</span></nav>
-    <span class="eyebrow">Блог</span>
-    <h1>Блог о Битрикс24, CRM и системах продаж</h1>
-    <p class="page-hero__lead">Статьи для SEO-трафика и прогрева аудитории: тарифы, сравнения, ошибки внедрения, интеграции и оцифровка продаж.</p>
+  <div class="container page-hero__grid">
+    <div>
+      <nav class="breadcrumbs" aria-label="Хлебные крошки"><span><a href="/">Главная</a></span><span>Блог</span></nav>
+      <span class="eyebrow">Блог</span>
+      <h1>Блог о Битрикс24, CRM и системах продаж</h1>
+      <p class="page-hero__lead">Статьи для SEO-трафика и прогрева аудитории: тарифы, сравнения, ошибки внедрения, интеграции и оцифровка продаж.</p>
+      <div class="hero__actions">
+        <a class="btn btn--cta btn--lg" href="#audit">Получить аудит</a>
+        <a class="btn btn--ghost btn--lg" href="/uslugi/">Услуги</a>
+      </div>
+      
+    </div>
+    <aside class="video-card">
+    <div class="video-frame" aria-label="Как использовать блог перед внедрением CRM">
+      <div class="video-frame__top">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="video-frame__body">
+        <button class="play-button" type="button" aria-label="Смотреть видео">▶</button>
+        <div>
+          <b>Как использовать блог перед внедрением CRM</b>
+          <small>Горизонтальное видео 16:9</small>
+        </div>
+      </div>
+    </div>
+    <div class="video-card__content">
+      <span class="eyebrow">Видео от эксперта</span>
+      <h3>Как использовать блог перед внедрением CRM</h3>
+      <p>Покажу, какие статьи помогают выбрать тариф, сравнить CRM, избежать ошибок и подготовить отдел продаж к запуску.</p>
+      <ul class="video-card__list"><li>Тарифы и сравнения</li><li>Ошибки внедрения</li><li>Интеграция 1С и CRM</li></ul>
+    </div>
+  </aside>
   </div>
 </section>
 <section class="section">
@@ -187,6 +214,28 @@
       <div class="tag-row"><span class="tag">оцифровать отдел продаж</span></div>
     </a>
   </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="cta-band" id="audit">
+      <div class="cta-band__inner">
+        <div>
+          <span class="eyebrow eyebrow--white">Лид-магнит</span>
+          <h2>Обсудить тему из блога на аудите</h2>
+          <p>Если статья похожа на вашу ситуацию, разберем ее на примере вашей компании и покажем план действий.</p>
+        </div>
+        <form class="form" data-form data-source="audit">
+    <input type="hidden" name="source" value="audit">
+    <input name="name" autocomplete="name" placeholder="Ваше имя" required>
+    <input name="phone" autocomplete="tel" placeholder="Телефон или WhatsApp" required>
+    <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
+    <button class="btn btn--cta btn--block" type="submit">Получить бесплатный аудит</button>
+    <div class="form__status" data-form-status></div>
+    <div class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Форму можно подключить к вебхуку Битрикс24.</div>
+  </form>
+      </div>
+    </div>
   </div>
 </section>
 </main>
