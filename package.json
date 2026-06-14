@@ -1,0 +1,10 @@
+{
+  "name": "dm-marketing-pro-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for dm-marketing.pro Bitrix24 integration agency",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}
