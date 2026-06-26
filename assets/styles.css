@@ -907,6 +907,56 @@ h3 {
   background: linear-gradient(180deg, #fff, #fff8f5);
 }
 
+.service-groups {
+  display: grid;
+  gap: 22px;
+}
+
+.service-group {
+  padding: 24px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, .9);
+  box-shadow: var(--shadow-card);
+}
+
+.service-group header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.service-group header p {
+  color: var(--c-text-soft);
+}
+
+.service-group__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.service-line {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--c-bg-soft);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.service-line:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.service-line span {
+  color: var(--c-text-soft);
+  font-size: 14px;
+}
+
 .case-mini {
   display: inline-flex;
   margin-top: 12px;
@@ -1813,6 +1863,10 @@ h3 {
   border-radius: var(--radius-lg);
   background: #fff;
   box-shadow: var(--shadow-card);
+}
+
+.metrics-title {
+  margin-top: 42px;
 }
 
 .metric {
