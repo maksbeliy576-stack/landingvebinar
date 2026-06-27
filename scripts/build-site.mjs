@@ -1301,12 +1301,12 @@ function servicesRoleFilter() {
 
 function solutionsHomeBlock() {
   const solutionCopy = {
-    'bitrix24-dlya-proizvodstva': ['🏭', 'case-meat-67.jpg', 'Сделки зависают между продажами и производством?', 'Связываем CRM с 1С: менеджер видит статус заказа, склад — спецификацию, руководитель — прогноз.', 'Кейс: +67% к выручке'],
-    'bitrix24-dlya-optovoy-torgovli': ['📦', 'case-polymer-3-5d.jpg', 'Клиент давно не покупал, а менеджер об этом не знает?', 'Настраиваем автоматический контроль повторных продаж — ни один клиент не остывает без касания.', 'Кейс: +27% повторных продаж'],
-    'bitrix24-dlya-stroitelstva': ['🏗️', 'case-food-eq-95.jpg', 'Сметы, договоры и согласования живут в разных местах?', 'Собираем проектные сделки, документы и статусы в одной CRM-воронке.', 'Кейс: -60% дублей данных'],
-    'bitrix24-dlya-b2b': ['🤝', 'case-chem-6x.jpg', 'Сделка на 3 млн зависла в переговорах, и непонятно почему?', 'Строим контроль многоступенчатых сделок с несколькими ЛПР и прогнозом выручки.', 'Кейс: 30/60/90 прогноз'],
-    'bitrix24-dlya-logistiki': ['🚚', 'case-uzi-15.jpg', 'Клиент спрашивает статус, а менеджер ищет его в чатах?', 'Связываем заявки, маршруты, статусы и уведомления в единой системе.', 'Кейс: быстрее обработка заявок'],
-    'bitrix24-dlya-servisnykh-kompaniy': ['🛠️', 'case-gofro-133.jpg', 'Обращения идут из разных каналов, а SLA никто не контролирует?', 'Настраиваем заявки, историю обслуживания и контроль повторных обращений.', 'Кейс: 0 забытых обращений'],
+    'bitrix24-dlya-proizvodstva': ['🏭', 'production', 'Сделки зависают между продажами и производством?', 'Связываем CRM с 1С: менеджер видит статус заказа, склад — спецификацию, руководитель — прогноз.', 'Кейс: +67% к выручке'],
+    'bitrix24-dlya-optovoy-torgovli': ['📦', 'trade', 'Клиент давно не покупал, а менеджер об этом не знает?', 'Настраиваем автоматический контроль повторных продаж — ни один клиент не остывает без касания.', 'Кейс: +27% повторных продаж'],
+    'bitrix24-dlya-stroitelstva': ['🏗️', 'construction', 'Сметы, договоры и согласования живут в разных местах?', 'Собираем проектные сделки, документы и статусы в одной CRM-воронке.', 'Кейс: -60% дублей данных'],
+    'bitrix24-dlya-b2b': ['🤝', 'b2b', 'Сделка на 3 млн зависла в переговорах, и непонятно почему?', 'Строим контроль многоступенчатых сделок с несколькими ЛПР и прогнозом выручки.', 'Кейс: 30/60/90 прогноз'],
+    'bitrix24-dlya-logistiki': ['🚚', 'logistics', 'Клиент спрашивает статус, а менеджер ищет его в чатах?', 'Связываем заявки, маршруты, статусы и уведомления в единой системе.', 'Кейс: быстрее обработка заявок'],
+    'bitrix24-dlya-servisnykh-kompaniy': ['🛠️', 'service', 'Обращения идут из разных каналов, а SLA никто не контролирует?', 'Настраиваем заявки, историю обслуживания и контроль повторных обращений.', 'Кейс: 0 забытых обращений'],
   };
   return `<section class="section section--white" id="solutions">
   <div class="container">
@@ -1316,10 +1316,13 @@ function solutionsHomeBlock() {
       <p class="section__sub">Для каждой отрасли — свои воронки, роли, документы, интеграции и управленческие отчёты.</p>
     </div>
     <div class="grid grid--3">${industries.map((industry) => {
-      const [icon, image, pain, result, caseLine] = solutionCopy[industry.slug];
+      const [icon, visual, pain, result, caseLine] = solutionCopy[industry.slug];
       return `<a class="card card--link industry-card" href="${industryPath(industry)}">
-        <div class="industry-card__visual">
-          <img src="${dmAssetBase}/assets/cases/${image}" alt="${escapeHtml(industry.name)} — пример внедрения Битрикс24" loading="lazy">
+        <div class="industry-card__visual industry-card__visual--${visual}" aria-hidden="true">
+          <span class="visual-node visual-node--main"></span>
+          <span class="visual-node visual-node--side"></span>
+          <span class="visual-line visual-line--one"></span>
+          <span class="visual-line visual-line--two"></span>
           <span class="card__icon">${icon}</span>
         </div>
         <h3>${escapeHtml(industry.name)}</h3>
@@ -3781,7 +3784,7 @@ ${pages.map((page) => `  <url><loc>${url(page.path)}</loc><lastmod>2026-06-14</l
 fs.writeFileSync(path.join(rootDir, 'sitemap.xml'), sitemap, 'utf8');
 
 const robots = `User-agent: *
-Allow: /
+Disallow: /
 
 Sitemap: ${baseUrl}/sitemap.xml
 `;
