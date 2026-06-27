@@ -1301,12 +1301,12 @@ function servicesRoleFilter() {
 
 function solutionsHomeBlock() {
   const solutionCopy = {
-    'bitrix24-dlya-proizvodstva': ['production', 'Сделки зависают между продажами и производством?', 'Связываем CRM с 1С: менеджер видит статус заказа, склад — спецификацию, руководитель — прогноз.', 'Кейс: +67% к выручке'],
-    'bitrix24-dlya-optovoy-torgovli': ['trade', 'Клиент давно не покупал, а менеджер об этом не знает?', 'Настраиваем автоматический контроль повторных продаж — ни один клиент не остывает без касания.', 'Кейс: +27% повторных продаж'],
-    'bitrix24-dlya-stroitelstva': ['construction', 'Сметы, договоры и согласования живут в разных местах?', 'Собираем проектные сделки, документы и статусы в одной CRM-воронке.', 'Кейс: -60% дублей данных'],
-    'bitrix24-dlya-b2b': ['b2b', 'Сделка на 3 млн зависла в переговорах, и непонятно почему?', 'Строим контроль многоступенчатых сделок с несколькими ЛПР и прогнозом выручки.', 'Кейс: 30/60/90 прогноз'],
-    'bitrix24-dlya-logistiki': ['logistics', 'Клиент спрашивает статус, а менеджер ищет его в чатах?', 'Связываем заявки, маршруты, статусы и уведомления в единой системе.', 'Кейс: быстрее обработка заявок'],
-    'bitrix24-dlya-servisnykh-kompaniy': ['service', 'Обращения идут из разных каналов, а SLA никто не контролирует?', 'Настраиваем заявки, историю обслуживания и контроль повторных обращений.', 'Кейс: 0 забытых обращений'],
+    'bitrix24-dlya-proizvodstva': ['industry-production.svg', 'Сделки зависают между продажами и производством?', 'Связываем CRM с 1С: менеджер видит статус заказа, склад — спецификацию, руководитель — прогноз.', 'Кейс: +67% к выручке'],
+    'bitrix24-dlya-optovoy-torgovli': ['industry-wholesale.svg', 'Клиент давно не покупал, а менеджер об этом не знает?', 'Настраиваем автоматический контроль повторных продаж — ни один клиент не остывает без касания.', 'Кейс: +27% повторных продаж'],
+    'bitrix24-dlya-stroitelstva': ['industry-construction.svg', 'Сметы, договоры и согласования живут в разных местах?', 'Собираем проектные сделки, документы и статусы в одной CRM-воронке.', 'Кейс: -60% дублей данных'],
+    'bitrix24-dlya-b2b': ['industry-b2b.svg', 'Сделка на 3 млн зависла в переговорах, и непонятно почему?', 'Строим контроль многоступенчатых сделок с несколькими ЛПР и прогнозом выручки.', 'Кейс: 30/60/90 прогноз'],
+    'bitrix24-dlya-logistiki': ['industry-logistics.svg', 'Клиент спрашивает статус, а менеджер ищет его в чатах?', 'Связываем заявки, маршруты, статусы и уведомления в единой системе.', 'Кейс: быстрее обработка заявок'],
+    'bitrix24-dlya-servisnykh-kompaniy': ['industry-service.svg', 'Обращения идут из разных каналов, а SLA никто не контролирует?', 'Настраиваем заявки, историю обслуживания и контроль повторных обращений.', 'Кейс: 0 забытых обращений'],
   };
   return `<section class="section section--white" id="solutions">
   <div class="container">
@@ -1316,14 +1316,10 @@ function solutionsHomeBlock() {
       <p class="section__sub">Для каждой отрасли — свои воронки, роли, документы, интеграции и управленческие отчёты.</p>
     </div>
     <div class="grid grid--3">${industries.map((industry) => {
-      const [visual, pain, result, caseLine] = solutionCopy[industry.slug];
+      const [image, pain, result, caseLine] = solutionCopy[industry.slug];
       return `<a class="card card--link industry-card" href="${industryPath(industry)}">
-        <div class="industry-card__visual industry-card__visual--${visual}" aria-hidden="true">
-          <span class="visual-node visual-node--main"></span>
-          <span class="visual-node visual-node--side"></span>
-          <span class="visual-node visual-node--accent"></span>
-          <span class="visual-line visual-line--one"></span>
-          <span class="visual-line visual-line--two"></span>
+        <div class="industry-card__visual">
+          <img src="/assets/illustrations/${image}" alt="${escapeHtml(industry.name)} — отраслевое решение Битрикс24" loading="lazy">
         </div>
         <h3>${escapeHtml(industry.name)}</h3>
         <p><b>${escapeHtml(pain)}</b><br>${escapeHtml(result)}</p>
