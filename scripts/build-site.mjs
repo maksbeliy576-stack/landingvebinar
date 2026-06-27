@@ -2717,9 +2717,6 @@ function homePage() {
         <a class="btn btn--ghost btn--lg" href="/kejsy/">Смотреть кейсы клиентов</a>
       </div>
       ${heroStats()}
-      <div class="hero-logo-bar" aria-label="Клиенты">
-        ${sourceLogos.slice(0, 6).map(([img, alt]) => `<span><img src="${dmAssetBase}/assets/logos-real/${img}" alt="${escapeHtml(alt)}" loading="lazy"></span>`).join('')}
-      </div>
     </div>
     ${videoBlock({
       title: 'Как строится система продаж на базе Битрикс24',
