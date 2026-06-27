@@ -103,9 +103,9 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(32px, 4.7vw, 62px);
-  line-height: 1.05;
-  letter-spacing: -.035em;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -.025em;
 }
 
 h2 {
@@ -507,28 +507,28 @@ h3 {
 }
 
 .hero {
-  padding: 72px 0 54px;
+  padding: 42px 0 36px;
 }
 
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
   align-items: center;
-  gap: 40px;
+  gap: 32px;
 }
 
 .hero__lead {
   max-width: 740px;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   color: var(--c-text-soft);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(17px, 1.6vw, 20px);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .hero-proof {
@@ -939,12 +939,25 @@ h3 {
 }
 
 .service-line {
+  position: relative;
   display: grid;
   gap: 4px;
-  padding: 14px;
+  padding: 14px 14px 14px 22px;
   border-radius: 16px;
   background: var(--c-bg-soft);
   transition: transform .2s ease, background .2s ease;
+}
+
+.service-line::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--grad-cta);
+  opacity: .8;
 }
 
 .service-line:hover {
@@ -955,6 +968,81 @@ h3 {
 .service-line span {
   color: var(--c-text-soft);
   font-size: 14px;
+}
+
+.mission-quote {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  align-items: center;
+}
+
+.mission-quote__text {
+  position: relative;
+  padding: 34px;
+  border-radius: var(--radius-xl);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.mission-quote__text::before {
+  content: "“";
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  color: rgba(31, 58, 120, .08);
+  font-size: 150px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mission-quote blockquote {
+  position: relative;
+  margin: 18px 0 0;
+  color: var(--c-text-soft);
+  font-size: 18px;
+}
+
+.mission-quote__person {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--grad-navy);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.mission-quote__person img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.mission-quote__person figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+}
+
+.mission-quote__person span {
+  color: rgba(255, 255, 255, .72);
+  font-size: 14px;
+}
+
+.industry-card {
+  border: 1px solid rgba(31, 58, 120, .12);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(58, 95, 191, .12), transparent 34%),
+    #fff;
+}
+
+.industry-card .card__icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  background: var(--grad-navy);
+  box-shadow: 0 12px 28px -18px rgba(31, 58, 120, .7);
 }
 
 .case-mini {
@@ -2568,6 +2656,7 @@ tr:last-child td {
   .hero__grid,
   .page-hero__grid,
   .cta-band__inner,
+  .mission-quote,
   .split-panel {
     grid-template-columns: 1fr;
   }
