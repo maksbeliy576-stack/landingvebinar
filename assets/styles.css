@@ -512,7 +512,7 @@ h3 {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .62fr);
   align-items: center;
   gap: 32px;
 }
@@ -889,6 +889,12 @@ h3 {
   margin-top: 24px;
 }
 
+.compact-method .card__icon {
+  color: var(--c-navy);
+  background: rgba(31, 58, 120, .08);
+  box-shadow: none;
+}
+
 .service-badge {
   position: absolute;
   top: 18px;
@@ -926,6 +932,12 @@ h3 {
   gap: 16px;
   align-items: start;
   margin-bottom: 18px;
+}
+
+.service-group header .card__icon {
+  color: var(--c-navy);
+  background: rgba(31, 58, 120, .08);
+  box-shadow: none;
 }
 
 .service-group header p {
@@ -1041,8 +1053,10 @@ h3 {
   width: 58px;
   height: 58px;
   border-radius: 20px;
-  background: var(--grad-navy);
-  box-shadow: 0 12px 28px -18px rgba(31, 58, 120, .7);
+  color: var(--c-navy);
+  background: rgba(31, 58, 120, .08);
+  box-shadow: none;
+  font-size: 26px;
 }
 
 .case-mini {
@@ -1640,8 +1654,8 @@ h3 {
 }
 
 .stage-tab.is-active .stage-tab__num {
-  color: #fff;
-  background: var(--grad-navy);
+  color: var(--c-navy);
+  background: rgba(31, 58, 120, .1);
 }
 
 .stage-panel {
@@ -1881,7 +1895,7 @@ h3 {
 
 /* Source-style cases, logos, letters, team */
 .grid--cases {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .case-card {
@@ -2024,7 +2038,7 @@ h3 {
 
 .letters-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
 }
 
@@ -2139,6 +2153,10 @@ h3 {
   border-radius: var(--radius-lg);
   background: #fff;
   box-shadow: var(--shadow-card);
+}
+
+.reviews .grid--3 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .review-card--wide {
@@ -2783,6 +2801,10 @@ tr:last-child td {
     grid-template-columns: 1fr 1fr;
   }
 
+  .reviews .grid--3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .logos__row {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -2823,6 +2845,10 @@ tr:last-child td {
   .metrics,
   .team-grid,
   .letters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews .grid--3 {
     grid-template-columns: 1fr;
   }
 
