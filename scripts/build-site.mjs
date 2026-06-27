@@ -1536,7 +1536,7 @@ function compactMethodologyBlock() {
     ['Обучаем', 'Менеджеры, РОП и руководитель понимают, как работать в новой системе.'],
     ['Сопровождаем', 'После запуска есть backlog развития, поддержка и контроль первых результатов.'],
   ];
-  return `<section class="section" id="what">
+  return `<section class="section" id="method">
   <div class="container">
     <header class="section__head">
       <span class="eyebrow eyebrow--green">Как мы работаем</span>
@@ -2746,6 +2746,7 @@ function homePage() {
 ${servicesHomeBlock()}
 ${solutionsHomeBlock()}
 ${compactMethodologyBlock()}
+${stagesSourceBlock()}
 
 ${resultsSourceBlock()}
 ${logosSourceBlock()}
