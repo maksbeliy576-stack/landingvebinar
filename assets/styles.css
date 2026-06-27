@@ -1142,6 +1142,13 @@ h3 {
   right: 118px;
 }
 
+.visual-node--accent {
+  width: 34px;
+  height: 34px;
+  top: 36px;
+  left: 42px;
+}
+
 .visual-line {
   height: 6px;
   border-radius: 999px;
@@ -1163,25 +1170,119 @@ h3 {
 
 .industry-card__visual--production .visual-node--main {
   border-radius: 12px;
+  box-shadow:
+    0 0 0 999px transparent,
+    inset 0 -18px 0 rgba(31, 58, 120, .08);
+}
+
+.industry-card__visual--production .visual-node--side {
+  width: 22px;
+  height: 70px;
+  top: 58px;
+  right: 154px;
+  border-radius: 8px 8px 0 0;
+}
+
+.industry-card__visual--production .visual-node--accent {
+  width: 70px;
+  height: 34px;
+  top: 82px;
+  left: 46px;
+  border-radius: 10px 10px 0 0;
 }
 
 .industry-card__visual--trade .visual-node--main {
   width: 112px;
+  height: 66px;
+}
+
+.industry-card__visual--trade .visual-node--side,
+.industry-card__visual--trade .visual-node--accent {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.industry-card__visual--trade .visual-node--accent {
+  top: 42px;
+  left: 48px;
 }
 
 .industry-card__visual--construction .visual-node--main {
   transform: rotate(-3deg);
+  height: 72px;
+  clip-path: polygon(0 100%, 18% 35%, 36% 100%, 54% 22%, 72% 100%, 100% 0, 100% 100%);
+}
+
+.industry-card__visual--construction .visual-node--side {
+  width: 110px;
+  height: 12px;
+  top: 58px;
+  right: 78px;
+  transform: rotate(-18deg);
+}
+
+.industry-card__visual--construction .visual-node--accent {
+  border-radius: 50%;
 }
 
 .industry-card__visual--b2b .visual-node--side {
   right: 92px;
 }
 
+.industry-card__visual--b2b .visual-node--main,
+.industry-card__visual--b2b .visual-node--side,
+.industry-card__visual--b2b .visual-node--accent {
+  border-radius: 50%;
+}
+
+.industry-card__visual--b2b .visual-line--one {
+  top: 70px;
+  left: 68px;
+  width: 170px;
+}
+
 .industry-card__visual--logistics .visual-line--one {
   width: 150px;
 }
 
+.industry-card__visual--logistics .visual-node--main {
+  height: 48px;
+  border-radius: 12px;
+}
+
+.industry-card__visual--logistics .visual-node--side {
+  width: 36px;
+  height: 36px;
+  top: 112px;
+  right: 70px;
+  border-radius: 50%;
+}
+
+.industry-card__visual--logistics .visual-node--accent {
+  width: 36px;
+  height: 36px;
+  top: 112px;
+  left: 74px;
+  border-radius: 50%;
+}
+
 .industry-card__visual--service .visual-node--main {
+  border-radius: 50%;
+}
+
+.industry-card__visual--service .visual-node--side {
+  width: 84px;
+  height: 26px;
+  top: 82px;
+  right: 68px;
+}
+
+.industry-card__visual--service .visual-node--accent {
+  width: 58px;
+  height: 58px;
+  top: 42px;
+  left: 58px;
   border-radius: 50%;
 }
 
