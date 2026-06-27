@@ -16,6 +16,8 @@
   --c-navy-soft: #2a3a66;
   --c-wa: #25d366;
   --grad-navy: linear-gradient(135deg, #3a5fbf 0%, #1f3a78 100%);
+  --grad-cool: linear-gradient(135deg, #d9e7ff 0%, #8fb4ff 48%, #69d2e7 100%);
+  --grad-cool-strong: linear-gradient(135deg, #3a5fbf 0%, #1f91c9 55%, #42d2c8 100%);
   --grad-cta: linear-gradient(61deg, #e48533 0%, #e35353 52%, #d1254f 100%);
   --grad-cta-hover: linear-gradient(61deg, #ee9744 0%, #ed6464 52%, #de3866 100%);
   --grad-bg: radial-gradient(circle at 50% 0%, #eff2f7 0%, #d7e2ee 42%, #f7f9fd 100%);
@@ -890,9 +892,9 @@ h3 {
 }
 
 .compact-method .card__icon {
-  color: var(--c-navy);
-  background: rgba(31, 58, 120, .08);
-  box-shadow: none;
+  color: #0f2f66;
+  background: var(--grad-cool);
+  box-shadow: 0 12px 26px -20px rgba(31, 58, 120, .45);
 }
 
 .service-badge {
@@ -935,9 +937,9 @@ h3 {
 }
 
 .service-group header .card__icon {
-  color: var(--c-navy);
-  background: rgba(31, 58, 120, .08);
-  box-shadow: none;
+  color: #0f2f66;
+  background: var(--grad-cool);
+  box-shadow: 0 12px 26px -20px rgba(31, 58, 120, .45);
 }
 
 .service-group header p {
@@ -968,7 +970,7 @@ h3 {
   bottom: 12px;
   width: 4px;
   border-radius: 999px;
-  background: var(--grad-cta);
+  background: var(--grad-cool-strong);
   opacity: .8;
 }
 
@@ -1042,11 +1044,66 @@ h3 {
   font-size: 14px;
 }
 
+.mission-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.mission-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .2);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mission-socials a:first-child::before {
+  content: "✈";
+  margin-right: 5px;
+}
+
+.mission-socials a:last-child::before {
+  content: "M";
+  margin-right: 5px;
+}
+
 .industry-card {
+  overflow: hidden;
+  padding-top: 0;
   border: 1px solid rgba(31, 58, 120, .12);
   background:
     radial-gradient(circle at 100% 0%, rgba(58, 95, 191, .12), transparent 34%),
     #fff;
+}
+
+.industry-card__visual {
+  position: relative;
+  margin: -24px -24px 18px;
+  min-height: 150px;
+  overflow: hidden;
+  background: var(--grad-navy);
+}
+
+.industry-card__visual img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  opacity: .72;
+  mix-blend-mode: screen;
+}
+
+.industry-card__visual .card__icon {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
 }
 
 .industry-card .card__icon {
@@ -1054,8 +1111,8 @@ h3 {
   height: 58px;
   border-radius: 20px;
   color: var(--c-navy);
-  background: rgba(31, 58, 120, .08);
-  box-shadow: none;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 12px 28px -18px rgba(31, 58, 120, .7);
   font-size: 26px;
 }
 
