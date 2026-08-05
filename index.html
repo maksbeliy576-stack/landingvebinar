@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Система B2B-продаж: бренд, контент и CRM · вебинар 10 сентября</title>
+    <meta
+      name="description"
+      content="Бесплатный вебинар Алексея Тищенко и Максима Дедяева о том, как бренд, контент и CRM снижают зависимость B2B-продаж от отдельных менеджеров."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="logo" href="#top" aria-label="Студия Дедяева Максима">
+          <img src="assets/dm-marketing-logo.svg" alt="Студия Дедяева Максима">
+        </a>
+        <nav class="header__nav" aria-label="Навигация по странице">
+          <a href="#for-whom">Для кого</a>
+          <a href="#program">Программа</a>
+          <a href="#speaker">Спикеры</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#registration">Регистрация</a>
+        </nav>
+        <a class="button button--small" href="#registration">Зарегистрироваться</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero__glow hero__glow--one"></div>
+        <div class="hero__glow hero__glow--two"></div>
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <div class="webinar-date" aria-label="Дата и время вебинара">
+              <div>
+                <span class="webinar-date__label">10 сентября 2026 · 11:00 по Мск</span>
+                <strong id="webinar-countdown">Считаем дни до вебинара</strong>
+              </div>
+              <button class="calendar-button" type="button" id="add-to-calendar">
+                Добавить в календарь
+              </button>
+            </div>
+            <p class="eyebrow">Бесплатный онлайн-вебинар</p>
+            <h1>Система B2B-продаж: бренд, контент и CRM</h1>
+            <p class="hero__lead">
+              Как снизить зависимость от отдельных менеджеров: бренд создаёт
+              доверие, контент прогревает сложные сделки, а CRM фиксирует процесс
+              и клиентскую базу.
+            </p>
+            <div class="hero__meta" aria-label="Дата и формат вебинара">
+              <span>Онлайн</span>
+              <span>Бесплатно</span>
+              <span>60 минут</span>
+            </div>
+            <div class="hero__actions">
+              <a class="button" href="#registration">Зарегистрироваться на вебинар</a>
+              <a class="button button--ghost" href="#program">Посмотреть программу</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel hero-panel--speakers" aria-label="Спикеры вебинара">
+            <div class="hero-speaker-card">
+              <img src="assets/speakers/ticshenko-a.jpg" alt="Алексей Тищенко">
+              <div>
+                <span>Бренд и контент</span>
+                <strong>Алексей Тищенко</strong>
+                <p>сооснователь и директор по развитию МАРКО</p>
+              </div>
+            </div>
+            <div class="hero-speaker-card">
+              <img src="assets/speaker-maksim.png" alt="Максим Дедяев">
+              <div>
+                <span>CRM и процессы</span>
+                <strong>Максим Дедяев</strong>
+                <p>основатель Студии Дедяева Максима</p>
+              </div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card__top">
+                <span class="hero-card__label">Практический разбор</span>
+                <span class="hero-card__time">60 минут</span>
+              </div>
+              <div class="hero-card__number">2</div>
+              <p>
+                эксперта покажут, как связать маркетинг, продажи и CRM в единую
+                систему B2B-роста.
+              </p>
+              <div class="hero-card__list">
+                <span>Бренд</span>
+                <span>Контент</span>
+                <span>CRM</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section pain-section" id="for-whom">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Для кого</p>
+            <h2>Вебинар будет полезен, если в продажах есть хотя бы один из этих рисков:</h2>
+          </div>
+          <div class="cards cards--four">
+            <article class="card pain-card">
+              <span class="card__index">01</span>
+              <h3>Продажи держатся на отдельных сильных менеджерах</h3>
+              <p>Клиенты, договорённости и история отношений остаются в голове конкретного человека.</p>
+            </article>
+            <article class="card pain-card">
+              <span class="card__index">02</span>
+              <h3>Маркетинг и продажи работают разрозненно</h3>
+              <p>Бренд, контент, заявки и сделки не складываются в единый управляемый процесс.</p>
+            </article>
+            <article class="card pain-card">
+              <span class="card__index">03</span>
+              <h3>Контент есть, но он не помогает закрывать сделки</h3>
+              <p>Материалы публикуются, но не прогревают ЛПР и не помогают менеджеру вести сложную продажу.</p>
+            </article>
+            <article class="card pain-card">
+              <span class="card__index">04</span>
+              <h3>CRM есть или планируется, но процессы не закреплены</h3>
+              <p>Система не защищает клиентскую базу и не даёт руководителю прозрачной картины продаж.</p>
+            </article>
+          </div>
+          <div class="section-cta">
+            <a class="button" href="#registration">Разобраться в системе B2B-продаж</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="program">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow">Программа</p>
+            <h2>За 1 час разберём, как собрать B2B-продажи в систему</h2>
+          </div>
+          <div class="program">
+            <article class="program__item">
+              <span>01</span>
+              <div>
+                <h3>Почему B2B-продажи становятся зависимыми от менеджеров</h3>
+                <p>Где теряются знания о клиентах, доверие к бренду и контроль над сделками.</p>
+              </div>
+            </article>
+            <article class="program__item">
+              <span>02</span>
+              <div>
+                <h3>Как бренд помогает продавать сложные продукты</h3>
+                <p>Что должно быть в позиционировании, чтобы ЛПР понимал ценность до первого звонка.</p>
+              </div>
+            </article>
+            <article class="program__item">
+              <span>03</span>
+              <div>
+                <h3>Какой контент реально поддерживает B2B-сделку</h3>
+                <p>Кейсы, экспертные материалы и логика контент-воронки для длинного цикла продаж.</p>
+              </div>
+            </article>
+            <article class="program__item">
+              <span>04</span>
+              <div>
+                <h3>Как CRM фиксирует процесс и защищает клиентскую базу</h3>
+                <p>Воронки, регламенты, история коммуникаций и управляемый контроль отдела продаж.</p>
+              </div>
+            </article>
+            <article class="program__item">
+              <span>05</span>
+              <div>
+                <h3>Как связать бренд, контент и CRM в одну систему</h3>
+                <p>Пошаговая логика: от смысла и доверия до сделки, аналитики и повторных продаж.</p>
+              </div>
+            </article>
+          </div>
+          <div class="section-cta">
+            <a class="button" href="#registration">Записаться — это бесплатно</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section speaker-section" id="speaker">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow">Кто ведёт вебинар</p>
+            <h2>Два спикера — маркетинг и CRM в одной системе</h2>
+          </div>
+          <div class="speakers-grid">
+            <article class="speaker-profile">
+              <div class="speaker-profile__photo">
+                <img src="assets/speakers/ticshenko-a.jpg" alt="Алексей Тищенко">
+              </div>
+              <div class="speaker-profile__body">
+                <p class="speaker-profile__topic">Бренд и контент</p>
+                <h3>Алексей Тищенко</h3>
+                <p class="speaker__role">
+                  Сооснователь и директор по развитию маркетинговой группы МАРКО ·
+                  генеральный директор сервиса аутсорсинга отдела маркетинга для B2B и промышленных компаний «Маркаут».
+                </p>
+                <div class="stats stats--compact">
+                  <div class="stat">
+                    <strong>19+</strong>
+                    <span>лет в B2B и промышленном маркетинге</span>
+                  </div>
+                  <div class="stat">
+                    <strong>300+</strong>
+                    <span>маркетинговых стратегий и кейсов</span>
+                  </div>
+                </div>
+                <p class="speaker__speciality">
+                  Расскажет, как бренд, экспертный контент и системный маркетинг помогают сложным B2B-продажам не зависеть от личной харизмы отдельных менеджеров.
+                </p>
+                <div class="speaker-socials" aria-label="Ссылки Алексея Тищенко">
+                  <a href="https://t.me/marcocekh" target="_blank" rel="noopener noreferrer">TG-канал</a>
+                  <a href="https://vk.com/prommarketolog" target="_blank" rel="noopener noreferrer">VK</a>
+                  <a href="https://mar-co.ru/" target="_blank" rel="noopener noreferrer">МАРКО</a>
+                </div>
+              </div>
+            </article>
+            <article class="speaker-profile">
+              <div class="speaker-profile__photo">
+                <img src="assets/speaker-maksim.png" alt="Максим Дедяев">
+              </div>
+              <div class="speaker-profile__body">
+                <p class="speaker-profile__topic">CRM и процессы</p>
+                <h3>Максим Дедяев</h3>
+                <p class="speaker__role">
+                  Консультант по внедрению Битрикс24 и автоматизации продаж ·
+                  основатель Студии Дедяева Максима.
+                </p>
+                <div class="stats stats--compact">
+                  <div class="stat">
+                    <strong>150+</strong>
+                    <span>компаний с внедрённой CRM</span>
+                  </div>
+                  <div class="stat">
+                    <strong>10 лет</strong>
+                    <span>на рынке внедрений</span>
+                  </div>
+                </div>
+                <p class="speaker__speciality">
+                  Покажет, как CRM, регламенты, воронки и аналитика превращают продажи из набора личных договорённостей в управляемую систему.
+                </p>
+                <div class="speaker-socials" aria-label="Ссылки Максима Дедяева">
+                  <a href="https://t.me/dedyaeffmaksim" target="_blank" rel="noopener noreferrer">Telegram</a>
+                  <a href="https://vk.com/dmmarkeitng" target="_blank" rel="noopener noreferrer">VK</a>
+                  <a href="https://max.ru/id480407501370_biz" target="_blank" rel="noopener noreferrer">MAX</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="cases">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Кейсы</p>
+            <h2>Компании, которые уже получили результат</h2>
+          </div>
+          <div class="cases cases--real">
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-meat-67.jpg" alt="Кейс мясоперерабатывающего завода">
+              <div class="case-card__body">
+                <span class="case-card__tag">Производство · опт B2B</span>
+                <div class="case-card__niche">Мясоперерабатывающий завод</div>
+                <p>Внедрили воронку, регламенты и автоматическую отчётность.</p>
+                <strong>+67% к выручке за 5 месяцев</strong>
+              </div>
+            </article>
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-gofro-133.jpg" alt="Кейс производителя гофроупаковки">
+              <div class="case-card__body">
+                <span class="case-card__tag">Производство · B2B-продажи</span>
+                <div class="case-card__niche">Производство гофроупаковки</div>
+                <p>Сегментация лидов, скрипты, автоматический подогрев.</p>
+                <strong>+133% к конверсии</strong>
+              </div>
+            </article>
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-polymer-3-5d.jpg" alt="Кейс производителя полимерного сырья">
+              <div class="case-card__body">
+                <span class="case-card__tag">Производство · дистрибуция</span>
+                <div class="case-card__niche">Производство полимерного сырья</div>
+                <p>База знаний, чек-листы и регламенты для новых менеджеров.</p>
+                <strong>×6 быстрее адаптация</strong>
+              </div>
+            </article>
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-food-eq-95.jpg" alt="Кейс производителя оборудования пищевых производств">
+              <div class="case-card__body">
+                <span class="case-card__tag">Производство · сложные сделки</span>
+                <div class="case-card__niche">Оборудование пищевых производств</div>
+                <p>Сквозная воронка от заявки до отгрузки, контроль сроков.</p>
+                <strong>95% заказов в срок</strong>
+              </div>
+            </article>
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-chem-6x.jpg" alt="Кейс химзавода минеральных удобрений">
+              <div class="case-card__body">
+                <span class="case-card__tag">Производство · крупный B2B</span>
+                <div class="case-card__niche">Химзавод минеральных удобрений</div>
+                <p>Потери заявок сократили, первый ответ стал быстрым и контролируемым.</p>
+                <strong>×6 меньше потерь</strong>
+              </div>
+            </article>
+            <article class="case-card">
+              <img class="case-card__shot" src="assets/cases/case-uzi-15.jpg" alt="Кейс дистрибьютора УЗИ-аппаратов">
+              <div class="case-card__body">
+                <span class="case-card__tag">Дистрибуция · медтех</span>
+                <div class="case-card__niche">Дистрибьютор УЗИ-оборудования</div>
+                <p>Автоматизация воронки и контроль каждого этапа сделки.</p>
+                <strong>×1,5 быстрее цикл сделки</strong>
+              </div>
+            </article>
+          </div>
+          <div class="trusted-logos" aria-label="Нам доверяют компании Казахстана и России">
+            <h3>Нам доверяют компании Казахстана и России</h3>
+            <div class="trusted-logos__grid">
+              <img src="assets/logos-real/01-sberbank.jpeg" alt="ПАО Сбербанк">
+              <img src="assets/logos-real/02-rzhd.jpeg" alt="РЖД">
+              <img src="assets/logos-real/03-krays.png" alt="KRAYS Group">
+              <img src="assets/logos-real/04-baumark.jpeg" alt="Baumark">
+              <img src="assets/logos-real/05-letrrans.png" alt="LE-TRANS">
+              <img src="assets/logos-real/06-rocket-firm.jpeg" alt="Rocket Firm">
+              <img src="assets/logos-real/07-edge-apps.jpeg" alt="Edge Apps">
+              <img src="assets/logos-real/08-tulsar.jpg" alt="Tulsar">
+              <img src="assets/logos-real/09-kosmetika.jpg" alt="Косметика">
+              <img src="assets/logos-real/10-shlyapa.png" alt="Шляпа">
+              <img src="assets/logos-real/11-aupair-babysitters.jpeg" alt="Au-pair Babysitters">
+              <img src="assets/logos-real/12-mk.png" alt="MK-Global Logistics">
+              <img src="assets/logos-real/13-mengel.jpeg" alt="Mengel">
+              <img src="assets/logos-real/14-laborin.png" alt="Laborin">
+              <img src="assets/logos-real/15-mc.png" alt="MC">
+              <img src="assets/logos-real/16-koula.png" alt="Koula">
+              <img src="assets/logos-real/17-cosos.png" alt="Cosos">
+              <img src="assets/logos-real/18-konkrit.png" alt="Конкрит">
+              <img src="assets/logos-real/19-kazprice.png" alt="KazPrice">
+              <img src="assets/logos-real/20-zam-zam.jpeg" alt="Zam-Zam">
+              <img src="assets/logos-real/21-dom-kz.png" alt="Dom.kz">
+              <img src="assets/logos-real/22-dr-kudarov.jpeg" alt="Dr. Kudarov">
+              <img src="assets/logos-real/23-d-tail.png" alt="D-Tail">
+              <img src="assets/logos-real/24-grosstoun.png" alt="Grosstoun">
+              <img src="assets/logos-real/25-geo-platinum.png" alt="Geo Platinum">
+              <img src="assets/logos-real/26-bolim-lombard.jpeg" alt="Болим Ломбард">
+              <img src="assets/logos-real/27-bilimland.png" alt="Bilimland">
+              <img src="assets/logos-real/28-agrosputnik.jpeg" alt="Агроспутник">
+              <img src="assets/logos-real/29-agralis.jpeg" alt="Агралис">
+              <img src="assets/logos-real/30-100lgd.png" alt="100ЛГД">
+              <img src="assets/logos-real/31-n1broker.png" alt="N1 Broker">
+              <img src="assets/logos-real/32-yuridich-alyans.png" alt="Юридический Альянс">
+            </div>
+          </div>
+          <div class="letters" id="letters">
+            <div class="section-heading section-heading--center">
+              <p class="eyebrow">Отзывы клиентов</p>
+              <h2>Благодарственные письма от наших клиентов</h2>
+            </div>
+            <div class="letters__grid">
+              <a class="letter-card" href="#letter-1" aria-label="Открыть благодарственное письмо ПАО Сбербанк">
+                <img src="assets/letters/letter-1-sber.png" alt="Благодарственное письмо — Лаборатория нейронаук, ПАО Сбербанк">
+              </a>
+              <a class="letter-card" href="#letter-2" aria-label="Открыть благодарственное письмо Asilbek Sultanbek Group">
+                <img src="assets/letters/letter-2-asilbek.png" alt="Благодарственное письмо — Asilbek Sultanbek Group">
+              </a>
+              <a class="letter-card" href="#letter-3" aria-label="Открыть благодарственное письмо LE-TRANS">
+                <img src="assets/letters/letter-3-letrans.png" alt="Благодарственное письмо — ТОО LE-TRANS">
+              </a>
+              <a class="letter-card" href="#letter-4" aria-label="Открыть благодарственное письмо Krays Group">
+                <img src="assets/letters/letter-4-krays.jpg" alt="Благодарственное письмо — Krays Group">
+              </a>
+              <a class="letter-card" href="#letter-5" aria-label="Открыть благодарственное письмо MK-Global Logistics">
+                <img src="assets/letters/letter-5-mk.png" alt="Благодарственное письмо — MK-Global Logistics">
+              </a>
+              <a class="letter-card" href="#letter-6" aria-label="Открыть благодарственное письмо Laborin">
+                <img src="assets/letters/letter-6-laborin.png" alt="Благодарственное письмо — ТОО Laborin">
+              </a>
+            </div>
+          </div>
+          <div class="webinar-partners" id="partners">
+            <div class="section-heading section-heading--center">
+              <p class="eyebrow">Партнёры вебинара</p>
+              <h2>Технологии, с которыми работает система продаж</h2>
+            </div>
+            <div class="webinar-partners__grid">
+              <article class="webinar-partner-card">
+                <img src="assets/partners/bitrix24.svg" alt="Bitrix24">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/wazzup.svg" alt="Wazzup">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/beeline.png" alt="Билайн">
+              </article>
+              <article class="webinar-partner-card">
+                <img src="assets/partners/sipuni.svg" alt="Sipuni">
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-webinar" id="registration">
+        <div class="container">
+          <div class="webinar-cta">
+            <div class="webinar-cta__content">
+              <p class="eyebrow">Финальный шаг</p>
+              <h2>Зарегистрируйтесь на вебинар про систему B2B-продаж</h2>
+              <p class="webinar-cta__lead">
+                После вебинара у вас будет:
+              </p>
+              <ul class="webinar-cta__list">
+                <li>Понимание, где продажи зависят от отдельных менеджеров и как это исправлять.</li>
+                <li>Логика связки бренда, контента и CRM для сложных B2B-сделок.</li>
+                <li>Идеи контента, который помогает менеджеру прогревать ЛПР и закрывать сделку.</li>
+                <li>Понимание, какие процессы нужно фиксировать в CRM, чтобы не терять клиентов.</li>
+                <li>План первых шагов для усиления маркетинга, продаж и CRM без хаоса.</li>
+              </ul>
+              <div class="webinar-cta__contacts">
+                <a href="mailto:expert@dm-marketing.pro">expert@dm-marketing.pro</a>
+                <a href="tel:+79065889897">+7 (906) 588-98-97</a>
+                <a href="https://dm-marketing.pro/">dm-marketing.pro</a>
+              </div>
+            </div>
+
+          <form class="registration-form webinar-cta__form" action="#" method="post">
+            <h3>Записаться на вебинар</h3>
+            <label>
+              <span>Ваше имя</span>
+              <input type="text" name="name" placeholder="Иван" autocomplete="name">
+            </label>
+            <label>
+              <span>Телефон</span>
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="mail@company.ru" autocomplete="email">
+            </label>
+            <button class="button button--form" type="submit">
+              Зарегистрироваться на вебинар — бесплатно
+            </button>
+            <p class="form-note">
+              Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
+              и получение информационных сообщений.
+            </p>
+          </form>
+          </div>
+        </div>
+      </section>
+      <div class="letter-lightbox" id="letter-1" aria-label="Благодарственное письмо ПАО Сбербанк">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-1-sber.png" alt="Благодарственное письмо — Лаборатория нейронаук, ПАО Сбербанк">
+      </div>
+      <div class="letter-lightbox" id="letter-2" aria-label="Благодарственное письмо Asilbek Sultanbek Group">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-2-asilbek.png" alt="Благодарственное письмо — Asilbek Sultanbek Group">
+      </div>
+      <div class="letter-lightbox" id="letter-3" aria-label="Благодарственное письмо LE-TRANS">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-3-letrans.png" alt="Благодарственное письмо — ТОО LE-TRANS">
+      </div>
+      <div class="letter-lightbox" id="letter-4" aria-label="Благодарственное письмо Krays Group">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-4-krays.jpg" alt="Благодарственное письмо — Krays Group">
+      </div>
+      <div class="letter-lightbox" id="letter-5" aria-label="Благодарственное письмо MK-Global Logistics">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-5-mk.png" alt="Благодарственное письмо — MK-Global Logistics">
+      </div>
+      <div class="letter-lightbox" id="letter-6" aria-label="Благодарственное письмо Laborin">
+        <a class="letter-lightbox__backdrop" href="#letters" aria-label="Закрыть"></a>
+        <a class="letter-lightbox__close" href="#letters" aria-label="Закрыть">×</a>
+        <img src="assets/letters/letter-6-laborin.png" alt="Благодарственное письмо — ТОО Laborin">
+      </div>
+    </main>
+    <script>
+      (function () {
+        var eventStart = new Date(Date.UTC(2026, 8, 10, 8, 0, 0));
+        var eventEnd = new Date(Date.UTC(2026, 8, 10, 9, 0, 0));
+        var countdown = document.getElementById("webinar-countdown");
+        var calendarButton = document.getElementById("add-to-calendar");
+
+        function formatDays(value) {
+          var lastTwo = value % 100;
+          var last = value % 10;
+
+          if (lastTwo >= 11 && lastTwo <= 14) {
+            return "дней";
+          }
+          if (last === 1) {
+            return "день";
+          }
+          if (last >= 2 && last <= 4) {
+            return "дня";
+          }
+          return "дней";
+        }
+
+        function updateCountdown() {
+          if (!countdown) {
+            return;
+          }
+
+          var now = new Date();
+          var diff = eventStart.getTime() - now.getTime();
+
+          if (diff <= 0) {
+            countdown.textContent = "Вебинар уже начался";
+            return;
+          }
+
+          var days = Math.ceil(diff / 86400000);
+          countdown.textContent = "До вебинара осталось " + days + " " + formatDays(days);
+        }
+
+        function toIcsDate(date) {
+          return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+        }
+
+        if (calendarButton) {
+          calendarButton.addEventListener("click", function () {
+            var details = [
+              "BEGIN:VCALENDAR",
+              "VERSION:2.0",
+              "PRODID:-//dm-marketing//crm-webinar//RU",
+              "BEGIN:VEVENT",
+              "UID:b2b-sales-system-webinar-20260910@dm-marketing.pro",
+              "DTSTAMP:" + toIcsDate(new Date()),
+              "DTSTART:" + toIcsDate(eventStart),
+              "DTEND:" + toIcsDate(eventEnd),
+              "SUMMARY:Система B2B-продаж: бренд, контент и CRM",
+              "DESCRIPTION:Бесплатный онлайн-вебинар о том, как бренд, контент и CRM снижают зависимость B2B-продаж от отдельных менеджеров.",
+              "LOCATION:Онлайн",
+              "END:VEVENT",
+              "END:VCALENDAR"
+            ].join("\\r\\n");
+            var blob = new Blob([details], { type: "text/calendar;charset=utf-8" });
+            var link = document.createElement("a");
+
+            link.href = URL.createObjectURL(blob);
+            link.download = "b2b-sales-system-webinar-10-09-2026.ics";
+            document.body.appendChild(link);
+            link.click();
+            URL.revokeObjectURL(link.href);
+            link.remove();
+          });
+        }
+
+        updateCountdown();
+        window.setInterval(updateCountdown, 3600000);
+      }());
+    </script>
+  </body>
+</html>
